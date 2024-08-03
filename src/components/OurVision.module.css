@@ -1,0 +1,100 @@
+.vision {
+  color: var(--medium);
+}
+.ourVision1 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+.frameChild,
+.lineChild {
+  height: 1.8px;
+  position: relative;
+  border-radius: var(--br-8xs);
+}
+.lineChild {
+  width: 97px;
+  background-color: var(--third-template-colour);
+}
+.frameChild {
+  flex: 1;
+  background-color: var(--medium);
+}
+.lineInner {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 0 0 var(--padding-24xl);
+}
+.line,
+.lineInner,
+.lineWrapper {
+  justify-content: flex-start;
+}
+.line {
+  height: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8xs);
+  flex-shrink: 0;
+}
+.lineWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-11xs) 0 var(--padding-9xl);
+  margin-top: -1px;
+}
+.lineWrapper,
+.ourVision,
+.tittle {
+  display: flex;
+  align-items: flex-start;
+}
+.tittle {
+  width: 173px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.ourVision {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-285xl) var(--padding-428xl);
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--third-template-colour);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 1000px) {
+  .ourVision1 {
+    font-size: var(--font-size-5xl);
+  }
+  .ourVision {
+    padding-left: var(--padding-133xl);
+    padding-right: var(--padding-133xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 725px) {
+  .ourVision {
+    padding-bottom: var(--padding-272xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .ourVision1 {
+    font-size: var(--font-size-lg);
+  }
+  .ourVision {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

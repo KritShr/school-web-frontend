@@ -1,0 +1,115 @@
+.arrowIcon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: contain;
+  min-height: 24px;
+}
+.march2022 {
+  position: relative;
+  line-height: 120%;
+  display: inline-block;
+  min-width: 95px;
+}
+.march2022Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10xs-5) 0 0;
+}
+.arrowIcon1 {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.month {
+  width: 303px;
+  filter: var(--dp);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.monthWrapper,
+.sun {
+  display: flex;
+  justify-content: center;
+}
+.monthWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-xl) 0 var(--padding-2xl);
+}
+.sun {
+  width: 41px;
+  position: relative;
+  line-height: 120%;
+  align-items: center;
+  flex-shrink: 0;
+}
+.weekdays {
+  width: 505px;
+  filter: var(--dp);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 0 var(--padding-3xs);
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+.calendar,
+.weekdaysParent,
+.weeks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.weeks {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-11xs-3);
+  font-size: var(--font-size-sm);
+  color: var(--neutrals-n200);
+}
+.calendar,
+.weekdaysParent {
+  align-items: flex-end;
+}
+.weekdaysParent {
+  width: 540.6px;
+  max-width: 104%;
+  flex-shrink: 0;
+  font-size: var(--small-bold-size);
+  color: var(--neutrals-n100);
+}
+.calendar {
+  width: 559px;
+  padding: var(--padding-4xs-3) var(--padding-lgi) var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-36xl-7);
+  max-width: 100%;
+  z-index: 1;
+  text-align: center;
+  font-size: var(--large-bold-size);
+  color: var(--default-body);
+  font-family: var(--small-bold);
+}
+@media screen and (max-width: 850px) {
+  .weekdays {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .calendar {
+    gap: var(--gap-9xl);
+  }
+}

@@ -1,0 +1,40 @@
+.nextPage {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  font-family: var(--font-poppins);
+  color: var(--default-white);
+  text-align: left;
+  display: inline-block;
+  min-width: 99px;
+}
+.nextIcon {
+  width: 16px;
+  height: 5px;
+  position: relative;
+}
+.button,
+.nextPageIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 0 0;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-xl) var(--padding-11xl);
+  background-color: var(--color);
+  border-radius: var(--br-8xs);
+  flex-direction: row;
+  gap: var(--gap-xl);
+  z-index: 1;
+}
+@media screen and (max-width: 450px) {
+  .nextPage {
+    font-size: var(--large-bold-size);
+    line-height: 17px;
+  }
+}

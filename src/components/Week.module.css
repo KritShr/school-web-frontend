@@ -1,0 +1,17 @@
+.week5 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-11xs-9);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--neutrals-n200);
+  font-family: var(--small-bold);
+}
+@media screen and (max-width: 850px) {
+  .week5 {
+    flex-wrap: wrap;
+  }
+}

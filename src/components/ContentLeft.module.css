@@ -1,0 +1,133 @@
+.notice {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 100px;
+  z-index: 1;
+}
+.searchInput {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-4xl) 0 var(--padding-xl);
+}
+.storyBackground,
+.storyForeground {
+  width: 97px;
+  height: 2px;
+  position: relative;
+  border-radius: var(--br-8xs);
+  background-color: var(--third-template-colour);
+  z-index: 1;
+}
+.storyForeground {
+  width: 100px;
+  background-color: var(--medium);
+}
+.searchIconClose {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.searchBar,
+.searchIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.searchIcon {
+  align-self: stretch;
+  gap: var(--gap-8xs);
+}
+.searchBar {
+  width: 143px;
+}
+.contentSearch,
+.searchButton {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.contentSearch {
+  align-self: stretch;
+  justify-content: center;
+  padding: 0 var(--padding-xl) var(--padding-21xl) var(--padding-3xl);
+}
+.searchButton {
+  height: 40px;
+  justify-content: flex-end;
+  padding: 0 var(--padding-11xs) 0 var(--padding-12xs);
+  box-sizing: border-box;
+}
+.contentLeft,
+.contentLeftTop,
+.storyItem,
+.storyList {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.storyItem {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 0 0 var(--padding-12xs);
+  box-sizing: border-box;
+}
+.contentLeft,
+.contentLeftTop,
+.storyList {
+  flex-direction: column;
+}
+.storyList {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-12xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+}
+.contentLeft,
+.contentLeftTop {
+  align-items: flex-end;
+}
+.contentLeftTop {
+  align-self: stretch;
+  gap: var(--gap-20xl);
+}
+.contentLeft {
+  flex: 1;
+  gap: var(--gap-26xl);
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--medium);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 975px) {
+  .notice {
+    font-size: var(--font-size-5xl);
+  }
+}
+@media screen and (max-width: 725px) {
+  .storyList {
+    gap: var(--gap-mini);
+  }
+  .contentLeftTop {
+    gap: var(--gap-lgi);
+  }
+  .contentLeft {
+    gap: var(--gap-3xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .notice {
+    font-size: var(--font-size-lg);
+  }
+}

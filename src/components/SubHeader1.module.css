@@ -1,0 +1,106 @@
+.imageIcon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.notice {
+  margin: 0;
+  font-size: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: inherit;
+}
+.home,
+.homeIcon,
+.notice {
+  position: relative;
+  z-index: 1;
+}
+.home {
+  text-decoration: none;
+  flex: 1;
+  color: inherit;
+  display: inline-block;
+  min-width: 44.3px;
+}
+.homeIcon {
+  width: 6px;
+  height: 5px;
+}
+.homeButtonIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0 0;
+}
+.notice1 {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+  color: var(--default-white);
+  display: inline-block;
+  min-width: 47.4px;
+  z-index: 1;
+}
+.homeButton {
+  flex: 1;
+  flex-direction: row;
+  gap: var(--gap-2xs-1);
+}
+.homeButton,
+.subHeader,
+.subHeaderButton {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.subHeaderButton {
+  width: 186.2px;
+  flex-direction: row;
+  padding: 0 var(--padding-15xl);
+  box-sizing: border-box;
+  font-size: var(--large-bold-size);
+  color: var(--color-gray-400);
+}
+.subHeader {
+  align-self: stretch;
+  flex-direction: column;
+  padding: var(--padding-25xl) var(--padding-460xl) var(--padding-24xl);
+  position: relative;
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-size-34xl);
+  color: var(--default-white);
+  font-family: var(--font-roboto);
+}
+@media screen and (max-width: 975px) {
+  .notice {
+    font-size: var(--font-size-23xl);
+  }
+}
+@media screen and (max-width: 725px) {
+  .subHeader {
+    padding-left: var(--padding-220xl);
+    padding-right: var(--padding-220xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .notice {
+    font-size: var(--font-size-13xl);
+  }
+  .subHeader {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

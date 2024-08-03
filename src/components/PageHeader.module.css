@@ -1,0 +1,108 @@
+.rectangleIcon {
+  width: 1160px;
+  height: 180px;
+  position: relative;
+  display: none;
+  max-width: 100%;
+}
+.aboutUs {
+  margin: 0;
+  width: 431.4px;
+  font-size: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+.aboutUs,
+.home,
+.homeIconChild {
+  position: relative;
+  z-index: 1;
+}
+.home {
+  text-decoration: none;
+  width: 52px;
+  color: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.homeIconChild {
+  width: 7.1px;
+  height: 5px;
+}
+.homeIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0 0;
+}
+.aboutUs1 {
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  color: var(--default-white);
+  display: inline-block;
+  min-width: 65px;
+  z-index: 1;
+}
+.homeLink1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs-8);
+}
+.homeLink,
+.pageHeader,
+.subHeader {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.homeLink {
+  width: 432px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 0 var(--padding-11xs);
+  text-align: left;
+  font-size: var(--large-bold-size);
+  color: var(--color-gray-400);
+}
+.pageHeader,
+.subHeader {
+  justify-content: flex-start;
+}
+.subHeader {
+  flex: 1;
+  background-color: var(--medium);
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-25xl) var(--padding-xl) var(--padding-26xl);
+  gap: var(--gap-3xs);
+}
+.pageHeader {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 0 var(--padding-31xl);
+  text-align: center;
+  font-size: var(--font-size-34xl);
+  color: var(--default-white);
+  font-family: var(--font-roboto);
+}
+@media screen and (max-width: 1000px) {
+  .aboutUs {
+    font-size: var(--font-size-23xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutUs {
+    font-size: var(--font-size-13xl);
+  }
+}

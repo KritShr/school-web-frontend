@@ -1,0 +1,26 @@
+.sendMessage {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  font-family: var(--font-poppins);
+  color: var(--default-white);
+  text-align: left;
+}
+.property1variant2 {
+  cursor: pointer;
+  border: 1px solid var(--default-white);
+  padding: var(--padding-lg) var(--padding-10xl);
+  background-color: var(--medium);
+  border-radius: var(--br-8xs);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+.property1variant2:hover {
+  background-color: var(--color-seagreen);
+  border: 1px solid var(--color-gainsboro-100);
+  box-sizing: border-box;
+}
