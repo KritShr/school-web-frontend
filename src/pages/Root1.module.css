@@ -1,0 +1,36 @@
+.root {
+  width: 100%;
+  position: relative;
+  background-color: var(--default-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 381px 134px var(--padding-37xl);
+  box-sizing: border-box;
+  gap: 216px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1800px) {
+  .root {
+    gap: 108px;
+    padding-left: var(--padding-48xl);
+    padding-right: var(--padding-48xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .root {
+    gap: 54px;
+    padding-left: var(--padding-14xl);
+    padding-right: var(--padding-14xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .root {
+    gap: var(--gap-8xl);
+  }
+}

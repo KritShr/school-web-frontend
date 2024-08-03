@@ -1,0 +1,30 @@
+.facilitiesMain,
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.main {
+  align-self: stretch;
+  max-width: 100%;
+}
+.facilitiesMain {
+  width: 100%;
+  position: relative;
+  background-color: var(--default-white);
+  overflow: hidden;
+  gap: 254px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 725px) {
+  .facilitiesMain {
+    gap: 127px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .facilitiesMain {
+    gap: 63px;
+  }
+}

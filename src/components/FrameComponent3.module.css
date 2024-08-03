@@ -1,0 +1,156 @@
+.property1defaultIcon {
+  width: 116.8px;
+  height: 115px;
+  position: relative;
+  cursor: pointer;
+}
+.property1defaultParent {
+  border-radius: var(--br-8xs);
+  border: 1px dashed var(--color-blueviolet);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xl);
+  gap: var(--gap-xl);
+}
+.componentSetWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-10xl);
+}
+.more,
+.moreIcon {
+  position: relative;
+}
+.more {
+  font-size: var(--font-size-xl);
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  font-family: var(--font-poppins);
+  color: var(--default-white);
+  text-align: left;
+  display: inline-block;
+  min-width: 49px;
+}
+.moreIcon {
+  width: 16px;
+  height: 5px;
+}
+.moreIconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 0 0;
+}
+.property1default {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-xl) var(--padding-11xl);
+  background-color: var(--color);
+  border-radius: var(--br-8xs);
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.buttonWrapper,
+.property1default,
+.property1variant2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.property1variant2 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-xl) var(--padding-11xl);
+  background-color: var(--medium);
+  border-radius: var(--br-8xs);
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.buttonWrapper {
+  justify-content: flex-end;
+  padding: 0 var(--padding-xl) var(--padding-57xl);
+}
+.viewMore {
+  margin: 0;
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  font-weight: 400;
+  font-family: var(--font-poppins);
+  color: var(--default-white);
+  text-align: left;
+  display: inline-block;
+  min-width: 103px;
+}
+.property1default1,
+.viewMoreIconWrapper {
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.viewMoreIconWrapper {
+  height: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) 0 0;
+}
+.property1default1 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-xl) var(--padding-11xl);
+  background-color: var(--color);
+  height: 59.2px;
+  border-radius: var(--br-8xs);
+  flex-direction: row;
+  gap: var(--gap-xl);
+}
+.button1,
+.frameParent,
+.property1default1,
+.property1variant21 {
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-start;
+}
+.property1variant21 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-xl) var(--padding-11xl);
+  background-color: var(--medium);
+  height: 59.2px;
+  border-radius: var(--br-8xs);
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+}
+.button1,
+.frameParent {
+  flex-direction: column;
+}
+.button1 {
+  border-radius: var(--br-8xs);
+  border: 1px dashed var(--color-blueviolet);
+  overflow: hidden;
+  align-items: flex-start;
+  padding: var(--padding-xl);
+  gap: var(--gap-xl);
+}
+.frameParent {
+  align-items: flex-end;
+  gap: var(--gap-706xl);
+}
+@media screen and (max-width: 450px) {
+  .more,
+  .viewMore {
+    font-size: var(--large-bold-size);
+    line-height: 17px;
+  }
+}

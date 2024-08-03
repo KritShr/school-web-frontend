@@ -1,0 +1,98 @@
+.property1default {
+  align-self: stretch;
+  height: 518.1px;
+  position: relative;
+}
+.component2,
+.component2Wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.component2 {
+  width: 1117px;
+  border-radius: var(--br-8xs);
+  border: 1px dashed var(--color-blueviolet);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-xl);
+  gap: var(--gap-xl);
+}
+.component2Wrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.property1default1 {
+  align-self: stretch;
+  height: 466px;
+  position: relative;
+}
+.box {
+  width: 1117px;
+  border-radius: var(--br-8xs);
+  border: 1px dashed var(--color-blueviolet);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-direction: column;
+  padding: var(--padding-xl);
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+.box,
+.frameParent,
+.root,
+.rootInner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameParent {
+  width: 1286px;
+  flex-direction: column;
+  gap: 45.8px;
+  max-width: 100%;
+}
+.root,
+.rootInner {
+  box-sizing: border-box;
+}
+.rootInner {
+  width: 239px;
+  flex-direction: column;
+  padding: 202px 0 0;
+}
+.root {
+  width: 100%;
+  position: relative;
+  background-color: var(--default-white);
+  overflow: hidden;
+  flex-direction: row;
+  padding: 97px var(--padding-13xl) 1928.6px;
+  gap: var(--gap-3xs);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1525px) {
+  .root {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1225px) {
+  .rootInner {
+    padding-top: var(--padding-66xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 850px) {
+  .frameParent {
+    gap: var(--gap-4xl);
+  }
+  .rootInner {
+    padding-top: var(--padding-36xl);
+    box-sizing: border-box;
+  }
+}

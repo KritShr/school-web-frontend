@@ -1,0 +1,865 @@
+.iconBd {
+  position: absolute;
+  height: 37.39%;
+  width: 107.5%;
+  top: -1.23%;
+  right: -4%;
+  bottom: 63.84%;
+  left: -3.5%;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-silver);
+  border: 1.5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div,
+.volleyballBallIcon {
+  position: absolute;
+  display: none;
+}
+.volleyballBallIcon {
+  top: 47px;
+  left: 8.5px;
+  width: 12.5px;
+  height: 13.5px;
+  overflow: hidden;
+}
+.div {
+  width: 33%;
+  top: calc(50% - 13.25px);
+  left: 52%;
+  height: 9.7px;
+}
+.iconChild,
+.iconItem {
+  position: absolute;
+  top: 37.8px;
+  left: 19px;
+  width: 18px;
+  height: 18.9px;
+  object-fit: contain;
+}
+.iconItem {
+  top: 56.2px;
+  left: 19.5px;
+  height: 17.8px;
+}
+.icon,
+.text {
+  position: relative;
+}
+.icon {
+  width: 20px;
+  height: 56.7px;
+  display: none;
+}
+.text {
+  margin: 0;
+  align-self: stretch;
+  font-size: inherit;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: inherit;
+}
+.mrKrishnahariGhawa {
+  position: relative;
+  font-size: var(--font-size-xl);
+  line-height: 35px;
+  font-weight: 500;
+  color: var(--third-template-colour);
+  display: inline-block;
+  max-width: 100%;
+}
+.textParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.text1 {
+  flex: 1;
+  position: relative;
+  line-height: 35px;
+  display: inline-block;
+  max-width: 100%;
+}
+.textWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 6px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: var(--font-size-xl);
+  color: var(--third-template-colour);
+}
+.facebookIcon {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  min-height: 24px;
+}
+.facebookParent,
+.frameContainer,
+.frameWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.facebookParent {
+  flex-direction: row;
+  gap: var(--gap-6xl);
+}
+.frameContainer,
+.frameWrapper {
+  max-width: 100%;
+}
+.frameContainer {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-xl);
+}
+.frameWrapper {
+  width: 609px;
+  flex-direction: row;
+  padding: 0 var(--padding-35xl) var(--padding-31xl);
+  box-sizing: border-box;
+}
+.rectangle {
+  width: 1160px;
+  height: 1276px;
+  position: relative;
+  background-color: var(--color-whitesmoke-100);
+  display: none;
+  max-width: 100%;
+}
+.team {
+  color: var(--medium);
+}
+.meetOurTeamContainer {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  z-index: 1;
+}
+.teamMemberImage,
+.teamMemberName {
+  width: 97.7px;
+  height: 2px;
+  position: relative;
+  border-radius: var(--br-8xs);
+  background-color: var(--third-template-colour);
+  z-index: 1;
+}
+.teamMemberName {
+  width: 100.7px;
+  background-color: var(--medium);
+}
+.teamMemberNameWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.teamMemberImageParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-8xs);
+}
+.frameWrapper2,
+.meetOurTeamParent,
+.teamMemberImageParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameWrapper2 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-26xl) 0 var(--padding-27xl);
+}
+.meetOurTeamParent {
+  width: 235.6px;
+  flex-direction: column;
+}
+.frameWrapper1,
+.instanceParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.frameWrapper1 {
+  padding: 0 var(--padding-2xl) 0 var(--padding-xl);
+}
+.instanceParent {
+  flex-wrap: wrap;
+  gap: 73.7px;
+}
+.frameDiv,
+.instanceGroup {
+  justify-content: flex-start;
+}
+.frameDiv {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-mid);
+}
+.instanceGroup {
+  width: 673.7px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 75.7px;
+}
+.instanceGroup,
+.meetOurStaff,
+.meetOurStaffInner {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.meetOurStaffInner {
+  width: 1015.7px;
+  flex-direction: row;
+  justify-content: center;
+}
+.meetOurStaff {
+  align-self: stretch;
+  background-color: var(--color-whitesmoke-100);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-11xl) 57px 84px var(--padding-39xl);
+  box-sizing: border-box;
+  gap: 97px;
+  color: var(--third-template-colour);
+}
+.footerBackground,
+.footerLogoBackground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 488px;
+  right: -1160px;
+  bottom: -488px;
+  left: 1160px;
+  background-color: var(--dark);
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+.footerLogoBackground {
+  top: 382px;
+  right: -276.6px;
+  bottom: -382px;
+  left: 276.6px;
+  background-color: var(--default-white);
+  z-index: 1;
+}
+.tittleIcon {
+  width: 185.2px;
+  height: 182px;
+  position: relative;
+  object-fit: cover;
+  z-index: 2;
+}
+.creative {
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+.academy {
+  margin: 0;
+}
+.creativeLearnersAcademyContainer {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 40px;
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 2;
+}
+.creativeLearnersAcademyWrapper,
+.footerLogoBackgroundParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl) 0 var(--padding-smi);
+}
+.footerLogoBackgroundParent {
+  flex-direction: column;
+  padding: var(--padding-base) var(--padding-23xl) var(--padding-8xl);
+  position: relative;
+  gap: var(--gap-8xl);
+  font-size: var(--font-size-17xl);
+  color: var(--color-midnightblue);
+  font-family: var(--font-roboto);
+}
+.home,
+.links {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.links {
+  margin: 0;
+  width: 128.2px;
+  font-size: inherit;
+  font-weight: 800;
+  font-family: inherit;
+}
+.home {
+  width: 101px;
+  letter-spacing: -0.02em;
+  line-height: 21px;
+}
+.management1 {
+  align-self: stretch;
+}
+.gallery,
+.management1,
+.notice {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  z-index: 1;
+}
+.notice {
+  display: inline-block;
+  min-width: 62.6px;
+}
+.gallery {
+  flex: 1;
+}
+.galleryWrapper {
+  width: 103px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs);
+  box-sizing: border-box;
+}
+.contactUs {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 24px;
+  display: inline-block;
+  min-width: 115.1px;
+  z-index: 1;
+}
+.frameParent2,
+.noticeParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+}
+.noticeParent {
+  gap: var(--gap-3xl);
+}
+.homeParent {
+  align-self: stretch;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-xl);
+  color: var(--default-white);
+}
+.frameWrapper3,
+.homeParent,
+.linksParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.linksParent {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.frameWrapper3 {
+  width: 142.3px;
+  padding: var(--padding-5xs) 0 0;
+  box-sizing: border-box;
+}
+.findUs {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 800;
+  font-family: inherit;
+  z-index: 1;
+}
+.findUsWrapper {
+  width: 130.2px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs);
+  box-sizing: border-box;
+}
+.div3,
+.madhyapurThimi6 {
+  line-height: 33px;
+  white-space: pre-wrap;
+  display: inline-block;
+}
+.madhyapurThimi6 {
+  width: 237.2px;
+  height: 96px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.div3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.phoneAltIcon {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 19.9px;
+  height: 25px;
+  overflow: hidden;
+}
+.envelopeIcon,
+.parent {
+  width: 237.2px;
+  height: 33px;
+  position: relative;
+}
+.envelopeIcon {
+  width: 30.7px;
+  height: 26.6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.envelopeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs-3) 0 0;
+}
+.claschoolnpgmailcom {
+  margin-left: -7.5px;
+  width: 290.8px;
+  height: 93px;
+  position: relative;
+  line-height: 32px;
+  white-space: pre-wrap;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.claschoolnpgmailcomWrapper,
+.frameParent5 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.claschoolnpgmailcomWrapper {
+  flex-direction: column;
+  padding: 0;
+}
+.frameParent5 {
+  align-self: stretch;
+  flex-direction: row;
+}
+.frameParent4,
+.madhyapurThimi6HulakroadParent {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.frameParent4 {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-2xs);
+  margin-top: -20px;
+}
+.madhyapurThimi6HulakroadParent {
+  font-size: var(--font-size-xl);
+  color: var(--default-white);
+}
+.frameParent1,
+.frameWrapper4,
+.madhyapurThimi6HulakroadParent {
+  display: flex;
+  align-items: flex-start;
+}
+.frameWrapper4 {
+  width: 314px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 0 0;
+  box-sizing: border-box;
+}
+.frameParent1 {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+  font-size: var(--font-size-6xl);
+  color: var(--light);
+  font-family: var(--font-poppins);
+}
+.iconBd3 {
+  position: absolute;
+  height: 6.51%;
+  width: 106.05%;
+  top: -0.19%;
+  right: -3.23%;
+  bottom: 93.68%;
+  left: -2.82%;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-silver);
+  border: 1.5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div4,
+.volleyballBallIcon3 {
+  position: absolute;
+  display: none;
+}
+.volleyballBallIcon3 {
+  top: 354.3px;
+  left: 10.5px;
+  width: 15.5px;
+  height: 16.9px;
+  overflow: hidden;
+}
+.div4 {
+  width: 38.71%;
+  top: calc(50% - 36.1px);
+  left: 61.29%;
+  height: 15.7px;
+}
+.iconChild3,
+.iconChild4 {
+  position: absolute;
+  top: 342.8px;
+  left: 23.5px;
+  width: 22.7px;
+  height: 24.2px;
+  object-fit: contain;
+}
+.iconChild4 {
+  top: 366.1px;
+  left: 24.8px;
+  width: 24px;
+  height: 23.3px;
+}
+.icon3 {
+  width: 24.8px;
+  height: 367px;
+  position: relative;
+  display: none;
+  z-index: 2;
+}
+.safariIcon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin: 0 !important;
+  top: 113px;
+  right: 341.5px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.iconBd4 {
+  position: absolute;
+  height: 6.3%;
+  width: 106.05%;
+  top: 0;
+  right: -6.05%;
+  bottom: 93.7%;
+  left: 0;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-silver);
+  border: 1.5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div5,
+.volleyballBallIcon4 {
+  position: absolute;
+  display: none;
+}
+.volleyballBallIcon4 {
+  top: 366.5px;
+  left: 10.5px;
+  width: 15.5px;
+  height: 16.9px;
+  overflow: hidden;
+}
+.div5 {
+  width: 42.34%;
+  top: calc(50% - 29.95px);
+  left: 67.34%;
+  height: 15.7px;
+}
+.iconChild5,
+.iconChild6 {
+  position: absolute;
+  top: 355px;
+  left: 0.8px;
+  width: 22.7px;
+  height: 24.2px;
+  object-fit: contain;
+}
+.iconChild6 {
+  width: 24px;
+  height: 23.3px;
+}
+.icon4 {
+  width: 24.8px;
+  height: 379.1px;
+  position: relative;
+  display: none;
+  z-index: 4;
+}
+.iconBd5 {
+  position: absolute;
+  height: 6.21%;
+  width: 107.54%;
+  top: 0;
+  right: -7.54%;
+  bottom: 93.79%;
+  left: 0;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-silver);
+  border: 1.5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div6,
+.volleyballBallIcon5 {
+  position: absolute;
+  display: none;
+}
+.volleyballBallIcon5 {
+  top: 371.9px;
+  left: 8.4px;
+  width: 12.4px;
+  height: 16.9px;
+  overflow: hidden;
+}
+.div6 {
+  width: 53.27%;
+  top: calc(50% - 27.3px);
+  left: 84.42%;
+  height: 15.7px;
+}
+.iconChild7,
+.iconChild8 {
+  position: absolute;
+  top: 360.4px;
+  left: 0.7px;
+  width: 18.2px;
+  height: 24.2px;
+  object-fit: contain;
+}
+.iconChild8 {
+  width: 19.2px;
+  height: 23.3px;
+}
+.icon5 {
+  width: 19.9px;
+  height: 384.6px;
+  position: relative;
+  display: none;
+  z-index: 5;
+}
+.copyright2024 {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  font-weight: 500;
+  z-index: 1;
+}
+.copyright,
+.footer,
+.frameGroup {
+  display: flex;
+  align-items: flex-start;
+}
+.copyright {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 0 0 var(--padding-12xs);
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-500);
+  font-family: var(--font-poppins);
+}
+.footer,
+.frameGroup {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.footer {
+  align-self: stretch;
+  padding: var(--padding-23xl) var(--padding-33xl) var(--padding-15xl)
+    var(--padding-35xl);
+  position: relative;
+  gap: var(--gap-4xs);
+  text-align: left;
+  font-size: var(--large-bold-size);
+  color: var(--default-white);
+  font-family: var(--font-roboto);
+}
+.frameGroup {
+  width: 1160px;
+  max-width: 100%;
+}
+.imageIcon {
+  width: 501px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  margin-left: -555px;
+}
+.frameParent {
+  align-self: stretch;
+  flex-direction: row;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--medium);
+  font-family: var(--font-poppins);
+}
+.frameParent,
+.management,
+.management3 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.management3 {
+  flex: 1;
+  background-color: var(--default-white);
+  flex-direction: column;
+  gap: 57px;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--large-bold-size);
+  color: var(--default-white);
+  font-family: var(--font-roboto);
+}
+.management {
+  width: 100%;
+  position: relative;
+  flex-direction: row;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1050px) {
+  .instanceParent {
+    gap: var(--gap-18xl);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .meetOurTeamContainer,
+  .text {
+    font-size: var(--font-size-5xl);
+  }
+  .creativeLearnersAcademyContainer {
+    font-size: var(--font-size-10xl);
+    line-height: 32px;
+  }
+  .frameParent1 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 725px) {
+  .frameWrapper {
+    padding-left: var(--padding-8xl);
+    padding-right: var(--padding-8xl);
+    padding-bottom: var(--padding-13xl);
+    box-sizing: border-box;
+  }
+  .instanceParent {
+    gap: var(--gap-lg);
+  }
+  .instanceGroup {
+    gap: 38px;
+  }
+  .meetOurStaff {
+    gap: 48px;
+    padding: var(--padding-xl) var(--padding-9xl) var(--padding-17xl)
+      var(--padding-10xl);
+    box-sizing: border-box;
+  }
+  .footer {
+    padding: var(--padding-8xl) var(--padding-7xl) var(--padding-3xl)
+      var(--padding-8xl);
+    box-sizing: border-box;
+  }
+  .management3 {
+    gap: var(--gap-9xl);
+  }
+}
+@media screen and (max-width: 450px) {
+  .text {
+    font-size: var(--font-size-lg);
+  }
+  .mrKrishnahariGhawa,
+  .text1 {
+    font-size: var(--large-bold-size);
+    line-height: 28px;
+  }
+  .meetOurTeamContainer {
+    font-size: var(--font-size-lg);
+  }
+  .instanceGroup {
+    gap: var(--gap-lgi);
+  }
+  .meetOurStaff {
+    gap: var(--gap-5xl);
+  }
+  .creativeLearnersAcademyContainer {
+    font-size: var(--font-size-3xl);
+    line-height: 24px;
+  }
+  .footerLogoBackgroundParent {
+    padding: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .links {
+    font-size: var(--font-size-xl);
+  }
+  .contactUs,
+  .gallery,
+  .home,
+  .management1,
+  .notice {
+    font-size: var(--large-bold-size);
+    line-height: 17px;
+  }
+  .findUs {
+    font-size: var(--font-size-xl);
+  }
+  .claschoolnpgmailcom,
+  .div3,
+  .madhyapurThimi6 {
+    font-size: var(--large-bold-size);
+    line-height: 26px;
+  }
+}

@@ -1,0 +1,101 @@
+.mission {
+  color: var(--medium);
+}
+.ourMission1 {
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: inherit;
+}
+.missionImageRect,
+.missionImageRectOuter {
+  width: 97px;
+  height: 2px;
+  position: relative;
+  border-radius: var(--br-8xs);
+  background-color: var(--third-template-colour);
+}
+.missionImageRect {
+  width: 100px;
+  background-color: var(--medium);
+}
+.missionImageRectInner {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.line {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-8xs);
+  flex-shrink: 0;
+}
+.line,
+.missionImageWrapper,
+.tittle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.missionImageWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-7xl) 0 var(--padding-9xl);
+  margin-top: -1px;
+}
+.tittle {
+  width: 197px;
+  flex-direction: column;
+}
+.ourMission,
+.property1default {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--third-template-colour);
+  font-family: var(--font-poppins);
+}
+.property1default {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-285xl) var(--padding-428xl);
+}
+.ourMission {
+  width: 1092px;
+  border-radius: var(--br-8xs);
+  border: 1px dashed var(--color-blueviolet);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-xl);
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .property1default {
+    padding-left: var(--padding-133xl);
+    padding-right: var(--padding-133xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 675px) {
+  .property1default {
+    padding-bottom: var(--padding-272xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .property1default {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
