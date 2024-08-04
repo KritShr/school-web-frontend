@@ -1,6 +1,6 @@
 import Calendar from "./Calendar";
 import PropTypes from "prop-types";
-import styles from "./Component.module.css";
+import styles from "../css/components/Component.module.css";
 
 const Component = ({ className = "" }) => {
   return (

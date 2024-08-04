@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./OurVision1.module.css";
+import styles from "../css/components/OurVision1.module.css";
 
 const OurVision1 = ({ className = "" }) => {
   return (

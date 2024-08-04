@@ -1,6 +1,6 @@
 import GroupIcon from "./GroupIcon";
 import PropTypes from "prop-types";
-import styles from "./Content.module.css";
+import styles from "../css/components/Content.module.css";
 
 const Content = ({ className = "" }) => {
   return (

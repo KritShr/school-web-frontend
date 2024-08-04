@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import styles from "./GroupComponent1.module.css";
+import styles from "../css/components/GroupComponent1.module.css";
 
 const GroupComponent1 = ({
   className = "",

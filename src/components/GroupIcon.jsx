@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "./GroupIcon.module.css";
+import styles from "../css/components/GroupIcon.module.css";
 
 const GroupIcon = ({ className = "" }) => {
   const navigate = useNavigate();

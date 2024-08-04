@@ -1,6 +1,6 @@
 import { useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-import styles from "./Card.module.css";
+import styles from "../css/components/Card.module.css";
 
 const Card = ({
   className = "",

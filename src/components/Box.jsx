@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./Box.module.css";
+import styles from "../css/components/Box.module.css";
 
 const Box = ({ className = "" }) => {
   return (

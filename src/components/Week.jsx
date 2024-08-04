@@ -1,6 +1,6 @@
 import CalendarDay from "./CalendarDay";
 import PropTypes from "prop-types";
-import styles from "./Week.module.css";
+import styles from "../css/components/Week.module.css";
 
 const Week = ({ className = "", day, day1, day2, day3, day4, day5, day6 }) => {
   return (

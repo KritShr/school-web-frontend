@@ -2,7 +2,7 @@ import Search from "./Search";
 import Story from "./Story";
 import Button2 from "./Button2";
 import PropTypes from "prop-types";
-import styles from "./ContentLeft.module.css";
+import styles from "../css/components/ContentLeft.module.css";
 
 const ContentLeft = ({ className = "" }) => {
   return (

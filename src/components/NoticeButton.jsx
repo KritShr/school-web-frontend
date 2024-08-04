@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import Button1 from "./Button1";
 import PropTypes from "prop-types";
-import styles from "./NoticeButton.module.css";
+import styles from "../css/components/NoticeButton.module.css";
 
 const NoticeButton = ({ className = "", propWidth }) => {
   const noticeButtonStyle = useMemo(() => {

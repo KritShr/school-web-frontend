@@ -1,7 +1,7 @@
 import { useMemo, useCallback } from "react";
 import Card from "./Card";
 import PropTypes from "prop-types";
-import styles from "./Team1.module.css";
+import styles from "../css/components/Team1.module.css";
 
 const Team1 = ({
   className = "",

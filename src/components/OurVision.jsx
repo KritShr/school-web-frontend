@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import styles from "./OurVision.module.css";
+import styles from "../css/components/OurVision.module.css";
 
 const OurVision = ({
   className = "",

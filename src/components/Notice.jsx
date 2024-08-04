@@ -1,6 +1,6 @@
 import NoticeButton from "./NoticeButton";
 import PropTypes from "prop-types";
-import styles from "./Notice.module.css";
+import styles from "../css/components/Notice.module.css";
 
 const Notice = ({ className = "" }) => {
   return (

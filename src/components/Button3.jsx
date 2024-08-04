@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import styles from "./Button3.module.css";
+import styles from "../css/components/Button3.module.css";
 
 const Button3 = ({
   className = "",

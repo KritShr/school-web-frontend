@@ -1,9 +1,8 @@
-import SubHeader from "./SubHeader";
 import Team2 from "./Team2";
 import Team1 from "./Team1";
 import Team from "./Team";
 import PropTypes from "prop-types";
-import styles from "./Hero.module.css";
+import styles from "../css/components/Hero.module.css";
 
 const Hero = ({ className = "" }) => {
   return (

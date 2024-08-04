@@ -1,4 +1,3 @@
-import FrameComponent1 from "../components/FrameComponent1";
 import GroupComponent from "../components/GroupComponent";
 import styles from "../css/page/Management.module.css";
 

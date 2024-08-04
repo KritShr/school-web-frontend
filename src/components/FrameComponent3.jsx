@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "./FrameComponent3.module.css";
+import styles from "../css/components/FrameComponent3.module.css";
 
 const FrameComponent3 = ({ className = "" }) => {
   const navigate = useNavigate();

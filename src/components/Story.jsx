@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import styles from "./Story.module.css";
+import styles from "../css/components/Story.module.css";
 
 const Story = ({ className = "", propAlignSelf, propFlex, rectangle14 }) => {
   const storyStyle = useMemo(() => {

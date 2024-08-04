@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./EventCalendar.module.css";
+import styles from "../css/components/EventCalendar.module.css";
 
 const EventCalendar = ({ className = "" }) => {
   return (

@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "./Button1.module.css";
+import styles from "../css/components/Button1.module.css";
 
 const Button1 = ({ className = "" }) => {
   const navigate = useNavigate();

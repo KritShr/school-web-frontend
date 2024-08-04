@@ -1,6 +1,6 @@
 import Button2 from "./Button2";
 import PropTypes from "prop-types";
-import styles from "./FrameComponent5.module.css";
+import styles from "../css/components/FrameComponent5.module.css";
 
 const FrameComponent5 = ({ className = "" }) => {
   return (

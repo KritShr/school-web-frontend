@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./Gallery.module.css";
+import styles from "../css/components/Gallery.module.css";
 
 const Gallery = ({ className = "" }) => {
   return (

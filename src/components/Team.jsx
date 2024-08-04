@@ -1,7 +1,7 @@
 import { useMemo, useCallback } from "react";
 import Card from "./Card";
 import PropTypes from "prop-types";
-import styles from "./Team.module.css";
+import styles from "../css/components/Team.module.css";
 
 const Team = ({ className = "", team3AlignSelf, rectangleDivRight }) => {
   const team3Style = useMemo(() => {
