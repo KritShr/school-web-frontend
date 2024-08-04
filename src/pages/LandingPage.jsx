@@ -1,18 +1,10 @@
-import Content from "../components/Content";
+import Content from "../components1/Content";
 import EventCalendar from "../components/EventCalendar";
 import Notice from "../components/Notice";
 import Gallery from "../components/Gallery";
 import styles from "../css/page/LandingPage.module.css";
-import { useNavigate } from "react-router-dom";
-import { useCallback } from "react";
 
 const LandingPage = () => {
-
-  const navigate = useNavigate();
-
-  const onNoticeBtnClick = useCallback(() => {
-    navigate("/notice");
-  }, [navigate]);
 
   return (
     <div className={styles.landingPage4}>

@@ -1,8 +1,16 @@
-import GroupIcon from "./GroupIcon";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "../css/components/Content.module.css";
+import stylesBtn from "../css/components/GroupIcon.module.css";
 
 const Content = ({ className = "" }) => {
+  const navigate = useNavigate();
+
+  const moveToAbout = useCallback(() => {
+    navigate("/about-us");
+  }, [navigate]);
+
   return (
     <section className={[styles.content, className].join(" ")}>
       <div className={styles.contentLeftParent}>
@@ -43,7 +51,13 @@ const Content = ({ className = "" }) => {
               creativity, critical thinking, and global citizenship.
             </div>
           </div>
-          <GroupIcon />
+          <img
+            className={[stylesBtn.contentRightChild, className].join(" ")}
+            loading="lazy"
+            alt=""
+            src="/group-1451.svg"
+            onClick={moveToAbout}
+          />
         </div>
       </div>
     </section>
