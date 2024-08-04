@@ -1,5 +1,5 @@
 import Button11 from "../components/Button11";
-import styles from "./Contact.module.css";
+import styles from "../css/pagecss/Contact.module.css";
 
 const Contact = () => {
 

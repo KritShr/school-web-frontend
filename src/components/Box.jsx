@@ -12,27 +12,6 @@ const Box = ({ className = "" }) => {
         </div>
         <div className={styles.notice1Child} />
       </div>
-      <div className={styles.notice1}>
-        <div className={styles.noticeTitleParent}>
-          <h3 className={styles.noticeTitle}>Event name 1</h3>
-          <div className={styles.noticeDate}>2024-07-08</div>
-        </div>
-        <div className={styles.notice1Child} />
-      </div>
-      <div className={styles.notice1}>
-        <div className={styles.noticeTitleParent}>
-          <h3 className={styles.noticeTitle}>Event name 1</h3>
-          <div className={styles.noticeDate}>2024-07-08</div>
-        </div>
-        <div className={styles.notice1Child} />
-      </div>
-      <div className={styles.notice1}>
-        <div className={styles.noticeTitleParent}>
-          <h3 className={styles.noticeTitle}>Event name 1</h3>
-          <div className={styles.noticeDate}>2024-07-08</div>
-        </div>
-        <div className={styles.notice1Child} />
-      </div>
     </div>
   );
 };
