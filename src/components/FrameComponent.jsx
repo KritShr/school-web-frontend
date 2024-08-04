@@ -6,8 +6,9 @@ import styles from "./FrameComponent.module.css";
 const FrameComponent = ({ className = "" }) => {
   const navigate = useNavigate();
 
-  const onImageClick = useCallback(() => {
-    navigate("/");
+  const onImageClick = useCallback((path) => {
+    navigate(path);
+    console.log('clicked!')
   }, [navigate]);
 
   return (
@@ -20,15 +21,15 @@ const FrameComponent = ({ className = "" }) => {
             loading="lazy"
             alt=""
             src="/image-3@2x.png"
-            onClick={onImageClick}
+            onClick={onImageClick('/')}
           />
           <div className={styles.academyInfo}>
             <a
               className={styles.creative}
-              onClick={onImageClick}
+              onClick={onImageClick('/')}
             >{`Creative `}</a>
             <div className={styles.schoolName}>
-              <div className={styles.learnersAcademy} onClick={onImageClick}>
+              <div className={styles.learnersAcademy} onClick={onImageClick('/')}>
                 Learners' Academy
               </div>
             </div>
@@ -38,25 +39,25 @@ const FrameComponent = ({ className = "" }) => {
           <div className={styles.navItems}>
             <nav className={styles.linksContainer}>
               <nav className={styles.menuLinks}>
-                <div className={styles.aboutUs}>
+                <div className={styles.aboutUs} onClick={() => onImageClick('/about-us-4')}>
                   <a className={styles.aboutUs1}>About us</a>
                 </div>
-                <div className={styles.gallery}>
+                <div className={styles.gallery} onClick={() => onImageClick('/gallery-3a')}>
                   <a className={styles.gallery1}>Gallery</a>
                 </div>
-                <div className={styles.home} onClick={onImageClick}>
+                <div className={styles.home} onClick={onImageClick('/')}>
                   <a className={styles.home1}>Home</a>
                 </div>
-                <div className={styles.management}>
+                <div className={styles.management} onClick={() => onImageClick("/management")}>
                   <a className={styles.management1}>Management</a>
                 </div>
-                <div className={styles.notice}>
+                <div className={styles.notice} onClick={() => onImageClick("/notice")}>
                   <a className={styles.notice1}>Notice</a>
                 </div>
-                <div className={styles.facilities}>
+                <div className={styles.facilities} onClick={() => onImageClick("/facilities-main")}>
                   <a className={styles.facilities1}>Facilities</a>
                 </div>
-                <div className={styles.contactUs}>
+                <div className={styles.contactUs} onClick={() => onImageClick("/contact-4")}>
                   <a className={styles.contactUs1}>Contact us</a>
                 </div>
               </nav>
