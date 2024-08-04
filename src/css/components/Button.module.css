@@ -1,4 +1,4 @@
-.viewMore {
+.txt {
   position: relative;
   font-size: var(--font-size-xl);
   letter-spacing: -0.02em;
@@ -7,9 +7,8 @@
   color: var(--default-white);
   text-align: left;
   display: inline-block;
-  min-width: 103px;
 }
-.viewIcon {
+.icon {
   height: 5px;
   width: 16px;
   position: relative;

@@ -1,8 +1,17 @@
-import NoticeButton from "./NoticeButton";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "../css/components/Notice.module.css";
+import stylesBtn from "../css/components/Button.module.css";
+
 
 const Notice = ({ className = "" }) => {
+  const navigate = useNavigate();
+
+  const onButtonClick = useCallback(() => {
+    navigate("/notice");
+  }, [navigate]);
+
   return (
     <section className={[styles.notice, className].join(" ")}>
       <div className={styles.rectangle} />
@@ -18,7 +27,13 @@ const Notice = ({ className = "" }) => {
         </div>
       </div>
       <div className={styles.box} />
-      <NoticeButton />
+        <button
+        className={[stylesBtn.button, className].join(" ")}
+        onClick={onButtonClick}
+      >
+        <div className={stylesBtn.txt}>More</div>
+        <img className={stylesBtn.icon} alt="" src="/vector-1-11.svg" />
+      </button>
     </section>
   );
 };
