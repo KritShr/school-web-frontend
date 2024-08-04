@@ -1,6 +1,6 @@
 import FrameComponent1 from "../components/FrameComponent1";
 import GroupComponent from "../components/GroupComponent";
-import styles from "./Management.module.css";
+import styles from "../css/page/Management.module.css";
 
 const Management = () => {
   return (

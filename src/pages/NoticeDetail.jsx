@@ -1,5 +1,5 @@
 import Notices from "../components/Notices";
-import styles from "./NoticeDetail.module.css";
+import styles from "../css/page/NoticeDetail.module.css";
 
 const NoticeDetail = () => {
   return (

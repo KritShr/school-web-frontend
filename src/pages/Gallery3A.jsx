@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Button2 from "../components/Button2";
-import styles from "./Gallery3A.module.css";
+import styles from "../css/page/Gallery3A.module.css";
 
 const Gallery3A = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-import styles from "../css/Footer.module.css";
+import styles from "../css/layout/Footer.module.css";
 import { useNavigate} from "react-router-dom";
 
 const Footer = ({

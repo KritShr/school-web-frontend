@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "../css/Header.module.css";
+import styles from "../css/layout/Header.module.css";
 
 const Header = ({ className = "" }) => {
   const navigate = useNavigate();

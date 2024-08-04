@@ -3,7 +3,7 @@ import EventCalendar from "../components/EventCalendar";
 import Notice from "../components/Notice";
 import Gallery from "../components/Gallery";
 import NoticeButton from "../components/NoticeButton";
-import styles from "./LandingPage.module.css";
+import styles from "../css/page/LandingPage.module.css";
 
 const LandingPage = () => {
   return (

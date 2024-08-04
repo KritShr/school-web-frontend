@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../../css/Header.module.css";
+import styles from "../../css/layout/Header.module.css";
 
 const FrameComponent = ({ className = "" }) => {
 

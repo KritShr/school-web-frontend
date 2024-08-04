@@ -1,5 +1,5 @@
 import OurVision from "../components/OurVision";
-import styles from "./AboutUs.module.css";
+import styles from "../css/page/AboutUs.module.css";
 
 const AboutUs = () => {
   return (

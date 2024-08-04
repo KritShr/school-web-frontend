@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import ContentLeft from "../components/ContentLeft";
-import styles from "./Notice1.module.css";
+import styles from "../css/page/Notice1.module.css";
 
 const Notice1 = () => {
   const navigate = useNavigate();

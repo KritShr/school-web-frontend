@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../../css/SubHeader.module.css";
+import styles from "../../css/layout/SubHeader.module.css";
 
 const OtherSubHeader = ({mainTitle, subTitle}) => {
   const subTitleParts = subTitle ? subTitle.split(',') : [];

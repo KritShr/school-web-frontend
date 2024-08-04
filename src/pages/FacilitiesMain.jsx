@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import styles from "./FacilitiesMain.module.css";
+import styles from "../css/page/FacilitiesMain.module.css";
 
 const FacilitiesMain = () => {
   return (

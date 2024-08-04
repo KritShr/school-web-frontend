@@ -1,5 +1,5 @@
 import Button3 from "../components/Button3";
-import styles from "./Root3.module.css";
+import styles from "../css/page/Root3.module.css";
 
 const Root3 = () => {
   return (

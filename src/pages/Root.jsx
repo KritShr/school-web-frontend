@@ -1,7 +1,7 @@
 import Component from "../components/Component";
 import Box from "../components/Box";
 import FrameComponent3 from "../components/FrameComponent3";
-import styles from "./Root.module.css";
+import styles from "../css/page/Root.module.css";
 
 const Root = () => {
   return (
