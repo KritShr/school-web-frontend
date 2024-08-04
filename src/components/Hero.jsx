@@ -8,11 +8,6 @@ import styles from "./Hero.module.css";
 const Hero = ({ className = "" }) => {
   return (
     <div className={[styles.hero, className].join(" ")}>
-      <SubHeader
-        rectangle="/rectangle.svg"
-        image="/image.svg"
-        facilitiesIcon="/vector-1.svg"
-      />
       <div className={styles.content}>
         <div className={styles.meetOurStaff}>
           <div className={styles.team1Wrapper}>

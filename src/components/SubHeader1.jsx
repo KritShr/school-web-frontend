@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./SubHeader1.module.css";
+import styles from "../css/SubHeader.module.css";
 
 const SubHeader1 = ({ className = "" }) => {
   return (

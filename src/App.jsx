@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import {
+  Outlet,
   Routes,
   Route,
   useNavigationType,
@@ -18,6 +19,41 @@ import Root1 from "./pages/Root1";
 import Root2 from "./pages/Root2";
 import Root11 from "./pages/Root11";
 import Root3 from "./pages/Root3";
+import Footer from './layout/Footer'
+import Header from './layout/Header'
+import LandingSubHeader from './layout/SubHeader/LandingSubHeader'
+import OtherSubHeader from './layout/SubHeader/OtherSubHeader'
+
+const routeTitles = {
+  '/gallery': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
+  '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
+  '/notice-detail': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
+  '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
+  '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
+  '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
+  '/about-us' : { mainTitle: 'About us', subTitle: 'Home, About us' }
+}
+
+function Layout(){
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/';
+
+  const { mainTitle, subTitle } = routeTitles[location.pathname] || {};
+  return(
+    <div>
+      <Header />
+      {isLandingPage ? (
+        <LandingSubHeader />
+      ): (
+        <OtherSubHeader mainTitle={mainTitle} subTitle={subTitle} />
+      )}
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
 function App() {
   const action = useNavigationType();
@@ -105,19 +141,24 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/facilities-main" element={<FacilitiesMain />} />
-      <Route path="/about-us-4" element={<AboutUs />} />
-      <Route path="/management" element={<Management />} />
-      <Route path="/root" element={<Root />} />
-      <Route path="/notice" element={<Notice1 />} />
-      <Route path="/notice-detail" element={<NoticeDetail />} />
-      <Route path="/contact-4" element={<Contact />} />
-      <Route path="/gallery-3a" element={<Gallery3A />} />
-      <Route path="/root1" element={<Root1 />} />
-      <Route path="/root2" element={<Root2 />} />
-      <Route path="/root3" element={<Root11 />} />
-      <Route path="/root4" element={<Root3 />} />
+      <Route path="/" element={<Layout />} >
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/facilities" element={<FacilitiesMain />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/management" element={<Management />} />
+        <Route path="/root" element={<Root />} />
+        <Route path="/notice" element={<Notice1 />} />
+        <Route path="/notice-detail" element={<NoticeDetail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery3A />} />
+        <Route path="/root1" element={<Root1 />} />
+        <Route path="/root2" element={<Root2 />} />
+        <Route path="/root3" element={<Root11 />} />
+        <Route path="/root4" element={<Root3 />} />
+      </Route>
+
+
+      
     </Routes>
   );
 }

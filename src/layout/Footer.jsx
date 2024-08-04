@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import styles from "./Footer.module.css";
+import styles from "../css/Footer.module.css";
 
 const Footer = ({
   className = "",

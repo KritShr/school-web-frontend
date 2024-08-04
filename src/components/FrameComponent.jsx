@@ -8,7 +8,6 @@ const FrameComponent = ({ className = "" }) => {
 
   const onImageClick = useCallback((path) => {
     navigate(path);
-    console.log('clicked!')
   }, [navigate]);
 
   return (
