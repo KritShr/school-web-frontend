@@ -1,5 +1,3 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import OurVision from "../components/OurVision";
 import styles from "./AboutUs.module.css";
 

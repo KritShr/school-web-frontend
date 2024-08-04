@@ -727,6 +727,7 @@
 .frameGroup {
   width: 1160px;
   max-width: 100%;
+  margin:auto;
 }
 .imageIcon {
   width: 501px;
@@ -833,33 +834,5 @@
   }
   .meetOurStaff {
     gap: var(--gap-5xl);
-  }
-  .creativeLearnersAcademyContainer {
-    font-size: var(--font-size-3xl);
-    line-height: 24px;
-  }
-  .footerLogoBackgroundParent {
-    padding: var(--padding-xl);
-    box-sizing: border-box;
-  }
-  .links {
-    font-size: var(--font-size-xl);
-  }
-  .contactUs,
-  .gallery,
-  .home,
-  .management1,
-  .notice {
-    font-size: var(--large-bold-size);
-    line-height: 17px;
-  }
-  .findUs {
-    font-size: var(--font-size-xl);
-  }
-  .claschoolnpgmailcom,
-  .div3,
-  .madhyapurThimi6 {
-    font-size: var(--large-bold-size);
-    line-height: 26px;
   }
 }
