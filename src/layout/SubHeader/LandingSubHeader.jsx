@@ -8,18 +8,9 @@ const FrameComponent = ({ className = "" }) => {
       <div className={styles.image}>
         <img className={styles.vectorIcon} alt="" src="/vector@2x.png" />
         <div className={styles.promoBackground} />
-        <img
-          className={styles.radioButtonIcon}
-          loading="lazy"
-          alt=""
-          src="/radio-button@2x.png"
-        />
         <div className={styles.rectangleParent}>
           <div className={styles.frameChild} />
-          <button className={styles.button}>
-            <div className={styles.moreInfo}>More info</div>
-            <img className={styles.infoIcon} alt="" src="/info-icon.svg" />
-          </button>
+
           <div className={styles.text}>
             <span className={styles.textTxt}>
               <span>{`Empowering future leaders through `}</span>
@@ -29,7 +20,8 @@ const FrameComponent = ({ className = "" }) => {
               </span>
             </span>
           </div>
-          <h2 className={styles.tittle}>Introduction</h2>
+          
+          <h2 className={styles.tittle}><br/><br/>Introduction</h2>
         </div>
       </div>
     </section>
