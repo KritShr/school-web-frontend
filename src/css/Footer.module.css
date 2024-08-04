@@ -59,7 +59,7 @@
   color: var(--color-midnightblue);
   font-family: var(--font-roboto);
 }
-.home,
+.link,
 .links {
   position: relative;
   display: inline-block;
@@ -69,10 +69,11 @@
   width: 128.2px;
   font-weight: 800;
 }
-.home {
-  width: 101px;
+.link {
+  width: 120px;
   letter-spacing: -0.02em;
   line-height: 21px;
+  cursor: pointer;
 }
 .management {
   align-self: stretch;

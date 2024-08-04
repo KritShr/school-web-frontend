@@ -1,6 +1,7 @@
-import { useMemo } from "react";
+import { useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import styles from "../css/Footer.module.css";
+import { useNavigate} from "react-router-dom";
 
 const Footer = ({
   className = "",
@@ -27,13 +28,19 @@ const Footer = ({
     };
   }, [propAlignSelf]);
 
+  const navigate = useNavigate();
+
+  const onImageClick = useCallback((path) => {
+    navigate(path);
+  }, [navigate]);
+
   return (
     <footer
       className={[styles.footer, className].join(" ")}
       style={footerStyle}
     >
-      <div className={styles.footerBackground} />
       <div className={styles.footerContent}>
+        {/** 학교 로고 */}
         <div className={styles.brandInfo} style={brandInfoStyle}>
           <div className={styles.academyLogoBackground} />
           <img
@@ -50,25 +57,23 @@ const Footer = ({
             </h2>
           </div>
         </div>
+
+        {/** links */}
         <div className={styles.footerLinks}>
           <div className={styles.linksContainer}>
             <div className={styles.links}>Links</div>
             <div className={styles.mainLinks}>
-              <div className={styles.home}>Home</div>
-              <div className={styles.home}>About us</div>
-              <div className={styles.management}>Management</div>
-              <div className={styles.subLinks}>
-                <div className={styles.notice}>Notice</div>
-                <div className={styles.galleryContact}>
-                  <div className={styles.galleryContainer}>
-                    <div className={styles.gallery}>Gallery</div>
-                  </div>
-                  <div className={styles.contactUs}>Contact us</div>
-                </div>
-              </div>
+              <div className={styles.link} onClick={() => onImageClick('/')}>Home</div>
+              <div className={styles.link} onClick={() => onImageClick('/about-us')}>About us</div>
+              <div className={styles.link} onClick={() => onImageClick('/management')}>Management</div>
+              <div className={styles.link} onClick={() => onImageClick('/notice')}>Notice</div>
+              <div className={styles.link} onClick={() => onImageClick('/gallery')}>Gallery</div>
+              <div className={styles.link} onClick={() => onImageClick('/contact')}>Contact us</div>
             </div>
           </div>
         </div>
+
+        {/** find us */}
         <div className={styles.contactInfo}>
           <div className={styles.linksContainer}>
             <div className={styles.addressContainer}>
@@ -76,66 +81,17 @@ const Footer = ({
             </div>
             <div className={styles.fullAddress}>
               <div className={styles.madhyapurThimi6}>
-                {" "}
                 Madhyapur Thimi 6, Hulakroad
               </div>
-              <div className={styles.communication}>
-                <div className={styles.phone}>
-                  <div className={styles.div}> +977 9762422532</div>
-                  <img
-                    className={styles.phoneAltIcon}
-                    loading="lazy"
-                    alt=""
-                    src={phoneAlt}
-                  />
-                </div>
-                <div className={styles.emailInfo}>
-                  <div className={styles.emailContainer}>
-                    <img
-                      className={styles.envelopeIcon}
-                      loading="lazy"
-                      alt=""
-                      src="/envelope.svg"
-                    />
-                  </div>
-                  <div className={styles.emailAddress}>
-                    <div className={styles.claschoolnpgmailcom}>
-                      {" "}
-                      claschoolnp@gmail.com
-                    </div>
-                  </div>
-                </div>
+              <div className={styles.madhyapurThimi6}>
+                +977 9762422532
+              </div>
+              <div className={styles.madhyapurThimi6}>
+                claschoolnp@gmail.com
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.icon}>
-        <div className={styles.iconBd} />
-        <img className={styles.volleyballBallIcon} alt="" />
-        <div className={styles.div1}></div>
-        <img className={styles.iconChild} alt="" />
-        <img className={styles.iconItem} alt="" />
-      </div>
-      <img
-        className={styles.safariIcon}
-        loading="lazy"
-        alt=""
-        src="/safari.svg"
-      />
-      <div className={styles.icon1}>
-        <div className={styles.iconBd1} />
-        <img className={styles.volleyballBallIcon1} alt="" />
-        <div className={styles.div2}></div>
-        <img className={styles.iconInner} alt="" />
-        <img className={styles.lineIcon} alt="" />
-      </div>
-      <div className={styles.icon2}>
-        <div className={styles.iconBd2} />
-        <img className={styles.volleyballBallIcon2} alt="" />
-        <div className={styles.div3}></div>
-        <img className={styles.iconChild1} alt="" />
-        <img className={styles.iconChild2} alt="" />
       </div>
       <div className={styles.copyright2024AllRightReWrapper}>
         <div className={styles.copyright2024}>
