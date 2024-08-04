@@ -154,7 +154,8 @@
   align-self: stretch;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0 var(--padding-39xl) var(--padding-23xl-3);
+  padding: var(--padding-39xl) var(--padding-39xl) var(--padding-39xl);
+  margin: auto;
   box-sizing: border-box;
   text-align: left;
   font-size: var(--font-size-11xl);

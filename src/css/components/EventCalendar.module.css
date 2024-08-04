@@ -10,10 +10,9 @@
   color: var(--medium);
 }
 .eventCalendar1 {
-  margin: 0;
+  margin: auto;
   position: relative;
   font-size: inherit;
-  font-weight: 700;
   font-family: inherit;
 }
 .outerCalendar,
@@ -41,6 +40,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  margin: auto;
 }
 .calendarDesign {
   flex: 1;
@@ -61,15 +61,13 @@
   max-width: 100%;
 }
 .eventCalendar {
-  margin-right: -1px;
   align-self: stretch;
   background-color: var(--color-whitesmoke-100);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: var(--padding-16xl-6) var(--padding-xl) var(--padding-722xl-6)
-    var(--padding-459xl);
+  padding: var(--padding-16xl-6) 0 var(--padding-722xl-6) 0;
   box-sizing: border-box;
   gap: var(--gap-11xs-8);
   max-width: 100%;
@@ -79,29 +77,11 @@
   font-family: var(--font-poppins);
 }
 @media screen and (max-width: 1025px) {
-  .eventCalendar1 {
-    font-size: var(--font-size-5xl);
-  }
-  .eventCalendar {
-    padding-top: var(--padding-4xl);
-    padding-bottom: var(--padding-463xl);
-    box-sizing: border-box;
-  }
+  
 }
 @media screen and (max-width: 750px) {
-  .eventCalendar {
-    padding-left: var(--padding-220xl);
-    box-sizing: border-box;
-  }
+
 }
 @media screen and (max-width: 450px) {
-  .eventCalendar1 {
-    font-size: var(--font-size-lg);
-  }
-  .eventCalendar {
-    padding-left: var(--padding-xl);
-    padding-top: var(--padding-xl);
-    padding-bottom: var(--padding-294xl);
-    box-sizing: border-box;
-  }
+
 }
