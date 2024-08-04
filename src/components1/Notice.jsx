@@ -28,12 +28,12 @@ const Notice = ({ className = "" }) => {
       </div>
       <div className={styles.box} />
         <button
-        className={[stylesBtn.button, className].join(" ")}
-        onClick={onButtonClick}
-      >
-        <div className={stylesBtn.txt}>More</div>
-        <img className={stylesBtn.icon} alt="" src="/vector-1-11.svg" />
-      </button>
+          className={[stylesBtn.button, className].join(" ")}
+          onClick={onButtonClick}
+        >
+          <div className={stylesBtn.txt}>More</div>
+          <img className={stylesBtn.icon} alt="" src="/vector-1-11.svg" />
+        </button>
     </section>
   );
 };

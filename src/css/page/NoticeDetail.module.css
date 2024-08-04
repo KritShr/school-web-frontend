@@ -18,8 +18,10 @@
   justify-content: flex-start;
 }
 .bodyWrapper {
+  width: 1160px;
+  margin: auto;
   flex-direction: row;
-  padding: 0 var(--padding-37xl);
+  padding: 48px var(--padding-37xl);
   box-sizing: border-box;
   max-width: 100%;
 }

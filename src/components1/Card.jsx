@@ -28,7 +28,7 @@ const Card = ({
         <div className={styles.text}>
           <div className={styles.firstClickTests}>{firstClickTests}</div>
           <div className={styles.whileMostPeople}>
-            This is a facility description. You can write some description here.
+            This is a facility description. You can write some description here.!
           </div>
         </div>
         <div className={styles.button} onClick={onButtonContainerClick2}>

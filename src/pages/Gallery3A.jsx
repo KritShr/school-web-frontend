@@ -1,15 +1,12 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import Button2 from "../components/Button2";
+import stylesBtn from "../css/components/Button.module.css";
 import styles from "../css/page/Gallery3A.module.css";
-
+import { useCallback } from "react";
 const Gallery3A = () => {
-  const navigate = useNavigate();
 
-  const onImageClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
+  const onButtonClick = useCallback(() => {
+    //다음 사진 가져오기
+  }, []);
+  
   return (
     <div className={styles.gallery3a}>
       <main className={styles.subHeaderParent}>
@@ -101,17 +98,13 @@ const Gallery3A = () => {
                 />
               </div>
               <div className={styles.carouselButtons}>
-                <button className={styles.button}>
-                  <div className={styles.previousButtonIcon}>
-                    <img
-                      className={styles.previousButtonIconChild}
-                      alt=""
-                      src="/vector-1-13.svg"
-                    />
-                  </div>
-                  <div className={styles.previousPage}>Previous page</div>
-                </button>
-                <Button2 nextPage="Next page" propMinWidth="99px" />
+              <button
+                className={[stylesBtn.button].join(" ")}
+                onClick={onButtonClick}
+              >
+              <div className={stylesBtn.txt}>More</div>
+              <img className={stylesBtn.icon} alt="" src="/vector-1-11.svg" />
+            </button>
               </div>
             </div>
           </div>

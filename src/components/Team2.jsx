@@ -1,5 +1,5 @@
 import { useMemo, useCallback } from "react";
-import Card from "./Card";
+import Card from "../components1/Card";
 import PropTypes from "prop-types";
 import styles from "../css/components/Team2.module.css";
 

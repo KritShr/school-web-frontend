@@ -1,7 +1,12 @@
-import Button11 from "../components/Button11";
+import stylesBtn from "../css/components/Button.module.css";
 import styles from "../css/page/Contact.module.css";
+import { useCallback } from "react";
 
 const Contact = () => {
+  const onButtonClick = useCallback(() => {
+    //contact 제출하기
+    console.log('contact!')
+  }, []);
 
   return (
     <div className={styles.contact4}>
@@ -100,7 +105,12 @@ const Contact = () => {
                 <div className={styles.mesaageHere}>Mesaage here...</div>
               </div>
             </div>
-            <Button11 />
+            <button
+              className={[stylesBtn.button].join(" ")}
+              onClick={onButtonClick}
+            >
+              <div className={stylesBtn.txt}>Send</div>
+            </button>
           </div>
         </section>
       <div className={styles.imageWrapper}>

@@ -2,6 +2,7 @@ import { useMemo, useCallback } from "react";
 import Card from "./Card";
 import PropTypes from "prop-types";
 import styles from "../css/components/Team1.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Team1 = ({
   className = "",
@@ -20,9 +21,10 @@ const Team1 = ({
     };
   }, [teamInstanceShapeHeadersRight]);
 
-  const onButtonContainerClick = useCallback(() => {
-    // Please sync "Facilities 7" to the project
-  }, []);
+  const navigate = useNavigate();
+  const MoveToDetail = useCallback(() => {
+    navigate("/facilities-detail");
+  }, [navigate]);
 
   return (
     <div className={[styles.team2, className].join(" ")} style={team2Style}>
@@ -32,8 +34,8 @@ const Team1 = ({
       />
       <Card
         image="/image-2@2x.png"
-        firstClickTests="Facility 2"
-        onButtonContainerClick2={onButtonContainerClick}
+        firstClickTests="Facility 1"
+        onButtonContainerClick2={MoveToDetail}
         propHeight="5px"
         propPadding="4px 0px 0px"
       />

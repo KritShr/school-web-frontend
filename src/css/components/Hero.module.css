@@ -8,8 +8,12 @@
   box-sizing: border-box;
   max-width: 100%;
 }
+.hero{
+  width: 1160px;
+  margin: auto;
+}
+
 .content,
-.hero,
 .meetOurStaff {
   display: flex;
   justify-content: flex-start;

@@ -253,9 +253,11 @@
   justify-content: flex-start;
 }
 .contentLeftWrapper {
+  width: 1160px;
+  margin: auto;
   align-self: stretch;
   flex-direction: row;
-  padding: 0 48px 0 var(--padding-28xl);
+  padding: 48px 48px 0 var(--padding-28xl);
   box-sizing: border-box;
   max-width: 100%;
 }

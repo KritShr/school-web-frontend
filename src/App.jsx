@@ -75,11 +75,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/facilities-main":
+      case "/facilities":
         title = "";
         metaDescription = "";
         break;
-      case "/about-us-4":
+      case "/about-us":
         title = "";
         metaDescription = "";
         break;
@@ -99,11 +99,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/contact-4":
+      case "/contact":
         title = "";
         metaDescription = "";
         break;
-      case "/gallery-3a":
+      case "/gallery":
         title = "";
         metaDescription = "";
         break;
