@@ -1,12 +1,37 @@
 import stylesBtn from "../css/components/Button.module.css";
 import styles from "../css/page/Contact.module.css";
-import { useCallback } from "react";
+import axiosInstance from "../utils/axios";
+import { useState } from "react"
 
 const Contact = () => {
-  const onButtonClick = useCallback(() => {
+  const[contact, setContact] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const handleChange= (event)=>{
+    const{name, value} = event.target;
+    setContact(prevState=>({
+      ...prevState, // 바꾸지 않는 값은 유지
+      [name]: value // 바꾸는 값을 오버라이드
+    }));
+  }
+
+  const handleSubmit = async(event) => {
     //contact 제출하기
-    console.log('contact!')
-  }, []);
+    event.preventDefault();
+
+    console.log(`email: ${email}\nname: ${name}\nmessage: ${message}`)
+    const body = {
+      ...product
+    }
+    try {
+      await axiosInstance.post('/contacts', body);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className={styles.contact4}>
@@ -67,7 +92,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className={styles.touchContainerParent}>
-                <div className={styles.touchContainer}>
+                <form className={styles.touchContainer} onSubmit={handleSubmit}>
                   <div className={styles.touchHeaderWrapper}>
                     <div className={styles.touchHeader}>
                       <h3 className={styles.contactFindContainer}>
@@ -85,37 +110,28 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className={styles.inputField}>
-                    <div className={styles.inputFieldChild} />
                     <div className={styles.name}>Name</div>
                   </div>
-                </div>
-                <div className={styles.emailSubjectFields}>
-                  <div className={styles.inputField1}>
+                  <div className={styles.inputField}>
                     <div className={styles.inputFieldChild} />
-                    <div className={styles.email1}>Email</div>
+                    <div className={styles.name}>Email</div>
                   </div>
-                  <div className={styles.inputField1}>
+                  <div className={styles.inputField}>
                     <div className={styles.inputFieldChild} />
-                    <div className={styles.subject}>Subject</div>
+                    <div className={styles.name}>Title</div>
                   </div>
-                </div>
-              </div>
-              <div className={styles.inputField3}>
-                <div className={styles.rectangleDiv} />
-                <div className={styles.mesaageHere}>Mesaage here...</div>
+                  <div className={styles.inputField3}>
+                    <div className={styles.rectangleDiv} />
+                    <div className={styles.mesaageHere}>Mesaage here...</div>
+                  </div>
+                  <button className={[stylesBtn.button].join(" ")} >
+                    <div className={stylesBtn.txt}>Send</div>
+                  </button>
+                </form>
               </div>
             </div>
-            <button
-              className={[stylesBtn.button].join(" ")}
-              onClick={onButtonClick}
-            >
-              <div className={stylesBtn.txt}>Send</div>
-            </button>
           </div>
         </section>
-      <div className={styles.imageWrapper}>
-        <img className={styles.imageIcon} alt="" src="/image2.svg" />
-      </div>
     </div>
   );
 };
