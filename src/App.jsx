@@ -23,24 +23,44 @@ import Footer from './layout/Footer'
 import Header from './layout/Header'
 import LandingSubHeader from './layout/SubHeader/LandingSubHeader'
 import OtherSubHeader from './layout/SubHeader/OtherSubHeader'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const routeTitles = {
   '/gallery': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
   '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
-  '/notice-detail': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
+  '/notice/:id': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
   '/about-us' : { mainTitle: 'About us', subTitle: 'Home, About us' }
 }
-
+function matchRoute(pathname) {
+  for (let route in routeTitles) {
+    if (route.includes(':')) {
+      const regex = new RegExp(`^${route.replace(/:\w+/g, '\\w+')}$`);
+      if (regex.test(pathname)) {
+        return routeTitles[route];
+      }
+    } else if (route === pathname) {
+      return routeTitles[route];
+    }
+  }
+  return {};
+}
 function Layout(){
   const location = useLocation();
   const isLandingPage = location.pathname === '/';
 
-  const { mainTitle, subTitle } = routeTitles[location.pathname] || {};
+  const { mainTitle, subTitle } = matchRoute(location.pathname) || {};
   return(
     <div>
+      <ToastContainer
+        position='bottom-right'
+        theme='light'
+        pauseOnHover
+        autoClose={1500}
+      />
       <Header />
       {isLandingPage ? (
         <LandingSubHeader />
@@ -95,7 +115,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/notice-detail":
+      case "/notice/:noticeId":
         title = "";
         metaDescription = "";
         break;
@@ -148,7 +168,7 @@ function App() {
         <Route path="/management" element={<Management />} />
         <Route path="/root" element={<Root />} />
         <Route path="/notice" element={<Notice1 />} />
-        <Route path="/notice-detail" element={<NoticeDetail />} />
+        <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery3A />} />
         <Route path="/root1" element={<Root1 />} />
@@ -156,8 +176,6 @@ function App() {
         <Route path="/root3" element={<Root11 />} />
         <Route path="/root4" element={<Root3 />} />
       </Route>
-
-
       
     </Routes>
   );

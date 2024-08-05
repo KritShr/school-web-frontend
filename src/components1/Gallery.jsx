@@ -1,7 +1,30 @@
 import PropTypes from "prop-types";
 import styles from "../css/components/Gallery.module.css";
+import stylesimg from "../css/page/Gallery3A.module.css";
+import axiosInstance from "../utils/axios"
+import { useState, useEffect } from "react"
 
 const Gallery = ({ className = "" }) => {
+  const limit = 3;
+  const [galleries, setGalleries] = useState([]);
+
+  useEffect(() => { //컴포넌트가 어마운트 될 때 한 번만 수행하도록 함
+    fetchGalleries(limit);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const fetchGalleries = async(limit) =>{
+    const params = {
+      limit
+    }
+    try{
+      const response = await axiosInstance.get('/galleries', {params})
+      setGalleries(response.data.galleries);
+    } catch(err){
+      console.error(err);
+    }
+  }
+
   return (
     <section className={[styles.gallery, className].join(" ")}>
       <div className={styles.galleryContent}>
@@ -22,13 +45,20 @@ const Gallery = ({ className = "" }) => {
           </div>
         </div>
         <div className={styles.galleryNavigation}>
+          <div className={stylesimg.carouselImages}>
+            {galleries.map((gallery)=>(
+            <div key={gallery.image}>
+              <img
+                className={stylesimg.imageIcon10}
+                alt={gallery.title}
+                src={`${import.meta.env.VITE_SERVER_URL}/${gallery.image}`}
+              />
+            </div>
+            ))}
+                
+          </div>
           <img className={styles.rectangleIcon} alt="" src="/rectangle1.svg" />
-          <img
-            className={styles.galleryNavigationChild}
-            loading="lazy"
-            alt=""
-            src="/frame-4.svg"
-          />
+          
         </div>
       </div>
     </section>
