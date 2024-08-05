@@ -1,11 +1,10 @@
 import { useCallback } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "../css/layout/Header.module.css";
 
 const Header = ({ className = "" }) => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const onImageClick = useCallback((path) => {
     navigate(path);
