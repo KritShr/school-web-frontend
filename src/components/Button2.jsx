@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import styles from "./Button2.module.css";
+import styles from "../css/components/Button2.module.css";
 
 const Button2 = ({ className = "", nextPage, propMinWidth }) => {
   const nextPageStyle = useMemo(() => {

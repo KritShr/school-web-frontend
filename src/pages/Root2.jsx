@@ -1,5 +1,5 @@
 import Team3 from "../components/Team3";
-import styles from "./Root2.module.css";
+import styles from "../css/page/Root2.module.css";
 
 const Root2 = () => {
   return (

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./Search.module.css";
+import styles from "../css/components/Search.module.css";
 
 const Search = ({ className = "", value = "Value" }) => {
   return (

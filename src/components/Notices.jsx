@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./Notices.module.css";
+import styles from "../css/components/Notices.module.css";
 
 const Notices = ({ className = "" }) => {
   return (

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import Team2 from "./Team2";
 import Team31 from "./Team31";
 import PropTypes from "prop-types";
-import styles from "./Team3.module.css";
+import styles from "../css/components/Team3.module.css";
 
 const Team3 = ({
   className = "",

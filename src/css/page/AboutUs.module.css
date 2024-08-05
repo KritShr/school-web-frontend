@@ -1,0 +1,39 @@
+
+.missionVisionContent {
+  align-self: stretch;
+  position: relative;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+.missionVisionTitles {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 51px;
+}
+.missionVision,
+.missionVisionContentParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.missionVisionContentParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-53xl);
+}
+.missionVision {
+  align-self: stretch;
+  flex-direction: row;
+  width: 1160px;
+  margin: auto;
+  padding: 48px var(--padding-35xl) 502px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--third-template-colour);
+  font-family: var(--font-poppins);
+}

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./Button11.module.css";
+import styles from "../css/components/Button11.module.css";
 
 const Button11 = ({ className = "" }) => {
   return (

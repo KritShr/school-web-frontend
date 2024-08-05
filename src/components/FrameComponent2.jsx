@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./FrameComponent2.module.css";
+import styles from "../css/components/FrameComponent2.module.css";
 
 const FrameComponent2 = ({ className = "" }) => {
   return (

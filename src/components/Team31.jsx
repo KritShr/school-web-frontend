@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import Card1 from "./Card1";
 import PropTypes from "prop-types";
-import styles from "./Team31.module.css";
+import styles from "../css/components/Team31.module.css";
 
 const Team31 = ({ className = "", image, firstClickTests }) => {
   const onButtonContainerClick = useCallback(() => {

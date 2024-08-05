@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import styles from "./CalendarDay.module.css";
+import styles from "../css/components/CalendarDay.module.css";
 
 const CalendarDay = ({ className = "", day, propColor }) => {
   const dayStyle = useMemo(() => {

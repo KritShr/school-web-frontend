@@ -1,0 +1,517 @@
+.academyLogoBackground{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 488px;
+  right: -1160px;
+  bottom: -488px;
+  left: 1160px;
+  background-color: var(--dark);
+  transform: rotate(180deg);
+  transform-origin: 0 0;
+}
+.academyLogoBackground {
+  top: 382px;
+  right: -276.6px;
+  bottom: -382px;
+  left: 276.6px;
+  background-color: var(--default-white);
+  z-index: 1;
+}
+.tittleIcon {
+  width: 185.2px;
+  height: 182px;
+  position: relative;
+  object-fit: cover;
+  z-index: 2;
+}
+.creative {
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+.academy1 {
+  margin: 0;
+}
+.creativeLearnersAcademyContainer {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  line-height: 40px;
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 2;
+}
+.academy,
+.brandInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl) 0 var(--padding-smi);
+}
+.brandInfo {
+  flex-direction: column;
+  padding: var(--padding-base) var(--padding-23xl) var(--padding-8xl);
+  position: relative;
+  gap: var(--gap-8xl);
+  font-size: var(--font-size-17xl);
+  color: var(--color-midnightblue);
+  font-family: var(--font-roboto);
+}
+.link,
+.links {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+.links {
+  width: 128.2px;
+  font-weight: 800;
+}
+.link {
+  width: 120px;
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  cursor: pointer;
+}
+.management {
+  align-self: stretch;
+}
+.gallery,
+.management,
+.notice {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  z-index: 1;
+}
+.notice {
+  display: inline-block;
+  min-width: 62.6px;
+}
+.gallery {
+  flex: 1;
+}
+.galleryContainer {
+  width: 103px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs);
+  box-sizing: border-box;
+}
+.contactUs {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 24px;
+  display: inline-block;
+  min-width: 115.1px;
+  z-index: 1;
+}
+.galleryContact,
+.subLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+}
+.subLinks {
+  gap: var(--gap-3xl);
+}
+.mainLinks {
+  align-self: stretch;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-xl);
+  color: var(--default-white);
+}
+.footerLinks,
+.linksContainer,
+.mainLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.linksContainer {
+  align-self: stretch;
+  gap: var(--gap-xl);
+}
+.footerLinks {
+  width: 142.3px;
+  padding: var(--padding-5xs) 0 0;
+  box-sizing: border-box;
+}
+.findUs {
+  flex: 1;
+  position: relative;
+  font-weight: 800;
+  z-index: 1;
+}
+.addressContainer {
+  width: 130.2px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs);
+  box-sizing: border-box;
+}
+.div,
+.madhyapurThimi6 {
+  line-height: 33px;
+  white-space: pre-wrap;
+  display: inline-block;
+}
+.madhyapurThimi6 {
+  width: 237.2px;
+  height: 96px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.phoneAltIcon {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 19.9px;
+  height: 25px;
+  overflow: hidden;
+}
+.envelopeIcon,
+.phone {
+  width: 237.2px;
+  height: 33px;
+  position: relative;
+}
+.envelopeIcon {
+  width: 30.7px;
+  height: 26.6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.emailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs-3) 0 0;
+}
+.claschoolnpgmailcom {
+  margin-left: -7.5px;
+  width: 290.8px;
+  height: 93px;
+  position: relative;
+  line-height: 32px;
+  white-space: pre-wrap;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.emailAddress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+}
+.communication,
+.emailInfo,
+.fullAddress {
+  align-self: stretch;
+  justify-content: flex-start;
+}
+.emailInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.communication,
+.fullAddress {
+  flex-direction: column;
+}
+.communication {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-2xs);
+  margin-top: -20px;
+}
+.fullAddress {
+  font-size: var(--font-size-xl);
+  color: var(--default-white);
+}
+.contactInfo,
+.footerContent,
+.fullAddress {
+  display: flex;
+  align-items: flex-start;
+}
+.contactInfo {
+  width: 314px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 0 0;
+  box-sizing: border-box;
+}
+.footerContent {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+  font-size: var(--font-size-6xl);
+  color: var(--light);
+  font-family: var(--font-poppins);
+}
+.iconBd {
+  position: absolute;
+  height: 6.51%;
+  width: 106.05%;
+  top: -0.19%;
+  right: -3.23%;
+  bottom: 93.68%;
+  left: -2.82%;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-silver);
+  border: 1.5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div1,
+.volleyballBallIcon {
+  position: absolute;
+  display: none;
+}
+.volleyballBallIcon {
+  top: 354.3px;
+  left: 10.5px;
+  width: 15.5px;
+  height: 16.9px;
+  overflow: hidden;
+}
+.div1 {
+  width: 38.71%;
+  top: calc(50% - 36.1px);
+  left: 61.29%;
+  height: 15.7px;
+}
+.iconChild,
+.iconItem {
+  position: absolute;
+  top: 342.8px;
+  left: 23.5px;
+  width: 22.7px;
+  height: 24.2px;
+  object-fit: contain;
+}
+.iconItem {
+  top: 366.1px;
+  left: 24.8px;
+  width: 24px;
+  height: 23.3px;
+}
+.icon {
+  width: 24.8px;
+  height: 367px;
+  position: relative;
+  display: none;
+  z-index: 2;
+}
+.safariIcon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin: 0 !important;
+  top: 113px;
+  right: 341.5px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.iconBd1 {
+  position: absolute;
+  height: 6.3%;
+  width: 106.05%;
+  top: 0;
+  right: -6.05%;
+  bottom: 93.7%;
+  left: 0;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-silver);
+  border: 1.5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div2,
+.volleyballBallIcon1 {
+  position: absolute;
+  display: none;
+}
+.volleyballBallIcon1 {
+  top: 366.5px;
+  left: 10.5px;
+  width: 15.5px;
+  height: 16.9px;
+  overflow: hidden;
+}
+.div2 {
+  width: 42.34%;
+  top: calc(50% - 29.95px);
+  left: 67.34%;
+  height: 15.7px;
+}
+.iconInner,
+.lineIcon {
+  position: absolute;
+  top: 355px;
+  left: 0.8px;
+  width: 22.7px;
+  height: 24.2px;
+  object-fit: contain;
+}
+.lineIcon {
+  width: 24px;
+  height: 23.3px;
+}
+.icon1 {
+  width: 24.8px;
+  height: 379.1px;
+  position: relative;
+  display: none;
+  z-index: 4;
+}
+.iconBd2 {
+  position: absolute;
+  height: 6.21%;
+  width: 107.54%;
+  top: 0;
+  right: -7.54%;
+  bottom: 93.79%;
+  left: 0;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-silver);
+  border: 1.5px solid var(--color-black);
+  box-sizing: border-box;
+}
+.div3,
+.volleyballBallIcon2 {
+  position: absolute;
+  display: none;
+}
+.volleyballBallIcon2 {
+  top: 371.9px;
+  left: 8.4px;
+  width: 12.4px;
+  height: 16.9px;
+  overflow: hidden;
+}
+.div3 {
+  width: 53.27%;
+  top: calc(50% - 27.3px);
+  left: 84.42%;
+  height: 15.7px;
+}
+.iconChild1,
+.iconChild2 {
+  position: absolute;
+  top: 360.4px;
+  left: 0.7px;
+  width: 18.2px;
+  height: 24.2px;
+  object-fit: contain;
+}
+.iconChild2 {
+  width: 19.2px;
+  height: 23.3px;
+}
+.icon2 {
+  width: 19.9px;
+  height: 384.6px;
+  position: relative;
+  display: none;
+  z-index: 5;
+}
+.copyright2024 {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 21px;
+  font-weight: 500;
+  z-index: 1;
+}
+.copyright2024AllRightReWrapper,
+.footer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 0 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-500);
+  font-family: var(--font-poppins);
+}
+.footer {
+  bottom: 0px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-23xl) var(--padding-33xl) var(--padding-15xl)
+    var(--padding-35xl);
+  position: relative;
+  gap: var(--gap-4xs);
+  text-align: left;
+  font-size: var(--large-bold-size);
+  color: var(--default-white);
+  font-family: var(--font-roboto);
+  background-color: var(--dark);
+}
+@media screen and (max-width: 975px) {
+  .creativeLearnersAcademyContainer {
+    font-size: var(--font-size-10xl);
+    line-height: 32px;
+  }
+  .footerContent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 725px) {
+  .footer {
+    padding: var(--padding-8xl) var(--padding-7xl) var(--padding-3xl)
+      var(--padding-8xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .creativeLearnersAcademyContainer {
+    font-size: var(--font-size-3xl);
+    line-height: 24px;
+  }
+  .brandInfo {
+    padding: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .links {
+    font-size: var(--font-size-xl);
+  }
+  .contactUs,
+  .gallery,
+  .home,
+  .management,
+  .notice {
+    font-size: var(--large-bold-size);
+    line-height: 17px;
+  }
+  .findUs {
+    font-size: var(--font-size-xl);
+  }
+  .claschoolnpgmailcom,
+  .div,
+  .madhyapurThimi6 {
+    font-size: var(--large-bold-size);
+    line-height: 26px;
+  }
+}

@@ -1,6 +1,6 @@
 import OurMission1 from "./OurMission1";
 import PropTypes from "prop-types";
-import styles from "./OurMission.module.css";
+import styles from "../css/components/OurMission.module.css";
 
 const OurMission = ({ className = "" }) => {
   return (

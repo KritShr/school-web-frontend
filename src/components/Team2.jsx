@@ -1,7 +1,7 @@
 import { useMemo, useCallback } from "react";
-import Card from "./Card";
+import Card from "../components1/Card";
 import PropTypes from "prop-types";
-import styles from "./Team2.module.css";
+import styles from "../css/components/Team2.module.css";
 
 const Team2 = ({ className = "", team1Flex, teamShapeRight }) => {
   const team1Style = useMemo(() => {
