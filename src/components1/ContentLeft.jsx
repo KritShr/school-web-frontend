@@ -57,7 +57,7 @@ const ContentLeft = ({ className = "" }) => {
   return (
     <div className={[styles.contentLeft, className].join(" ")}>
       <div className={styles.contentLeftTop}>
-      <SearchInput 
+        <SearchInput 
           setSearchTerm = {setSearchTerm}
           searchTerm = {searchTerm}
           onSearch = {handleSearchTerm}
