@@ -734,11 +734,8 @@
   max-width: 100%;
   overflow: hidden;
 }
-.contact4,
 .imageWrapper {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 .imageWrapper {
   align-self: stretch;
@@ -749,13 +746,17 @@
   margin-top: -1702px;
 }
 .contact4 {
-  width: 100%;
   position: relative;
-  background-color: var(--default-white);
   overflow: hidden;
   flex-direction: column;
   line-height: normal;
   letter-spacing: normal;
+  flex-direction: row;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--third-template-colour);
+  font-family: var(--font-poppins);
 }
 @media screen and (max-width: 1025px) {
   .creativeParent {
