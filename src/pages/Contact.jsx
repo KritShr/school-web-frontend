@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../css/page/Contact.module.css";
 import axiosInstance from "../utils/axios";
+import { toast } from 'react-toastify';
 
 const Contact = () => {
   const [contact, setContact] = useState({
@@ -26,6 +27,7 @@ const Contact = () => {
 
     try{
       await axiosInstance.post('/contacts', body);
+      toast.info('Success!')
     } catch(err){
       console.error(err);
     }

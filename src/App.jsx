@@ -23,6 +23,8 @@ import Footer from './layout/Footer'
 import Header from './layout/Header'
 import LandingSubHeader from './layout/SubHeader/LandingSubHeader'
 import OtherSubHeader from './layout/SubHeader/OtherSubHeader'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const routeTitles = {
   '/gallery': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
@@ -53,6 +55,12 @@ function Layout(){
   const { mainTitle, subTitle } = matchRoute(location.pathname) || {};
   return(
     <div>
+      <ToastContainer
+        position='bottom-right'
+        theme='light'
+        pauseOnHover
+        autoClose={1500}
+      />
       <Header />
       {isLandingPage ? (
         <LandingSubHeader />
