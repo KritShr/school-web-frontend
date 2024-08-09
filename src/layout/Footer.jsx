@@ -28,11 +28,11 @@ const Footer = () => {
       <div className="w-1/3 lg:w-1/4">
         <h2 className="-text--light font-bold text-4xl">Links</h2>
         <div className="py-8">
-          <h3 className='-text--default-white font-medium text-2xl mb-3' onClick={() => moveTo('/')}>Home</h3>
-          <h3 className='-text--default-white font-medium text-2xl mb-3' onClick={() => moveTo('/about-us')}>About Us</h3>
-          <h3 className='-text--default-white font-medium text-2xl mb-3' onClick={() => moveTo('/management')}>Management</h3>
-          <h3 className='-text--default-white font-medium text-2xl mb-3' onClick={() => moveTo('/notice')}>Notice</h3>
-          <h3 className='-text--default-white font-medium text-2xl mb-3' onClick={() => moveTo('/gallery')}>Gallery</h3>
+          <h3 className='-text--default-white font-medium text-2xl mb-3 cursor-pointer' onClick={() => moveTo('/')}>Home</h3>
+          <h3 className='-text--default-white font-medium text-2xl mb-3 cursor-pointer' onClick={() => moveTo('/about-us')}>About Us</h3>
+          <h3 className='-text--default-white font-medium text-2xl mb-3 cursor-pointer' onClick={() => moveTo('/management')}>Management</h3>
+          <h3 className='-text--default-white font-medium text-2xl mb-3 cursor-pointer' onClick={() => moveTo('/notice')}>Notice</h3>
+          <h3 className='-text--default-white font-medium text-2xl mb-3 cursor-pointer' onClick={() => moveTo('/gallery')}>Gallery</h3>
           <h3 className='-text--default-white font-medium text-2xl' onClick={() => moveTo('/contact')}>Contact Us</h3>    
         </div>
       </div>
