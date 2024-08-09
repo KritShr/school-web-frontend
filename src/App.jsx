@@ -15,6 +15,7 @@ import Notice1 from "./pages/Notice1";
 import NoticeDetail from "./pages/NoticeDetail";
 import Contact from "./pages/Contact";
 import Gallery3A from "./pages/Gallery3A";
+import LoginPage from "./pages/LoginPage";
 import Root1 from "./pages/Root1";
 import Root2 from "./pages/Root2";
 import Root11 from "./pages/Root11";
@@ -33,7 +34,8 @@ const routeTitles = {
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
-  '/about-us' : { mainTitle: 'About us', subTitle: 'Home, About us' }
+  '/about-us' : { mainTitle: 'About us', subTitle: 'Home, About us' },
+  '/login' : { mainTitle: 'Admin Login', subTitle: 'Home, Admin Login' }
 }
 function matchRoute(pathname) {
   for (let route in routeTitles) {
@@ -127,6 +129,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/login":
+        title = "";
+        metaDescription = "";
+        break;
       case "/root1":
         title = "";
         metaDescription = "";
@@ -171,6 +177,7 @@ function App() {
         <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery3A />} />
+        <Route path="/login" element={<LoginPage/>} />
         <Route path="/root1" element={<Root1 />} />
         <Route path="/root2" element={<Root2 />} />
         <Route path="/root3" element={<Root11 />} />
