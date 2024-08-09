@@ -7,7 +7,7 @@ import styles_c from "../css/page/Contact.module.css"
 const Header = ({ className = "" }) => {
   const navigate = useNavigate();
 
-  const onImageClick = useCallback((path) => {
+  const moveTo = useCallback((path) => {
     navigate(path);
   }, [navigate]);
 
