@@ -2,8 +2,14 @@ import Calendar from "../components1/Calendar";
 import LandingNotice from "../components1/LandingNotice";
 import Gallery from "../components1/Gallery";
 import styles from "../css/page/Contact.module.css";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const moveToAboutUs = () =>{
+    navigate('/about-us');
+  }
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40">
@@ -29,7 +35,7 @@ const LandingPage = () => {
               </h3>
             </div>
 
-            <button className="rounded-full -bg--light text-center w-40 h-40 -text--medium text-6xl shadow-md hover:shadow-inner" >></button>
+            <button onClick={moveToAboutUs} className="rounded-full -bg--light text-center w-40 h-40 -text--medium text-6xl shadow-md hover:shadow-inner" >></button>
           </div>
         </div>
 
