@@ -371,16 +371,7 @@
   height: 425px;
   z-index: 2;
 }
-.image {
-  align-self: stretch;
-  height: 492.5px;
-  position: relative;
-  border-radius: var(--br-8xs);
-  background-image: url(/public/vector@2x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
+
 .headerParent {
   align-self: stretch;
   display: flex;
@@ -395,6 +386,26 @@
   font-size: var(--font-size-xl);
   color: var(--third-template-colour);
   font-family: var(--font-poppins);
+}
+.rectangleParent {
+  position: absolute;
+  top: 39.5px;
+  left: 50px;
+  border-radius: var(--br-3xs);
+  background-color: var(--light);
+  width: 484.4px;
+  height: 425px;
+  z-index: 2;
+}
+.image {
+  align-self: stretch;
+  height: 492.5px;
+  position: relative;
+  border-radius: var(--br-8xs);
+  background-image: url(/public/vector@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 @media screen and (max-width: 1025px) {
   .academyInfo {

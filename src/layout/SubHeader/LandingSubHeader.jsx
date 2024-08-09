@@ -1,28 +1,23 @@
 import PropTypes from "prop-types";
 import styles from "../../css/layout/Header.module.css";
+import styles_c from "../../css/page/Contact.module.css";
 
 const FrameComponent = ({ className = "" }) => {
 
   return (
     <section className={[styles.headerParent, className].join(" ")}>
       <div className={styles.image}>
-        <img className={styles.vectorIcon} alt="" src="/vector@2x.png" />
-        <div className={styles.promoBackground} />
         <div className={styles.rectangleParent}>
-          <div className={styles.frameChild} />
-
-          <div className={styles.text}>
-            <span className={styles.textTxt}>
-              <span>{`Empowering future leaders through `}</span>
-              <span>
-                innovative education, fostering creativity, critical thinking,
-                and global citizenship.
-              </span>
-            </span>
+          <div className="py-10 px-10">
+            <div className={styles_c.contact4}>
+              <h3 className="text-left text-4xl font-bold mt-20 mb-16">Introduction</h3>
+              <h3 className="text-2xl text-left font-semibold">
+                Empowering future leaders through innovative education, fostering creativity, critical thinking, and global citizenship.
+              </h3>
+            </div>  
           </div>
-          
-          <h2 className={styles.tittle}><br/><br/>Introduction</h2>
         </div>
+        
       </div>
     </section>
   );
