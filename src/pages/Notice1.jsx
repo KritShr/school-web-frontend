@@ -1,6 +1,5 @@
 import SearchInput from "../components1/SearchInput.jsx";
 import NoticeItem from "../components1/NoticeItem.jsx";
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axios.js"
 
@@ -67,7 +66,7 @@ const Notice1 = () => {
           <h3 className="text-2xl font-medium">
             This is Title
           </h3>
-          <h4 className="">
+          <h4 className="text-xl">
             0000-00-00
           </h4>
         </div>

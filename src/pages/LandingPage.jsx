@@ -16,7 +16,7 @@ const LandingPage = () => {
       <div className={styles.contact4}>
         
         {/** mission & vision */}
-        <div className="px-10 py-10 -bg--neutrals-n100 items-center">
+        <div className="px-10 py-10 items-center">
           <h3 className="text-3xl text-center font-bold mb-10 -text--medium">Creative education for practical life</h3>
           {/** our mission */}
           <div className="flex gap-10">
@@ -49,13 +49,13 @@ const LandingPage = () => {
         </div>
 
         {/** notice */}
-        <div className="px-10 py-10 -bg--neutrals-n100">
+        <div className="px-10 py-10">
         <h3 className="text-3xl text-center font-bold mb-10 -text--medium">Notice</h3>
           <LandingNotice />
         </div>
 
         {/** gallery */}
-        <div className="px-10 py-10 -bg--neutrals-n200">
+        <div className="px-10 py-10">
         <h3 className="text-3xl text-center font-bold mb-10 -text--medium">Gallery</h3>
           <Gallery />
         </div>
