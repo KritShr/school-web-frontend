@@ -1,16 +1,8 @@
 import { useMemo, useCallback } from "react";
 import { useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "../css/components/Story.module.css";
 
 const NoticeItem = ({notice}) => {
-  const storyStyle = useMemo(() => {
-    return {
-      alignSelf: 'stretch',
-      flex: 'unset',
-    };
-  }, []);
-
   var date = new Date(notice.updatedAt);
   var year = date.getFullYear().toString();
   var month = ("0" + (date.getMonth() + 1)).slice(-2);
