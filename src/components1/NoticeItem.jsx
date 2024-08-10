@@ -17,7 +17,8 @@ const NoticeItem = ({notice}) => {
   }, [navigate]);
   
   return (
-    <div className="items-center justify-between py-7 px-10 w-full rounded-md -bg--default-white flex mb-3 shadow-xl hover:-shadow--medium" onClick={() => moveToDetail(notice._id)}>
+    <div className="items-center justify-between py-7 px-10 w-full rounded-md -bg--default-white flex mb-3 shadow-xl 
+                    hover:-shadow--medium" onClick={() => moveToDetail(notice._id)}>
     <h3 className="text-2xl font-medium">
       {notice.title}
     </h3>

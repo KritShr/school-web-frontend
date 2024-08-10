@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import FacilitiesMain from "./pages/FacilitiesMain";
+import FacilityDetail from "./pages/FacilityDetail";
+
 import AboutUs from "./pages/AboutUs";
 import Management from "./pages/Management";
 import Root from "./pages/Root";
@@ -34,6 +36,8 @@ const routeTitles = {
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
+  '/facilities/:id': { mainTitle: 'facilities', subTitle: 'Home, facilities' },
+
   '/about-us' : { mainTitle: 'About us', subTitle: 'Home, About us' },
   '/login' : { mainTitle: 'Admin Login', subTitle: 'Home, Admin Login' }
 }
@@ -98,6 +102,10 @@ function App() {
         metaDescription = "";
         break;
       case "/facilities":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/facilities/facilityID":
         title = "";
         metaDescription = "";
         break;
@@ -170,6 +178,8 @@ function App() {
       <Route path="/" element={<Layout />} >
         <Route path="/" element={<LandingPage />} />
         <Route path="/facilities" element={<FacilitiesMain />} />
+        <Route path="/facilities/:facilityID" element={<FacilityDetail />} />
+
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/management" element={<Management />} />
         <Route path="/root" element={<Root />} />
