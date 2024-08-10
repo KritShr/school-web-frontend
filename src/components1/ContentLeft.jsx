@@ -55,8 +55,8 @@ const ContentLeft = ({ className = "" }) => {
   }
 
   return (
-    <div className={[styles.contentLeft, className].join(" ")}>
-      <div className={styles.contentLeftTop}>
+    <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white">
+      <div className="">
         <SearchInput 
           setSearchTerm = {setSearchTerm}
           searchTerm = {searchTerm}
@@ -77,11 +77,10 @@ const ContentLeft = ({ className = "" }) => {
         </div>
       </div>
       <button
-          className={[stylesBtn.button, className].join(" ")}
+          className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base"
           onClick={handleLoadMore}
         >
-        <div className={stylesBtn.txt}>More</div>
-        <img className={stylesBtn.icon} alt="" src="/vector-1-11.svg" />
+        More
       </button>
     </div>
   );
