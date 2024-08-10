@@ -63,17 +63,14 @@ const Notice1 = () => {
         
       {/** notice 목록 */}
       <div className="py-10">
-        <div className="py-7 px-10 w-full rounded-md -bg--color-silver flex mb-3">
-          <h3 className="">
+        <div className="items-center justify-between py-7 px-10 w-full rounded-md -bg--default-white flex mb-3 shadow-xl hover:-shadow--medium hover:">
+          <h3 className="text-2xl font-medium">
             This is Title
           </h3>
           <h4 className="">
             0000-00-00
           </h4>
-        </div> 
-      </div>
-      
-      <div className="mt-15 mb-15 gap-3">
+        </div>
         {notices.map(notice=>
           <NoticeItem
             notice={notice} key={notice._id}
@@ -81,7 +78,7 @@ const Notice1 = () => {
             propFlex="unset"
             rectangle14="/rectangle-14.svg"
           />
-        )}    
+        )}
       </div>
 
       <div className="justify-end flex">
