@@ -33,15 +33,17 @@ const Gallery = ({ className = "" }) => {
 
   return (
     <div className="flex gap-3 lg:gap-5">
-      {galleries.map((gallery)=>(
-        <div className="w-1/3 h-48 -bg--neutrals-n100 lg:h-80" onClick={moveToGallery}>
+      {galleries.map((gallery) => (
+        <div key={gallery.id} className="w-1/3 h-48 lg:h-80" onClick={moveToGallery}>
           <img
+            className="w-full h-full object-cover"
             alt={gallery.title}
             src={`${import.meta.env.VITE_SERVER_URL}/${gallery.image}`}
           />
         </div>
       ))}
     </div>
+
   );
 };
 
