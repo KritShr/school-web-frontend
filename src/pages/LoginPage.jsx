@@ -6,11 +6,11 @@ const LoginPage = () => {
 
     }
   return (
-    <section className="flex flex-col justify-center mt-20 max-w-[400px] m-auto">
+    <section className="flex flex-col mt-10 my-10 justify-center mt-0 max-w-[400px] m-auto">
       <div className={styles.contact4} ></div>
-      <div className="p-6 bg-white rounded-md shadow-md">
+      <div className="p-10 m-10 bg-white rounded-xl shadow-2xl">
         <h1 className="text-3xl font-semibold text-center">
-          로그인
+          Admin Login
         </h1>
         <form className="mt-6" onSubmit={handleSubmit()}>
           <div className="mb-2">
@@ -39,9 +39,9 @@ const LoginPage = () => {
 
           <div className="mt-6"> 
             <button
-              type="submit" className="w-full bg-black text-white px-4 py-2 rounded-md hover:bg-gray-700 duration-200"
+              type="submit" className="w-full bg-black text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base"
             >
-              로그인
+              Login
             </button>
           </div>
 
