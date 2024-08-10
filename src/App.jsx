@@ -36,8 +36,7 @@ const routeTitles = {
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
-  '/facilities/:id': { mainTitle: 'facilities', subTitle: 'Home, facilities' },
-
+  '/facilities/:id': { mainTitle: 'Facilities', subTitle: 'Home, facilities' },
   '/about-us' : { mainTitle: 'About us', subTitle: 'Home, About us' },
   '/login' : { mainTitle: 'Admin Login', subTitle: 'Home, Admin Login' }
 }
