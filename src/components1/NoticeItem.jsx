@@ -30,7 +30,7 @@ const NoticeItem = ({notice}) => {
     <h3 className="text-2xl font-medium">
       {notice.title}
     </h3>
-    <h4 className="">
+    <h4 className="text-xl">
       {returnDate}
     </h4>
   </div>

@@ -16,8 +16,8 @@ const LandingPage = () => {
       <div className={styles.contact4}>
         
         {/** mission & vision */}
-        <div className="px-10 py-10 -bg--neutrals-n100 items-center">
-          <h3 className="text-3xl text-center font-bold mb-10 -text--medium">Creative education for practical life</h3>
+        <div className="px-10 py-20 items-center">
+          <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Creative education for practical life</h3>
           {/** our mission */}
           <div className="flex gap-10">
             <div className="py-7 w-full justify-center rounded-md">
@@ -43,20 +43,20 @@ const LandingPage = () => {
         </div>
 
         {/** event calendar */}
-        <div className="px-10 py-10 -bg--color">
-          <h3 className="text-3xl text-center font-bold mb-10 -text--medium">Event Calendar</h3>
+        <div className="px-10 py-20 -bg--color">
+          <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Event Calendar</h3>
             <Calendar />
         </div>
 
         {/** notice */}
-        <div className="px-10 py-10 -bg--neutrals-n100">
-        <h3 className="text-3xl text-center font-bold mb-10 -text--medium">Notice</h3>
+        <div className="px-10 py-20">
+        <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Notice</h3>
           <LandingNotice />
         </div>
 
         {/** gallery */}
-        <div className="px-10 py-10 -bg--neutrals-n200">
-        <h3 className="text-3xl text-center font-bold mb-10 -text--medium">Gallery</h3>
+        <div className="px-10 py-20">
+        <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Gallery</h3>
           <Gallery />
         </div>
       </div>
