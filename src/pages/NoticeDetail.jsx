@@ -25,7 +25,9 @@ const NoticeDetail = () => {
   
   var returnDate = year+"-"+month+"-"+day
 
-  if(!notice) return null;
+  if(!notice) return(
+    <div>No Notice</div>
+  )
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg--default-white">

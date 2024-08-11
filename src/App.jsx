@@ -104,7 +104,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/facilities/facilityID":
+      case "/facilities/:facilityId":
         title = "";
         metaDescription = "";
         break;
@@ -177,7 +177,7 @@ function App() {
       <Route path="/" element={<Layout />} >
         <Route path="/" element={<LandingPage />} />
         <Route path="/facilities" element={<FacilitiesMain />} />
-        <Route path="/facilities/:facilityID" element={<FacilityDetail />} />
+        <Route path="/facilities/:facilityId" element={<FacilityDetail />} />
 
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/management" element={<Management />} />

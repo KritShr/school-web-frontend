@@ -31,8 +31,7 @@ const FacilityBox = ({facility}) => {
         <button 
           className="-bg--color-silver text-2xl font-bold w-96 bg-black text-white px-4 py-2 items-center rounded-md 
                     hover:-bg--medium duration-200" 
-          onClick={moveToDetail}
-          
+          onClick={() => moveToDetail(facility._id)}
         >
           more
         </button>
