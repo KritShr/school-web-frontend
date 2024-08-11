@@ -73,9 +73,6 @@ const Notice1 = () => {
         {notices.map(notice=>
           <NoticeItem
             notice={notice} key={notice._id}
-            propAlignSelf="stretch"
-            propFlex="unset"
-            rectangle14="/rectangle-14.svg"
           />
         )}
       </div>

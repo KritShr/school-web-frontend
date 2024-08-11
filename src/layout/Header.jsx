@@ -26,7 +26,7 @@ const Header = () => {
         <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/' ? '-text--medium' : ''}`} onClick={() => moveTo('/')}>Home</h3>
         <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/about-us' ? '-text--medium' : ''}`} onClick={() => moveTo('/about-us')}>About Us</h3>
         <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/management' ? '-text--medium' : ''}`} onClick={() => moveTo('/management')}>Management</h3>
-        <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/management' ? '-text--medium' : ''}`} onClick={() => moveTo('/facilities')}>Facility</h3>
+        <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/facilities' ? '-text--medium' : ''}`} onClick={() => moveTo('/facilities')}>Facility</h3>
         <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/notice' ? '-text--medium' : ''}`} onClick={() => moveTo('/notice')}>Notice</h3>
         <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/gallery' ? '-text--medium' : ''}`} onClick={() => moveTo('/gallery')}>Gallery</h3>
         <h3 className={`font-medium text-2xl cursor-pointer hover:-text--medium ${currentPath === '/contact' ? '-text--medium' : ''}`} onClick={() => moveTo('/contact')}>Contact Us</h3>
