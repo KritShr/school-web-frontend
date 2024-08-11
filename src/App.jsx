@@ -36,7 +36,9 @@ const routeTitles = {
   '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/notice/:id': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
-  '/contact/:id': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
+  '/contact/:id': { mainTitle: 'Contact', subTitle: 'Home, ContactList' },
+  '/contactlist': { mainTitle: 'Contact', subTitle: 'Home, ContactList' },
+
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
@@ -140,6 +142,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/contactlist":
+        title = "";
+        metaDescription = "";
+        break;
       case "/gallery":
         title = "";
         metaDescription = "";
@@ -193,7 +199,7 @@ function App() {
         <Route path="/notice" element={<Notice1 />} />
         <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contact/:contactId" element={<ContactList />} />
+        <Route path="/contactlist" element={<ContactList />} />
         <Route path="/gallery" element={<Gallery3A />} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/root1" element={<Root1 />} />
