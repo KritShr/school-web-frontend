@@ -24,7 +24,7 @@ const ContactList = () => {
       searchTerm
     }
     try{
-      const response = await axiosInstance.get('/contact', {params})
+      const response = await axiosInstance.get('/contacts', {params})
 
       if(loadMore) { // 더 보기 클릭 시 현재 상품 state에 가져온 state 추가
         setContact([...contact, ...response.data.contact]) 
