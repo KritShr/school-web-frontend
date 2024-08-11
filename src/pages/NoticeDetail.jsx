@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
-import styles from "../css/page/NoticeDetail.module.css";
-import stylesDetail from "../css/components/Notices.module.css";
+import styles from "../css/page/Contact.module.css";
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axios.js"
 
@@ -29,27 +28,27 @@ const NoticeDetail = () => {
   if(!notice) return null;
 
   return (
-    <div className={styles.noticeDetail}>
-      <section className={styles.bodyWrapper}>
-        <div className={styles.body}>
-          <div className={[stylesDetail.notices].join(" ")}>
-            <div className={stylesDetail.rectangle} />
-            <div className={stylesDetail.noticeItem}>
-              <h3 className={stylesDetail.title}>{notice.title}</h3>
-              <div className={stylesDetail.noticeItemSeparator} />
-              <div className={stylesDetail.september102021Wrapper}>
-                <div className={stylesDetail.september102021}>{returnDate}</div>
-              </div>
-            </div>
-            <div className={stylesDetail.descriptions}>
-              <p className={stylesDetail.writeSomeDescriptions}>
-                {notice.description}
-              </p>
-            </div>
+    <div className="px-10 py-10 sm:px-4 lg:px-40 -bg--default-white">
+      <div className={styles.contact4}>
+        <div className="mt-10 mb-10 isolate self-center -bg--color-gainsboro-100 py-10 px-10 rounded-md divide-y-2">
+          {/** title & date */}
+          <div className="items-center justify-between py-7 w-full flex mb-3">
+            <h2 className="text-4xl font-semibold">{notice.title}</h2>
+            <h4 className="text-xl">{returnDate}</h4>
+          </div>
+
+          {/** file download */}
+          <div className="-bg--color-silver py-7 text-xl text-left">
+            file.pdf
+          </div>
+          {/** descriptions */}
+          <div className="text-xl leading-10 text-left py-7">
+            {notice.description}
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+      </div>
+      
   );
 };
 
