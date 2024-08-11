@@ -36,7 +36,7 @@ const LandingPage = () => {
             </div>
 
             <div className="py-10 w-full">
-              <button onClick={moveToAboutUs} className="rounded-full -bg--light text-center w-32 h-32 -text--medium text-8xl shadow-md hover:shadow-inner" >></button>
+              <button onClick={moveToAboutUs} className="rounded-full -bg--light text-center w-32 h-32 -text--medium text-8xl shadow-md hover:shadow-inner" ></button>
             </div>
             
           </div>

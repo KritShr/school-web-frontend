@@ -15,7 +15,11 @@ import Management from "./pages/Management";
 import Root from "./pages/Root";
 import Notice1 from "./pages/Notice1";
 import NoticeDetail from "./pages/NoticeDetail";
+
 import Contact from "./pages/Contact";
+import ContactList from "./pages/ContactList";
+import ContactListDetail from "./pages/ContactListDetail";
+
 import Gallery3A from "./pages/Gallery3A";
 import LoginPage from "./pages/LoginPage";
 import Root1 from "./pages/Root1";
@@ -34,6 +38,10 @@ const routeTitles = {
   '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/notice/:id': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
+  '/contactlist': { mainTitle: 'Contact', subTitle: 'Home, ContactList' },
+  '/contactlist/:id': { mainTitle: 'Contact', subTitle: 'Home, ContactList' },
+
+
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
   '/facilities/:id': { mainTitle: 'Facilities', subTitle: 'Home, facilities' },
@@ -132,6 +140,14 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/contactlist":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/contactlist/:contactlistId":
+        title = "";
+        metaDescription = "";
+        break; 
       case "/gallery":
         title = "";
         metaDescription = "";
@@ -185,6 +201,9 @@ function App() {
         <Route path="/notice" element={<Notice1 />} />
         <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contactlist" element={<ContactList />} />
+        <Route path="/contactlist/:contactlistId" element={<ContactListDetail />} />
+
         <Route path="/gallery" element={<Gallery3A />} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/root1" element={<Root1 />} />
