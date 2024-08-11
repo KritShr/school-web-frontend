@@ -35,6 +35,7 @@ const Header = () => {
           loading="lazy"
           alt=""
           src="/account.svg"
+          onClick={() => moveTo('/login')}
         />
       </div>
     </div>
