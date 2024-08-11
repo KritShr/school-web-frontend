@@ -9,7 +9,9 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use(function(config){ //요청 전 다음 코드를 수행함
-    config.headers.Authorization = 'Bearer '+localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+    config.headers.Authorization = 'Bearer '+token;
+    
     return config;
 }, function(err){
     return Promise.reject(err);
