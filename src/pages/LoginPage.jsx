@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import styles from "../css/page/Contact.module.css";
 import { toast } from 'react-toastify';
 import axiosInstance from "../utils/axios";
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [admin, setAdmin] = useState({
     username:'',
     password:'',
   })
+  const navigate = useNavigate();
 
   const handleChange= (event)=>{
     const{name, value} = event.target;
@@ -25,11 +27,21 @@ const LoginPage = () => {
       ...admin
     }
 
-    try{
-      await axiosInstance.post('/admin/login', body);
-      toast.info('Success!')
-    } catch(err){
+    try {
+      const response = await axiosInstance.post('/admin/login', body);
+
+      // Assuming the token is in response.data.token
+      const token = response.data.token;
+
+      // Save the token to localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('isAuth', true);
+      navigate('/')
+
+      toast.info('Login successful!');
+    } catch (err) {
       console.error(err);
+      toast.error('Login failed.');
     }
   }
   return (

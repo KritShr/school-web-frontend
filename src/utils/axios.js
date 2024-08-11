@@ -1,5 +1,7 @@
 //axios의 인스턴스화 => 중복 제거
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
     baseURL: import.meta.env.PROD ?
@@ -7,7 +9,7 @@ const axiosInstance = axios.create({
 })
 
 axiosInstance.interceptors.request.use(function(config){ //요청 전 다음 코드를 수행함
-    config.headers.Authorization = 'Bearer '+localStorage.getItem('accessToken');
+    config.headers.Authorization = 'Bearer '+localStorage.getItem('token');
     return config;
 }, function(err){
     return Promise.reject(err);
@@ -17,7 +19,10 @@ axiosInstance.interceptors.response.use((response)=>{ //토큰 만료 시 리로
     return response
 }, async function(err){
     if(err.response.data === 'jwt expired'){
-        window.location.reload();
+        localStorage.setItem('isAuth', false);
+        const navigate = useNavigate();
+        navigate('/login');
+        toast.info('Login Again!');
     }
     return Promise.reject(err);
 })
