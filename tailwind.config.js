@@ -15,7 +15,11 @@ module.exports = {
           backgroundColor: '#E5E7EB', // Track color (e.g., light gray)
         },
       },
+      screens: {
+        'wide': '1680px', // Custom breakpoint at 1500px
+      },
     },
+      
     colors: {
       '--default-white': '#fff',
       '--neutrals-n100': '#7b827e',

@@ -35,7 +35,7 @@ const Header = () => {
         </div>
 
         {/* Hamburger Menu for Small Screens */}
-        <div className="lg:hidden">
+        <div className="wide:hidden">
           <button
             className="text-gray-800 focus:outline-none"
             onClick={toggleMenu}
@@ -61,9 +61,10 @@ const Header = () => {
         <nav
           className={`${
             isMenuOpen ? 'block' : 'hidden'
-          } lg:flex lg:items-center lg:gap-7 absolute lg:relative top-16 
-            lg:top-auto right-5 lg:right-auto bg-white lg:bg-transparent 
-            shadow-lg lg:shadow-none p-5 lg:p-0 rounded-lg lg:block`}
+          } wide:flex wide:items-center wide:gap-7 absolute wide:relative top-16 
+wide:top-auto right-5 wide:right-auto bg-white wide:bg-transparent 
+shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg wide:block
+`}
         >
           <h3
             className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
