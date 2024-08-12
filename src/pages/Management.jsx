@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import ManagementBox from "../components1/ManagementBox.jsx";
 import axiosInstance from "../utils/axios.js";
 
 const Management = () => {
@@ -63,7 +64,7 @@ const Management = () => {
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 bg-white">
-      <div className="max-w-screen-3xl mx-auto p-8">
+      <div className="max-w-screen-xl mx-auto p-8">
         <div
           className="py-10 h-[500px] flex overflow-x-scroll overflow-y-hidden space-x-6 cursor-grab active:cursor-grabbing scrollbar-custom"
           ref={sliderRef}
@@ -72,8 +73,7 @@ const Management = () => {
           onMouseLeave={stopDrag}
           onMouseMove={handleDrag}
         >
-        
-        {/* 여러 박스 배치 */}
+        {/* 여러 박스 배치*/}
         {Array.from({ length: 10 }).map((_, index) => (
           <div
             className="w-60 h-auto p-3 bg-white rounded-lg shadow-xl flex-shrink-0 transform transition-transform hover:scale-105"
@@ -95,7 +95,7 @@ const Management = () => {
             </h1>
           </div>
         </div>
-      ))}
+      ))} 
     </div>
         
       </div>
