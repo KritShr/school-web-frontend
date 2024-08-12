@@ -38,8 +38,8 @@ const routeTitles = {
   '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/notice/:id': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
-  '/contactlist': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
-  '/contactlist/:id': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
+  '/contactList': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
+  '/contactList/:id': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
 
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
@@ -144,7 +144,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/contactlist/:contactlistId":
+      case "/contactist/:contactListId":
         title = "";
         metaDescription = "";
         break; 
