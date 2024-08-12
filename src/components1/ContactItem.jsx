@@ -13,7 +13,7 @@ const ContactItem = ({contact}) => {
   const navigate = useNavigate();
 
   const moveToDetail = useCallback((id) => {
-    navigate(`/contact/${id}`);
+    navigate(`/contactList/${id}`);
   }, [navigate]);
   
   return (

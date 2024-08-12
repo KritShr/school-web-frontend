@@ -5,19 +5,19 @@ import axiosInstance from "../utils/axios.js"
 
 const ContactList = () => {
   const limit = 12; //가져올 카드 수
-  const [contact, setContact] = useState([]);
+  const [contacts, setContacts] = useState([]);
   const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
   const [hasMore, setHasMore] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => { //컴포넌트가 어마운트 될 때 한 번만 수행하도록 함
-    fetchContact(skip, limit, loadMore);
+    fetchContacts(skip, limit, loadMore);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
-  const fetchContact = async(skip, limit, loadMore, searchTerm='') =>{
+  const fetchContacts = async(skip, limit, loadMore, searchTerm='') =>{
     const params = {
       skip,
       limit,
@@ -27,9 +27,9 @@ const ContactList = () => {
       const response = await axiosInstance.get('/contacts', {params})
 
       if(loadMore) { // 더 보기 클릭 시 현재 상품 state에 가져온 state 추가
-        setContact([...contact, ...response.data.contact]) 
+        setContacts([...contacts, ...response.data.contacts]) 
       } else{
-        setContact(response.data.contact);
+        setContacts(response.data.contacts);
       }
       setHasMore(response.data.hasMore);
       setLoadMore(false);
@@ -40,7 +40,7 @@ const ContactList = () => {
   }
 
   const handleLoadMore = () =>{
-    fetchContact(skip+limit, limit, true, searchTerm);  
+    fetchContacts(skip+limit, limit, true, searchTerm);  
     setLoadMore(true);
     setSkip(skip+limit);
   }
@@ -70,7 +70,7 @@ const ContactList = () => {
             0000-00-00
           </h4>
         </div>
-        {contact.map(contact=>
+        {contacts.map(contact=>
           <ContactItem
             contact={contact} key={contact._id}
           />
