@@ -2,8 +2,21 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
-    colors:{
+    extend: {
+      // Custom scrollbar styles
+      scrollbar: {
+        width: '8px',
+        height: '8px',
+        thumb: {
+          backgroundColor: '#4CAF50', // Thumb color (e.g., green)
+          borderRadius: '4px',
+        },
+        track: {
+          backgroundColor: '#E5E7EB', // Track color (e.g., light gray)
+        },
+      },
+    },
+    colors: {
       '--default-white': '#fff',
       '--neutrals-n100': '#7b827e',
       '--text-default-default': '#1e1e1e',
@@ -34,6 +47,33 @@ module.exports = {
       '--color-seagreen': '#179457',
     }
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-hide': {
+          /* For Firefox */
+          'scrollbar-width': 'none',
+          /* For Chrome, Safari, and Edge */
+          '&::-webkit-scrollbar': {
+            display: 'none',
+          },
+        },
+        '.scrollbar-custom': {
+          'scrollbar-width': 'thin',
+          'scrollbar-color': '#4CAF50 #E5E7EB', // Custom thumb and track colors
+          '&::-webkit-scrollbar': {
+            width: '8px',
+            height: '8px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#4CAF50',
+            borderRadius: '4px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#E5E7EB',
+          },
+        },
+      });
+    },
+  ],
 }
-

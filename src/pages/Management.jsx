@@ -65,7 +65,7 @@ const Management = () => {
     <div className="px-10 py-10 sm:px-4 lg:px-40 bg-white">
       <div className="max-w-screen-3xl mx-auto p-8">
         <div
-          className="h-[500px] flex overflow-x-scroll overflow-y-hidden space-x-6 cursor-grab active:cursor-grabbing scrollbar-hide"
+          className="py-10 h-[500px] flex overflow-x-scroll overflow-y-hidden space-x-6 cursor-grab active:cursor-grabbing scrollbar-custom"
           ref={sliderRef}
           onMouseDown={startDrag}
           onMouseUp={stopDrag}
@@ -76,7 +76,7 @@ const Management = () => {
         {/* 여러 박스 배치 */}
         {Array.from({ length: 10 }).map((_, index) => (
           <div
-            className="w-60 h-auto p-5 bg-white rounded-lg shadow-xl flex-shrink-0 transform transition-transform hover:scale-105"
+            className="w-60 h-auto p-3 bg-white rounded-lg shadow-xl flex-shrink-0 transform transition-transform hover:scale-105"
             key={index}
           >
           <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-md">
@@ -87,10 +87,10 @@ const Management = () => {
             />
           </div>
           <div className="p-2 text-center">
-            <h1 className="p-5 text-xl font-semibold text-gray-800">
-              이름이름이름이름이름
+            <h1 className="p-3 text-xl font-semibold text-gray-800">
+              이름이름이름이름
             </h1>
-            <h1 className="p-5 text-3xl font-semibold text-gray-600">
+            <h1 className="p-3 text-3xl font-semibold text-gray-600">
               잡
             </h1>
           </div>
