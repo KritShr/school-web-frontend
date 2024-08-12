@@ -4,7 +4,7 @@ import axiosInstance from "../utils/axios.js";
 
 const Management = () => {
   const limit = 12; // 가져올 카드 수
-  const [management, setManagement] = useState([]);
+  const [staffs, setStaffs] = useState([]);
   const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
   const [hasMore, setHasMore] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
@@ -15,11 +15,11 @@ const Management = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
-    fetchManagement(skip, limit, loadMore);
+    fetchStaffs(skip, limit, loadMore);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchManagement = async (skip, limit, loadMore) => {
+  const fetchStaffs = async (skip, limit, loadMore) => {
     const params = {
       skip,
       limit,
@@ -28,9 +28,9 @@ const Management = () => {
       const response = await axiosInstance.get("/staffs", { params });
 
       if (loadMore) {
-        setManagement([...management, ...response.data.management]);
+        setStaffs([...staffs, ...response.data.staffs]);
       } else {
-        setManagement(response.data.management);
+        setStaffs(response.data.staffs);
       }
       setHasMore(response.data.hasMore);
       setLoadMore(false);
@@ -40,7 +40,7 @@ const Management = () => {
   };
 
   const handleLoadMore = () => {
-    fetchManagement(skip + limit, limit, true);
+    fetchStaffs(skip + limit, limit, true);
     setLoadMore(true);
     setSkip(skip + limit);
   };
@@ -74,11 +74,18 @@ const Management = () => {
           onMouseMove={handleDrag}
         >
         {/* 여러 박스 배치*/}
+        {staffs.map(staff=>
+          <div className="p-2.5">
+            <ManagementBox
+              staff={staff} key={staff._id}
+            />
+          </div>
+        )}
         {Array.from({ length: 10 }).map((_, index) => (
-          <div
-            className="w-60 h-auto p-3 bg-white rounded-lg shadow-xl flex-shrink-0 transform transition-transform hover:scale-105"
-            key={index}
-          >
+        <div
+          className="w-60 h-auto p-3 bg-white rounded-lg shadow-xl flex-shrink-0 transform transition-transform hover:scale-105"
+          key={index}
+        >
           <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-md">
             <img
               src="image-1@2x.png"

@@ -35,7 +35,7 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const routeTitles = {
-  '/gallery': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
+  '/gallery/:type': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
   '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/notice/:id': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
@@ -154,7 +154,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/gallery":
+      case "/gallery/:type":
         title = "";
         metaDescription = "";
         break;
@@ -211,7 +211,7 @@ function App() {
         <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
         <Route path="/payment" element={<Payment />} />
 
-        <Route path="/gallery" element={<Gallery3A />} />
+        <Route path="/gallery/:type" element={<Gallery3A />} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/root1" element={<Root1 />} />
         <Route path="/root2" element={<Root2 />} />

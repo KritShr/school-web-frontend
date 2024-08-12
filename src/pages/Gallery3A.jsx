@@ -2,8 +2,11 @@ import styles from "../css/page/Gallery3A.module.css";
 import { useState, useEffect } from "react"
 import SearchInput from "../components1/SearchInput";
 import axiosInstance from "../utils/axios"
+import { useParams } from "react-router-dom";
 
 const Gallery3A = () => {
+  const {type} = useParams();
+
   const limit = 9; //가져올 카드 수
   const [galleries, setGalleries] = useState([]);
   const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
@@ -12,14 +15,15 @@ const Gallery3A = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => { //컴포넌트가 어마운트 될 때 한 번만 수행하도록 함
-    fetchGalleries(skip, limit, loadMore);
+    fetchGalleries(skip, limit, loadMore, type);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const fetchGalleries = async(skip, limit, loadMore, searchTerm='') =>{
+  const fetchGalleries = async(skip, limit, loadMore, type, searchTerm='') =>{
     const params = {
       skip,
       limit,
+      type,
       searchTerm
     }
     try{
@@ -53,6 +57,7 @@ const Gallery3A = () => {
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white">
       <div className={styles.contact4}>
+        <h2>{type}</h2>
         <div className="justify-end flex">
           <SearchInput 
             setSearchTerm = {setSearchTerm}
