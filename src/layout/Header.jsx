@@ -30,6 +30,8 @@ const Header = () => {
         <h3 className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${currentPath === '/notice' ? '-text--medium' : ''}`} onClick={() => moveTo('/notice')}>Notice</h3>
         <h3 className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${currentPath === '/gallery' ? '-text--medium' : ''}`} onClick={() => moveTo('/gallery')}>Gallery</h3>
         <h3 className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${currentPath === '/contact' ? '-text--medium' : ''}`} onClick={() => moveTo('/contact')}>Contact Us</h3>
+        <h3 className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${currentPath === '/payment' ? '-text--medium' : ''}`} onClick={() => moveTo('/payment')}>Payment</h3>
+        
         <img
           className="size-auto"
           loading="lazy"

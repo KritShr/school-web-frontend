@@ -19,6 +19,7 @@ import NoticeDetail from "./pages/NoticeDetail";
 import Contact from "./pages/Contact";
 import ContactList from "./pages/ContactList";
 import ContactListDetail from "./pages/ContactListDetail";
+import Payment from "./pages/Payment";
 
 import Gallery3A from "./pages/Gallery3A";
 import LoginPage from "./pages/LoginPage";
@@ -40,6 +41,7 @@ const routeTitles = {
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
   '/contactList': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
   '/contactList/:id': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
+  '/payment': { mainTitle: 'Payment', subTitle: 'Home, Payment' },
 
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
@@ -148,6 +150,10 @@ function App() {
         title = "";
         metaDescription = "";
         break; 
+      case "/payment":
+        title = "";
+        metaDescription = "";
+        break;
       case "/gallery":
         title = "";
         metaDescription = "";
@@ -203,6 +209,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/contactList" element={<ContactList />} />
         <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
+        <Route path="/payment" element={<Payment />} />
 
         <Route path="/gallery" element={<Gallery3A />} />
         <Route path="/login" element={<LoginPage/>} />
