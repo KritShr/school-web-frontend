@@ -144,7 +144,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/contactist/:contactListId":
+      case "/contactList/:contactListId":
         title = "";
         metaDescription = "";
         break; 
@@ -201,8 +201,8 @@ function App() {
         <Route path="/notice" element={<Notice1 />} />
         <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contactlist" element={<ContactList />} />
-        <Route path="/contactlist/:contactlistId" element={<ContactListDetail />} />
+        <Route path="/contactList" element={<ContactList />} />
+        <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
 
         <Route path="/gallery" element={<Gallery3A />} />
         <Route path="/login" element={<LoginPage/>} />
