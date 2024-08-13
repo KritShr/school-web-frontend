@@ -62,8 +62,7 @@ const Event = () => {
 
       <div className="max-w-screen-3xl mx-auto p-2"> {/* 중간에 정렬 */}
         <div className="grid grid-cols-3 grid-rows-2 gap-1">
-          
-          <div className="w-128 bg-white rounded-xl shadow-2xl">
+        <div className="w-128 bg-white rounded-xl shadow-2xl">
             
 
             {/* 이미지 추가: Admin Login 텍스트 바로 아래에 배치 */}
@@ -96,6 +95,7 @@ const Event = () => {
               </button>
             </div>
           </div>
+          
 
           {events.map(event=>
             <div className="p-2.5">
