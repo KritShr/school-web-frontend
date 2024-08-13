@@ -41,25 +41,35 @@ const LandingPage = () => {
             }}
           >
             {slides.map((slide, index) => (
+              <div key={index} className="relative w-full h-[600px]">
               <img 
                 key={index}
                 src={slide} 
                 alt={`Slide ${index + 1}`} 
                 className="w-full h-[600px] object-cover"
               />
+              {/* 그라데이션 흰색 레이어 */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: "linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0))"
+                }}
+              ></div>
+              </div>
+              
             ))}
           </div>
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="relative z-10 flex flex-col justify-center h-full pl-10">
+          <div className="relative z-10 flex flex-col justify-center w-full h-full pl-10">
             <h1 className="text-white text-5xl font-bold mb-6">
-              Welcome to Our School
+              Welcome to Creative Learners' Academy
             </h1>
             <p className="text-white text-xl mb-4">
               Empowering students through innovative education
             </p>
             <button 
               onClick={moveToAboutUs} 
-              className="text-white bg-blue-500 px-6 py-3 rounded-md hover:bg-blue-700"
+              className="-text--medium bg-blue-500 px-6 py-3 rounded-md hover:bg-blue-700"
             >
               Learn More About Us
             </button>

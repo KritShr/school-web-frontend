@@ -82,6 +82,12 @@ function Layout(){
         autoClose={1500}
       />
       <Header />
+      {isLandingPage ? (
+      <div></div>
+      ): (
+        <OtherSubHeader mainTitle={mainTitle} subTitle={subTitle} />
+      )}
+
       
       <main>
         <Outlet />
