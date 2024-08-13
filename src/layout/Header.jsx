@@ -41,7 +41,7 @@ const Header = () => {
             onClick={toggleMenu}
           >
             <svg
-              className="w-8 h-8"
+              className="w-10 h-10"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -61,13 +61,13 @@ const Header = () => {
         <nav
           className={`${
             isMenuOpen ? 'block' : 'hidden'
-          } wide:flex wide:items-center wide:gap-7 absolute wide:relative top-16 
-            wide:top-auto right-5 wide:right-auto bg-white wide:bg-transparent 
-            shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg wide:block
+          } bg-white wide:bg-white wide:flex wide:items-center wide:gap-7 absolute wide:relative top-16 
+            wide:top-auto right-5 wide:right-auto  
+            shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg wide:block z-50
             `}
         >
           <h3
-            className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/')}
@@ -75,7 +75,7 @@ const Header = () => {
             Home
           </h3>
           <h3
-            className={`whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/about-us' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/about-us')}
@@ -83,7 +83,7 @@ const Header = () => {
             About Us
           </h3>
           <h3
-            className={`whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/event' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/event')}
@@ -91,7 +91,7 @@ const Header = () => {
             News & Events
           </h3>
           <h3
-            className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/management' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/management')}
@@ -99,7 +99,7 @@ const Header = () => {
             Management
           </h3>
           <h3
-            className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/facilities' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/facilities')}
@@ -107,7 +107,7 @@ const Header = () => {
             Facility
           </h3>
           <h3
-            className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/notice' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/notice')}
@@ -115,7 +115,7 @@ const Header = () => {
             Notice
           </h3>
           <h3
-            className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/gallery' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/gallery')}
@@ -123,7 +123,7 @@ const Header = () => {
             Gallery
           </h3>
           <h3
-            className={`whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-1 whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/contact' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/contact')}
@@ -131,7 +131,7 @@ const Header = () => {
             Contact Us
           </h3>
           <h3
-            className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
+            className={`mb-3 font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/payment' ? 'text-gray-600' : ''
             }`}
             onClick={() => moveTo('/payment')}
