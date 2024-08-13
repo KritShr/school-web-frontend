@@ -12,10 +12,6 @@ const EventBox = ({event}) => {
 
   return (
     <div className="p-5 m-5 bg-white rounded-xl shadow-2xl">
-      <h1 className="text-3xl font-semibold text-center">
-        {event.title}
-      </h1>
-
       {/* 이미지 추가: Admin Login 텍스트 바로 아래에 배치 */}
       <div className="flex justify-center mt-4">
         <div className="relative w-96 h-72"> {/* 4:3 비율 (2배 크기) */}
@@ -26,6 +22,10 @@ const EventBox = ({event}) => {
           />
         </div>
       </div>
+      <h1 className="text-3xl font-semibold text-center">
+        {event.title}
+      </h1>
+      
 
       <div className="mt-6 flex justify-center"> {/* 부모 요소에 중앙 정렬 적용 */}
         <button 

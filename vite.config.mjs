@@ -7,4 +7,9 @@ export default defineConfig({
     outDir: "build",
   },
   plugins: [react()],
+  resolve: {
+    alias: {
+      'nepali-calendar-react': 'nepali-calendar-react/lib/index.js'
+    }
+  }
 });

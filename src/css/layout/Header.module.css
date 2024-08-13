@@ -213,6 +213,9 @@
   z-index: 1;
   cursor: pointer;
 }
+.relative:hover nav {
+  display: block;
+}
 .navItems {
   align-self: stretch;
   display: flex;
