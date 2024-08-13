@@ -62,9 +62,9 @@ const Header = () => {
           className={`${
             isMenuOpen ? 'block' : 'hidden'
           } wide:flex wide:items-center wide:gap-7 absolute wide:relative top-16 
-wide:top-auto right-5 wide:right-auto bg-white wide:bg-transparent 
-shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg wide:block
-`}
+            wide:top-auto right-5 wide:right-auto bg-white wide:bg-transparent 
+            shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg wide:block
+            `}
         >
           <h3
             className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
