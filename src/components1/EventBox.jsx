@@ -3,11 +3,19 @@ import { useNavigate } from "react-router-dom";  // useNavigate를 import
 import PropTypes from "prop-types";
 import { useCallback } from "react";
 
-const EventBox = ({event}) => {
+const EventBox = ({news}) => {
+  var date = new Date(news.updatedAt);
+  var year = date.getFullYear().toString();
+  var month = ("0" + (date.getMonth() + 1)).slice(-2);
+  var day = ("0" + date.getDate()).slice(-2);
+  
+  var returnDate = year+"-"+month+"-"+day
+
+
   const navigate = useNavigate();  // useNavigate 훅 사용
 
   const moveToDetail = useCallback((id) => {
-    navigate(`/events/${id}`);
+    navigate(`/newses/${id}`);
   }, [navigate]);
 
   return (
@@ -16,21 +24,20 @@ const EventBox = ({event}) => {
       <div className="flex justify-center mt-4">
         <div className="relative w-full h-96"> {/* 4:3 비율 (2배 크기) */}
           <img 
-            src={`${import.meta.env.VITE_SERVER_URL}/${event.image}`}  // public 폴더의 이미지 파일 경로
-            alt={event.title} 
+            src={`${import.meta.env.VITE_SERVER_URL}/${news.image}`}  // public 폴더의 이미지 파일 경로
+            alt={news.title} 
             className="w-full h-full object-cover" 
           />
         </div>
       </div>
       <h1 className="text-3xl font-bold text-center mt-3 pr-5 pl-5 truncate">
-        {event.title}
+        {news.title}
       </h1>
-      <h1 className="text-l font-semibold text-right mt-2 pr-5">
-        0000-00-00
-      </h1>
+      <h4 className="text-l font-semibold text-right mt-2 pr-5">
+        {returnDate}
+      </h4>
       <h1 className="text-xl font-medium text-left mt-1 p-5 truncate">
-        this is description this is description this is description this is description
-        this is description this is description this is description
+        {news.description}
       </h1>
 
 
@@ -38,7 +45,7 @@ const EventBox = ({event}) => {
         <button 
           className="mb-5 -bg--color-silver text-2xl font-bold bg-black text-white px-4 py-2 items-center rounded-md 
                     hover:-bg--medium duration-200" 
-          onClick={() => moveToDetail(event._id)}
+          onClick={() => moveToDetail(news._id)}
         >
           more
         </button>
@@ -48,7 +55,7 @@ const EventBox = ({event}) => {
 };
 
 EventBox.propTypes = {
-  event: PropTypes.object.isRequired,
+  news: PropTypes.object.isRequired,
 };
 
 export default EventBox;
