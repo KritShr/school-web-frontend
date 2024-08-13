@@ -83,6 +83,14 @@ shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg wide:block
             About Us
           </h3>
           <h3
+            className={`whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
+              currentPath === '/event' ? 'text-gray-600' : ''
+            }`}
+            onClick={() => moveTo('/event')}
+          >
+            News & Events
+          </h3>
+          <h3
             className={`font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/management' ? 'text-gray-600' : ''
             }`}

@@ -9,6 +9,9 @@ import {
 import LandingPage from "./pages/LandingPage";
 import FacilitiesMain from "./pages/FacilitiesMain";
 import FacilityDetail from "./pages/FacilityDetail";
+import Event from "./pages/Event";
+import EventDetail from "./pages/EventDetail";
+
 
 import AboutUs from "./pages/AboutUs";
 import Management from "./pages/Management";
@@ -42,6 +45,8 @@ const routeTitles = {
   '/contactList': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
   '/contactList/:id': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
   '/payment': { mainTitle: 'Payment', subTitle: 'Home, Payment' },
+  '/event': { mainTitle: 'Event', subTitle: 'Home, Event' },
+  '/event/:id': { mainTitle: 'Event', subTitle: 'Home, Event' },
 
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
@@ -115,6 +120,14 @@ function App() {
         metaDescription = "";
         break;
       case "/facilities/:facilityId":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/event":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/event/:eventId":
         title = "";
         metaDescription = "";
         break;
@@ -200,6 +213,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/facilities" element={<FacilitiesMain />} />
         <Route path="/facilities/:facilityId" element={<FacilityDetail />} />
+        <Route path="/event" element={<Event />} />
+        <Route path="/event/:eventId" element={<EventDetail />} />
+        
 
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/management" element={<Management />} />

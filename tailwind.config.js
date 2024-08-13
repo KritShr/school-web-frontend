@@ -16,7 +16,7 @@ module.exports = {
         },
       },
       screens: {
-        'wide': '1680px', // Custom breakpoint at 1500px
+        'wide': '1850px', // Custom breakpoint at 1500px
       },
     },
       
