@@ -63,30 +63,34 @@ const Event = () => {
       <div className="max-w-screen-3xl mx-auto p-2"> {/* 중간에 정렬 */}
         <div className="grid grid-cols-3 grid-rows-2 gap-1">
           
-          <div className="p-5 m-5 bg-white rounded-xl shadow-2xl">
-            <h1 className="text-3xl font-semibold text-center">
-              Event Title
-            </h1>
+          <div className="w-128 bg-white rounded-xl shadow-2xl">
+            
 
             {/* 이미지 추가: Admin Login 텍스트 바로 아래에 배치 */}
-            <div className="flex justify-center mt-4">
-              <div className="relative w-96 h-72"> {/* 4:3 비율 (2배 크기) */}
+            <div className="flex justify-center">
+              <div className="relative w-full h-96"> {/* 4:3 비율 (2배 크기) */}
                 <img 
-                  src='image-1@2x.png'  // public 폴더의 이미지 파일 경로
+                  src='image-8@2x.png'  // public 폴더의 이미지 파일 경로
                   alt=""
-                  className="absolute inset-0 w-full h-full object-cover" 
+                  className="w-full h-full object-cover" 
                 />
               </div>
             </div>
-
-            <div>
+            <h1 className="text-3xl font-bold text-center mt-3 pr-5 pl-5 truncate">
+              Event Title
+            </h1>
+            <h1 className="text-l font-semibold text-right mt-2 pr-5">
               0000-00-00
-            </div>
+            </h1>
+            <h1 className="text-xl font-medium text-left mt-1 p-5 truncate">
+              this is description this is description this is description this is description
+              this is description this is description this is description
+            </h1>
 
-            <div className="mt-6 flex justify-center"> {/* 부모 요소에 중앙 정렬 적용 */}
+            <div className="m-5 flex justify-end"> {/* 부모 요소에 중앙 정렬 적용 */}
               <button 
-                className="-bg--color-silver text-2xl font-bold w-96 bg-black text-white px-4 py-2 items-center rounded-md 
-                          hover:-bg--medium duration-200" 
+                className="items-center -bg--color-silver text-2xl font-bold bg-black text-white px-4 py-2 items-center rounded-md 
+                          hover:-bg--medium duration-200 " 
               >
                 more
               </button>
@@ -105,7 +109,7 @@ const Event = () => {
 
       <div className="justify-end flex">
         <button
-            className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base"
+            className="-bg--color-silver text-white inline-flex px-2 py-1 rounded-md hover:-bg--medium duration-200 text-base"
             onClick={handleLoadMore}
           >
           More
