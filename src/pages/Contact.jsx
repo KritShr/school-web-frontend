@@ -50,8 +50,8 @@ const Contact = () => {
           <div className="flex relative w-full lg:w-2/3 p-2 -bg--color rounded-md" >  
             <iframe
                 className="absolute w-full h-full left-0 top-0"
-              src="https://www.google.co.kr/maps/place/Creative+Learners'+Academy/@27.684246,85.3874382,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb1a675f05b3e5:0x4a6f525dfb22d7f9!8m2!3d27.684246!4d85.3900131!16s%2Fg%2F1tfbr93_?entry=ttu"
-            />
+              src={`https://www.google.com/maps/embed/v1/place?q=Creative+Learners+Academy&key=AIzaSyCw0Dr2tS1QJ-4DAlccHNDWwwP_Kj110io`}
+/>
           </div>
         </div>
 
