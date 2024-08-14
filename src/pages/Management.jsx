@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import ManagementBox from "../components1/ManagementBox.jsx";
 import axiosInstance from "../utils/axios.js";
+import { toast } from "react-toastify";
 
 const Management = () => {
   const limit = 12; // 가져올 카드 수
@@ -13,6 +14,8 @@ const Management = () => {
   const [isDragging, setIsDragging] = useState(false); // 드래그 상태 체크
   const [startPos, setStartPos] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
+  const isAuth = localStorage.getItem('isAuth');
 
   useEffect(() => {
     fetchStaffs(skip, limit, loadMore);
@@ -39,12 +42,6 @@ const Management = () => {
     }
   };
 
-  const handleLoadMore = () => {
-    fetchStaffs(skip + limit, limit, true);
-    setLoadMore(true);
-    setSkip(skip + limit);
-  };
-
   const startDrag = (e) => {
     setIsDragging(true);
     setStartPos(e.pageX - sliderRef.current.offsetLeft);
@@ -61,6 +58,20 @@ const Management = () => {
     const walk = (x - startPos) * 2; // 스크롤 속도 조정
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
+
+  const handleUpdate = (staffId) => {
+    console.log(`Editing staff with id: ${staffId}`);
+  }
+
+  const handleDelete = async(staffId) => {
+    try {
+      await axiosInstance.delete(`/staffs/${staffId}`);
+      setStaffs(staffs.filter(staff => staff._id !== staffId));
+    } catch (error) {
+      console.error(error)
+      toast.error('Delete Failed...')
+    }
+  }
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 bg-white">
@@ -80,6 +91,12 @@ const Management = () => {
             <ManagementBox
               staff={staff} key={staff._id}
             />
+            {isAuth && (
+              <div className="mt-2 flex justify-around">
+                <button className="bg-blue-500 text-white px-3 py-1 rounded" onClick={()=> handleUpdate(staff._id)}>Edit</button>
+                <button className="bg-blue-500 text-white px-3 py-1 rounded" onClick={()=> handleDelete(staff._id)}>Delete</button>
+              </div>
+            )}
           </div>
         )}
         {Array.from({ length: 10 }).map((_, index) => (
