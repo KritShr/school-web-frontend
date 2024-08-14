@@ -46,7 +46,7 @@ const routeTitles = {
   '/contactList/:id': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
   '/payment': { mainTitle: 'Payment', subTitle: 'Home, Payment' },
   '/event': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
-  '/event/:id': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
+  '/newses/:eventId': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
 
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
@@ -129,7 +129,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/event/:eventId":
+      case "/newses/:eventId":
         title = "";
         metaDescription = "";
         break;
@@ -216,7 +216,7 @@ function App() {
         <Route path="/facilities" element={<FacilitiesMain />} />
         <Route path="/facilities/:facilityId" element={<FacilityDetail />} />
         <Route path="/event" element={<Event />} />
-        <Route path="/event/:eventId" element={<EventDetail />} />
+        <Route path="/newses/:eventId" element={<EventDetail />} />
         
 
         <Route path="/about-us" element={<AboutUs />} />
