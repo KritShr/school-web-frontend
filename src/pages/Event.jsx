@@ -4,34 +4,35 @@ import SearchInput from "../components1/SearchInput.jsx";
 import axiosInstance from "../utils/axios.js"
 
 const Event = () => {
-  const limit = 12; //가져올 카드 수
-  const [events, setEvent] = useState([]);
+  const limit = 9; //가져올 카드 수
+  const [newses, setNewses] = useState([]);
   const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
   const [hasMore, setHasMore] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => { //컴포넌트가 어마운트 될 때 한 번만 수행하도록 함
-    fetchEvent(skip, limit, loadMore);
+    fetchNewses(skip, limit, loadMore);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const fetchEvent = async(skip, limit, loadMore, searchTerm='') =>{
+  const fetchNewses = async(skip, limit, loadMore, searchTerm='') =>{
     const params = {
       skip,
       limit,
       searchTerm
     }
     try{
-      const response = await axiosInstance.get('/events', {params})
+      const response = await axiosInstance.get('/news', {params})
 
       if(loadMore) { // 더 보기 클릭 시 현재 상품 state에 가져온 state 추가
-        setEvent([...events, ...response.data.events]) 
+        setNewses([...newses, ...response.data.newses]) 
       } else{
-        setEvent(response.data.events);
+        setNewses(response.data.newses);
       }
       setHasMore(response.data.hasMore);
       setLoadMore(false);
+      console.log(newses);
       
     } catch(err){
       console.error(err);
@@ -39,14 +40,14 @@ const Event = () => {
   }
 
   const handleLoadMore = () =>{
-    fetchEvent(skip+limit, limit, true, searchTerm);  
+    fetchNewses(skip+limit, limit, true, searchTerm);  
     setLoadMore(true);
     setSkip(skip+limit);
   }
   const handleSearchTerm = (event) => {
     setSkip(0);
     setSearchTerm(event.target.value);
-    fetchEvent(0, limit, loadMore, event.target.value);
+    fetchNewses(0, limit, loadMore, event.target.value);
   }
 
 
@@ -62,8 +63,7 @@ const Event = () => {
 
       <div className="max-w-screen-3xl mx-auto p-2"> {/* 중간에 정렬 */}
         <div className="grid grid-cols-3 grid-rows-2 gap-1">
-          
-          <div className="w-128 bg-white rounded-xl shadow-2xl">
+        <div className="w-128 bg-white rounded-xl shadow-2xl">
             
 
             {/* 이미지 추가: Admin Login 텍스트 바로 아래에 배치 */}
@@ -96,11 +96,12 @@ const Event = () => {
               </button>
             </div>
           </div>
+          
 
-          {events.map(event=>
+          {newses.map(news=>
             <div className="p-2.5">
               <EventBox
-                event={event} key={event._id}
+                news={news} key={news._id}
               />
             </div>
           )}

@@ -45,8 +45,8 @@ const routeTitles = {
   '/contactList': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
   '/contactList/:id': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
   '/payment': { mainTitle: 'Payment', subTitle: 'Home, Payment' },
-  '/event': { mainTitle: 'Event', subTitle: 'Home, Event' },
-  '/event/:id': { mainTitle: 'Event', subTitle: 'Home, Event' },
+  '/event': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
+  '/event/:id': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
 
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
@@ -82,6 +82,12 @@ function Layout(){
         autoClose={1500}
       />
       <Header />
+      {isLandingPage ? (
+      <div></div>
+      ): (
+        <OtherSubHeader mainTitle={mainTitle} subTitle={subTitle} />
+      )}
+
       
       <main>
         <Outlet />
