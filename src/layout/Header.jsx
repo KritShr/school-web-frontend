@@ -10,9 +10,26 @@ const Header = () => {
   }, [navigate]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isGallerySubMenuOpen, setIsGallerySubMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleGalleryClick = () => {
+    setIsGallerySubMenuOpen(!isGallerySubMenuOpen);
+  };
+
+  const handleGalleryMouseEnter = () => {
+    if (!isMenuOpen) {
+      setIsGallerySubMenuOpen(true);
+    }
+  };
+
+  const handleGalleryMouseLeave = () => {
+    if (!isMenuOpen) {
+      setIsGallerySubMenuOpen(false);
+    }
   };
 
   return (
@@ -65,12 +82,10 @@ const Header = () => {
             wide:top-auto right-5 wide:right-auto  
             shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg z-50
           `}
-          
           style={{
             background: "linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))"
           }}
-          >
-          
+        >
           <h3
             className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/' ? 'text-gray-600' : ''
@@ -119,14 +134,49 @@ const Header = () => {
           >
             Notice
           </h3>
-          <h3
-            className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
-              currentPath === '/gallery' ? 'text-gray-600' : ''
-            }`}
-            onClick={() => moveTo('/gallery')}
+          
+          <div
+            className="relative wide:static wide:inline-block"
+            onMouseEnter={handleGalleryMouseEnter}
+            onMouseLeave={handleGalleryMouseLeave}
+            
           >
-            Gallery
-          </h3>
+            <h3
+              className={`bg-white mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
+                currentPath === '/gallery' ? 'text-gray-600' : ''
+              }`}
+              onClick={isMenuOpen ? handleGalleryClick : undefined}
+            >
+              Gallery
+            </h3>
+
+            {/* Submenu for Gallery */}
+            <div
+              className={`${
+                isGallerySubMenuOpen ? 'block' : 'hidden'
+              } wide:absolute wide:left-85 wide:mt-1 ml-4 mt-2 bg-white shadow-lg rounded-lg z-50`}
+              style={{
+                background: "rgba(255, 255, 255, 0.8)" // Semi-transparent white background
+              }}
+            >
+              <h4
+                className="px-4 py-2 text-xl cursor-pointer hover:-text--medium"
+                onClick={() => moveTo('/gallery/activities')}
+              >
+                Activities
+              </h4>
+              <h4
+                className="px-4 py-2 text-xl cursor-pointer hover:-text--medium"
+                onClick={() => moveTo('/gallery/volunteers')}
+              >
+                Volunteers
+              </h4>
+            </div>
+          </div>
+
+          {/* Pushes Contact Us and Payment down */}
+          {isGallerySubMenuOpen && isMenuOpen && <div className="wide:hidden mb-4"></div>}
+
           <h3
             className={`mb-1 whitespace-nowrap font-semibold text-2xl cursor-pointer hover:-text--medium ${
               currentPath === '/contact' ? 'text-gray-600' : ''

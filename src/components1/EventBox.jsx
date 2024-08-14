@@ -14,8 +14,8 @@ const EventBox = ({news}) => {
 
   const navigate = useNavigate();  // useNavigate 훅 사용
 
-  const moveToDetail = useCallback((id) => {
-    navigate(`/newses/${id}`);
+  const moveToDetail = useCallback((eventId) => {
+    navigate(`/newses/${eventId}`);
   }, [navigate]);
 
   return (

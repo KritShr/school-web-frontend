@@ -10,7 +10,7 @@ const EventDetail = () => {
   useEffect(() => {
     async function fetchEvent() {
       try {
-        const response = await axiosInstance.get(`/events/${eventId}?type=single`);
+        const response = await axiosInstance.get(`/news/${eventId}?type=single`);
         setEvent(response.data[0]); // Directly set response.data
       } catch (error) {
         console.error(error);
@@ -36,7 +36,7 @@ const EventDetail = () => {
         <div className="justify-center py-10">
           <img 
             src={`${import.meta.env.VITE_SERVER_URL}/${event.image}`}  // public 폴더의 이미지 파일 경로
-            alt={event.title} 
+            alt={""} 
             className="inset-0 w-full object-cover relative" 
           />
         </div>
