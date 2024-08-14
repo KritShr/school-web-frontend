@@ -47,7 +47,7 @@ const EventBox = ({news}) => {
                     hover:-bg--medium duration-200" 
           onClick={() => moveToDetail(news._id)}
         >
-          more
+          More
         </button>
       </div>
     </div>

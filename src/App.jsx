@@ -32,7 +32,7 @@ import Root11 from "./pages/Root11";
 import Root3 from "./pages/Root3";
 import Footer from './layout/Footer'
 import Header from './layout/Header'
-import LandingSubHeader from './layout/SubHeader/LandingSubHeader'
+import UploadManagement from "./pages/uploadManagement";
 import OtherSubHeader from './layout/SubHeader/OtherSubHeader'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -48,6 +48,7 @@ const routeTitles = {
   '/event': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
   '/newses/:eventId': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
 
+  '/management/upload': { mainTitle: 'Management', subTitle: 'Home, Management'},
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
@@ -134,6 +135,10 @@ function App() {
         metaDescription = "";
         break;
       case "/about-us":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/management/upload":
         title = "";
         metaDescription = "";
         break;
@@ -225,12 +230,16 @@ function App() {
         <Route path="/notice" element={<Notice1 />} />
         <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/contactList" element={<ContactList />} />
-        <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
         <Route path="/payment" element={<Payment />} />
-
         <Route path="/gallery/:type" element={<Gallery3A />} />
         <Route path="/login" element={<LoginPage/>} />
+
+        <Route path="/contactList" element={<ContactList />} />
+        <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
+        <Route path="/management/upload"element={<UploadManagement/>} />
+        
+
+        
         <Route path="/root1" element={<Root1 />} />
         <Route path="/root2" element={<Root2 />} />
         <Route path="/root3" element={<Root11 />} />
