@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import ManagementBox from "../components1/ManagementBox.jsx";
 import axiosInstance from "../utils/axios.js";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Management = () => {
   const limit = 12; // 가져올 카드 수
@@ -14,6 +15,8 @@ const Management = () => {
   const [isDragging, setIsDragging] = useState(false); // 드래그 상태 체크
   const [startPos, setStartPos] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
+  const navigate = useNavigate();
 
   const isAuth = localStorage.getItem('isAuth');
 
@@ -67,14 +70,16 @@ const Management = () => {
     try {
       await axiosInstance.delete(`/staffs/${staffId}`);
       setStaffs(staffs.filter(staff => staff._id !== staffId));
+      toast.info('Delete Success!');
     } catch (error) {
       console.error(error)
-      toast.error('Delete Failed...')
+      toast.error('Delete Failed...');
     }
   }
 
   const handleCreate = () => {
     console.log(`move to Create Management!`)
+    navigate('/management/upload');
   }
 
   return (
