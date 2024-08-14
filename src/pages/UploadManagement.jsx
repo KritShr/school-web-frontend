@@ -1,43 +1,51 @@
 import React, { useState } from 'react'
+import FileUpload from '../components1/FileUpload'
+import axiosInstance from '../utils/axios'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { dept } from '../utils/selectData';
+import { useNavigate } from 'react-router-dom';
 
 const UploadManagement = () => {
+    const navigate = useNavigate();
 
-    const [staff, seStaff] = useState({
+    const [staff, setStaff] = useState({
         name:'',
         department:'',
         image:''
     })
 
-    const dept = [
-        {key: 1, value: 'Principal'},
-        {key: 2, value: 'Coordinator'},
-        {key: 3, value: 'Teaching Staff'},
-        {key: 4, value: 'Non-teaching Staff'}
-    ]
-
     const handleChange= (event)=>{
         const{name, value} = event.target;
-        seStaff(prevState=>({
+        setStaff(prevState=>({
           ...prevState, // 바꾸지 않는 값은 유지
           [name]: value // 바꾸는 값을 오버라이드
         }));
-      }
-    
-    const handleSubmit = async(event) =>{
-        /**event.preventDefault();
-    
-        const body = {
-          ...contact
-        }
-    
-        try{
-          await axiosInstance.post('/contacts', body);
-          toast.info('Success!')
-        } catch(err){
-          console.error(err);
-        }**/
-       toast.info('Submit Success!');
     }
+
+    const handleImages = (newImage) => {
+        setStaff(prevState=>({
+            ...prevState,
+            image: newImage
+        }));
+    }
+    
+    const handleSubmit = async(event)=>{
+        event.preventDefault();
+
+        const body={...staff}
+        console.log(body)
+        try {
+            await axiosInstance.post('/staffs', body);
+            toast.info('Upload Success!');
+            navigate('/management');
+            
+        } catch (error) {
+            console.error(error);
+            toast.error('Upload Failed...')
+        }
+    }
+
   return (
     <div className='px-10 py-10 sm:px-4 lg:px-40 -bg-white'>
         <div className="mt-10 mb-10 isolate self-center -bg--color-gainsboro-100 py-10 rounded-md">
@@ -45,7 +53,8 @@ const UploadManagement = () => {
                 <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload Management</h2>
             </div>
             <form onSubmit={handleSubmit} className="px-10 lg:px-40">
-                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <FileUpload image = {staff.image} onImageChange={handleImages} api={'/staffs/image'}/>
+                <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div >
                     <label htmlFor="name" className="block text-sm font-semibold leading-6 text---third-template-colour text-left">Name</label>
                     <div className="mt-2.5">
