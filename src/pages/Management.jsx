@@ -103,8 +103,7 @@ const Management = () => {
           {staffs.map(staff=>
             <div className="p-2.5">
               {isAuth && (
-                <div className="mt-2 flex justify-left gap-2 mb-1">
-                  <button className="-bg--medium text-white px-3 py-1 rounded" onClick={()=> handleUpdate(staff._id)}>Edit</button>
+                <div className="mt-2 flex justify-left gap-2 mb-1"> 
                   <button className="-bg--medium text-white px-3 py-1 rounded" onClick={()=> handleDelete(staff._id)}>Delete</button>
                 </div>
               )}
@@ -114,28 +113,6 @@ const Management = () => {
               
             </div>
           )}
-          {Array.from({ length: 10 }).map((_, index) => (
-          <div
-            className="w-60 h-auto p-3 bg-white rounded-lg shadow-xl flex-shrink-0 transform transition-transform hover:scale-105"
-            key={index}
-          >
-            <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-md">
-              <img
-                src="image-1@2x.png"
-                alt="Staff"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-2 text-center">
-              <h1 className="p-3 text-xl font-semibold text-gray-800">
-                이름이름이름이름
-              </h1>
-              <h1 className="p-3 text-3xl font-semibold text-gray-600">
-                잡
-              </h1>
-            </div>
-          </div>
-          ))} 
         </div>
         
       </div>
