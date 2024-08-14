@@ -62,7 +62,7 @@ const Event = () => {
       </div>
 
       <div className="max-w-screen-3xl mx-auto p-2"> {/* 중간에 정렬 */}
-        <div className="grid grid-cols-3 grid-rows-2 gap-1">
+        <div className="grid grid-cols-3 grid-rows-2 gap-1 sm:grid-cols-2 lg:grid-cols-3">
         <div className="w-128 bg-white rounded-xl shadow-2xl">
             
 
@@ -89,10 +89,10 @@ const Event = () => {
 
             <div className="m-5 flex justify-end"> {/* 부모 요소에 중앙 정렬 적용 */}
               <button 
-                className="items-center -bg--color-silver text-2xl font-bold bg-black text-white px-4 py-2 items-center rounded-md 
+                className="-bg--color-silver text-2xl font-bold bg-black text-white px-4 py-2 items-center rounded-md 
                           hover:-bg--medium duration-200 " 
               >
-                more
+                More
               </button>
             </div>
           </div>
@@ -110,7 +110,7 @@ const Event = () => {
 
       <div className="justify-end flex">
         <button
-            className="-bg--color-silver text-white inline-flex px-2 py-1 rounded-md hover:-bg--medium duration-200 text-base"
+            className="-bg--color-silver text-white inline-flex px-4 py-2 text-2xl font-bold rounded-md hover:-bg--medium duration-200"
             onClick={handleLoadMore}
           >
           More
