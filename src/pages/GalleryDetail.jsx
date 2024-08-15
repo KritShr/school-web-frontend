@@ -19,8 +19,6 @@ const GalleryDetail = () => {
     fetchGallery();
   }, [galleryId]);
 
-      // Log the gallery images to ensure they are being fetched correctly
-  console.log("Gallery Images:", gallery?.images);
 
   if (!gallery) {
     return (
