@@ -1,4 +1,5 @@
-import Calendar from "../components1/Calendar";
+import NepaliCalendar from '../components1/NepaliCalendar';
+
 import LandingNotice from "../components1/LandingNotice";
 import Gallery from "../components1/Gallery";
 import styles from "../css/page/Contact.module.css";
@@ -102,7 +103,9 @@ const LandingPage = () => {
         {/** event calendar */}
         <div className="px-10 py-20 -bg--color">
           <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Event Calendar</h3>
-            <Calendar />
+            {/*<Calendar />*/}
+            <NepaliCalendar />
+
         </div>
 
         {/** notice */}

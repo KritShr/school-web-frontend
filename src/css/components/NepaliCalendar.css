@@ -1,0 +1,75 @@
+/* NepaliCalendar.css */
+.calendar-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .month-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .month-title {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .day-header {
+    text-align: center;
+    font-weight: bold;
+    background-color: #eeeeee;
+    padding: 10px 0;
+    border-radius: 4px;
+  }
+  
+  .day-cell {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .day-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .day-info {
+    font-size: 0.8em;
+    color: #555;
+  }
+  
+  .special-day {
+    background-color: #ffe4e1;
+  }
+  
+  .holiday {
+    background-color: #f0f8ff;
+  }
+  
+  .event {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #333;
+  }
+  

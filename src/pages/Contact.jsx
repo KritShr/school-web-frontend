@@ -50,7 +50,7 @@ const Contact = () => {
           <div className="flex relative w-full lg:w-2/3 p-2 -bg--color rounded-md" >  
             <iframe
                 className="absolute w-full h-full left-0 top-0"
-              src={`https://www.google.com/maps/embed/v1/place?q=Creative+Learners+Academy&key=AIzaSyCw0Dr2tS1QJ-4DAlccHNDWwwP_Kj110io`}
+              src={`https://www.google.com/maps/embed/v1/place?q=Creative+Learners'+Academy,Nepal&key=AIzaSyCw0Dr2tS1QJ-4DAlccHNDWwwP_Kj110io`}
 />
           </div>
         </div>
