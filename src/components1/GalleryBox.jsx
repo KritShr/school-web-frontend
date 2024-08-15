@@ -11,6 +11,8 @@ const GalleryBox = ({gallery}) => {
   
   var returnDate = year+"-"+month+"-"+day
 
+  console.log(gallery)
+
 
   const navigate = useNavigate();  // useNavigate 훅 사용
 
@@ -24,7 +26,7 @@ const GalleryBox = ({gallery}) => {
       <div className="flex justify-center mt-4">
         <div className="relative w-full h-96"> {/* 4:3 비율 (2배 크기) */}
           <img 
-            src={`${import.meta.env.VITE_SERVER_URL}/${gallery.image}`}  // public 폴더의 이미지 파일 경로
+            src={`${import.meta.env.VITE_SERVER_URL}/${gallery.images[0]}`}  // public 폴더의 이미지 파일 경로
             alt={gallery.title} 
             className="w-full h-full object-cover" 
           />

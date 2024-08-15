@@ -10,7 +10,7 @@ const GalleryDetail = () => {
   useEffect(() => {
     async function fetchGallery() {
       try {
-        const response = await axiosInstance.get(`/gallery/${galleryId}?type=single`);
+        const response = await axiosInstance.get(`/galleries/${galleryId}?type=single`);
         setGallery(response.data[0]); // Directly set response.data
       } catch (error) {
         console.error(error);
@@ -18,6 +18,7 @@ const GalleryDetail = () => {
     }
     fetchGallery();
   }, [galleryId]);
+
 
   if (!gallery) {
     return (
@@ -34,11 +35,15 @@ const GalleryDetail = () => {
 
         {/** image */}
         <div className="justify-center py-10">
-          <img 
-            src={`${import.meta.env.VITE_SERVER_URL}/${gallery.image}`}  // public 폴더의 이미지 파일 경로
-            alt={""} 
-            className="inset-0 w-full object-cover relative" 
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+        {gallery.images && gallery.images.length > 0 ? (
+        gallery.images.map((image, index) => (
+        <img key={index} src={`${import.meta.env.VITE_SERVER_URL}/${image}`} alt={gallery.title} />
+        ))
+        ) : (
+        <p>No images available</p>
+        )}
+          </div>  
         </div>
         
         {/** introduction */}

@@ -25,6 +25,8 @@ import ContactListDetail from "./pages/ContactListDetail";
 import Payment from "./pages/Payment";
 
 import Gallery3A from "./pages/Gallery3A";
+import GalleryDetail from "./pages/GalleryDetail";
+
 import LoginPage from "./pages/LoginPage";
 import Root1 from "./pages/Root1";
 import Root2 from "./pages/Root2";
@@ -40,6 +42,8 @@ import UploadGallery from "./pages/UploadGallery";
 
 const routeTitles = {
   '/gallery/:type': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
+  '/galleries/:galleryId': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
+
   '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/notice/:id': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
@@ -236,6 +240,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/gallery/:type" element={<Gallery3A />} />
+        <Route path="/galleries/:galleryId" element={<GalleryDetail />} />
+
         <Route path="/login" element={<LoginPage/>} />
 
         <Route path="/contactList" element={<ContactList />} />
