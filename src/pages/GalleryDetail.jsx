@@ -10,7 +10,7 @@ const GalleryDetail = () => {
   useEffect(() => {
     async function fetchGallery() {
       try {
-        const response = await axiosInstance.get(`/gallery/${galleryId}?type=single`);
+        const response = await axiosInstance.get(`/galleries/${galleryId}?type=single`);
         setGallery(response.data[0]); // Directly set response.data
       } catch (error) {
         console.error(error);
