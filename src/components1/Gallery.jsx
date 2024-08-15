@@ -28,7 +28,7 @@ const Gallery = ({ className = "" }) => {
   
 
   const moveToGallery = () =>{
-    navigate('/gallery/activities')
+    navigate('/gallery/school')
   }
 
   return (
@@ -38,7 +38,7 @@ const Gallery = ({ className = "" }) => {
           <img
             className="w-full h-full object-cover"
             alt={gallery.title}
-            src={`${import.meta.env.VITE_SERVER_URL}/${gallery.image}`}
+            src={`${import.meta.env.VITE_SERVER_URL}/${gallery.images[0]}`}
           />
         </div>
       ))}

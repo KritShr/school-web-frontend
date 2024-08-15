@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";  // useNavigate를 import
 import PropTypes from "prop-types";
 import { useCallback } from "react";
+import styles from "../css/page/Gallery3A.module.css";
 
 const GalleryBox = ({gallery}) => {
   var date = new Date(gallery.updatedAt);
@@ -22,6 +23,7 @@ const GalleryBox = ({gallery}) => {
 
   return (
     <div className="w-128 bg-white rounded-xl">
+      <div className={styles.contact4}>
       {/* 이미지 추가: Admin Login 텍스트 바로 아래에 배치 */}
       <div className="flex justify-center mt-4">
         <div className="relative w-full h-96"> {/* 4:3 비율 (2배 크기) */}
@@ -51,6 +53,7 @@ const GalleryBox = ({gallery}) => {
         >
           More
         </button>
+      </div>
       </div>
     </div>
   );

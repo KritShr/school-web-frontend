@@ -89,9 +89,9 @@ const Gallery3A = () => {
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white">
       <div className={styles.contact4}>
-      <h2 className="text-4xl font-bold text-center mt-8 mb-4">
-      {getGalleryTitle()}
-      </h2>
+        <h2 className="text-4xl font-bold text-center mt-8 mb-4">
+          {getGalleryTitle()}
+        </h2>
         <div className="justify-end flex">
           <SearchInput 
             setSearchTerm={setSearchTerm}
@@ -101,7 +101,7 @@ const Gallery3A = () => {
         </div>
         {isAuth && (
             <div className="mt-2 flex justify-end mb-1">
-              <button className="-bg--medium text-white px-3 py-1 rounded" onClick={handleCreate}>Create</button>
+              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
             </div>
         )}
           
@@ -111,7 +111,7 @@ const Gallery3A = () => {
             <div>
               {isAuth && (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
-                  <button className="-bg--medium text-white px-3 py-1 rounded" onClick={()=> handleDelete(gallery._id)}>Delete</button>
+                  <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(gallery._id)}>Delete</button>
                 </div>
               )}
             <GalleryBox key={gallery._id} gallery={gallery} />

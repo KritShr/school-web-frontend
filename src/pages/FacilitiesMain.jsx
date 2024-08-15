@@ -83,7 +83,7 @@ const FacilitiesMain = () => {
 
       {isAuth && (
         <div className="mt-2 flex justify-end mb-1">
-          <button className="-bg--medium text-white px-3 py-1 rounded" onClick={handleCreate}>Create</button>
+          <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
         </div>
       )}
 
@@ -93,7 +93,7 @@ const FacilitiesMain = () => {
             <div className="p-2.5">
               {isAuth && (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
-                  <button className="-bg--medium text-white px-3 py-1 rounded" onClick={()=> handleDelete(facility._id)}>Delete</button>
+                  <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(facility._id)}>Delete</button>
                 </div>
               )}
               <FacilityBox

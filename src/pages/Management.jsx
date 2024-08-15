@@ -84,7 +84,7 @@ const Management = () => {
         <h2 className="text-5xl font-bold text-center mb-5"> Board of <span className="-text--medium">Directors</span> </h2>
           {isAuth && (
             <div className="mt-2 flex justify-end mb-1">
-              <button className="-bg--medium text-white px-3 py-1 rounded" onClick={handleCreate}>Create</button>
+              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
             </div>
           )}
           <div
@@ -100,7 +100,7 @@ const Management = () => {
             <div className="p-2.5">
               {isAuth && (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
-                  <button className="-bg--medium text-white px-3 py-1 rounded" onClick={()=> handleDelete(staff._id)}>Delete</button>
+                  <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(staff._id)}>Delete</button>
                 </div>
               )}
               <ManagementBox

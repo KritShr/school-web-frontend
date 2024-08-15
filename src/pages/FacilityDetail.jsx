@@ -41,7 +41,7 @@ const FacilityDetail = () => {
 
         {isAuth && (
             <div className="mt-2 flex justify-end mb-1">
-              <button className="-bg--medium text-white px-3 py-1 rounded" onClick={handleUpdate}>Update</button>
+              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleUpdate}>Update</button>
             </div>
         )}
 
