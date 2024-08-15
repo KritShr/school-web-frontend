@@ -7,7 +7,7 @@ import styles from "../css/page/Gallery3A.module.css";
 
 const Gallery3A = () => {
   const { type } = useParams();
-
+console.log();
   const limit = 9; // Number of cards to fetch
   const [galleries, setGalleries] = useState([]);
   const [skip, setSkip] = useState(0); // Starting point for fetching images
