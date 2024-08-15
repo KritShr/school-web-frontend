@@ -69,7 +69,7 @@ const LandingPage = () => {
             </p>
             <button 
               onClick={moveToAboutUs} 
-              className="-text--medium bg-blue-500 px-6 py-3 rounded-md hover:bg-blue-700"
+              className="-text--light bg-blue-500 px-6 py-3 font-bold rounded-md hover:bg-blue-700"
             >
               Learn More About Us
             </button>
@@ -82,7 +82,7 @@ const LandingPage = () => {
           {/** our mission */}
           <div className="flex gap-10">
             <div className="py-7 w-full justify-center rounded-md">
-              <h2  className="text-2xl leading-10 text-center font-semibold -text--text-default-default mb-3">OUR MISSION</h2>
+              <h2  className="text-2xl leading-10 text-center font-semibold mb-3">OUR MISSION</h2>
               <h3 className="pl-5 pr-5 text-xl">
                 To empower students from diverse backgrounds through affordable, quality education, fostering lifelong learning and personal growth.
               </h3>
@@ -90,7 +90,7 @@ const LandingPage = () => {
 
             {/** our vision */}
             <div className="py-7 w-full justify-center rounded-md">
-              <h2  className="text-2xl leading-10 text-center font-semibold -text--text-default-default mb-3">OUR VISION</h2>
+              <h2  className="text-2xl leading-10 text-center font-semibold mb-3">OUR VISION</h2>
               <h3 className="pl-5 pr-5 text-xl">
                 Empowering future leaders through innovative education, fostering creativity, critical thinking, and global citizenship.
               </h3>

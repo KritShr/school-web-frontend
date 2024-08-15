@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import styles from "../css/page/Contact.module.css";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Header = () => {
 
   return (
     <header className="!bg-white shadow-md">
+      <div className={styles.contact4}>
       <div className="!bg-white flex justify-between items-center px-5 py-4">
         {/* Logo Section */}
         <div
@@ -79,7 +81,7 @@ const Header = () => {
         <nav
           className={`${
             isMenuOpen ? 'block' : 'hidden'
-          } !bg-white wide:!bg-white wide:flex wide:items-center wide:gap-7 absolute wide:relative top-16 
+          } !bg-white wide:!bg-white wide:flex wide:items-center wide:gap-6 absolute wide:relative top-16 
             wide:top-auto right-5 wide:right-auto  
             shadow-lg wide:shadow-none p-5 wide:p-0 rounded-lg z-50
           `}
@@ -109,7 +111,7 @@ const Header = () => {
             }`}
             onClick={() => moveTo('/event')}
           >
-            News & Events
+            News
           </h3>
           <h3
             className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
@@ -117,7 +119,7 @@ const Header = () => {
             }`}
             onClick={() => moveTo('/management')}
           >
-            Management
+            Staff
           </h3>
           <h3
             className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
@@ -184,7 +186,7 @@ const Header = () => {
             }`}
             onClick={() => moveTo('/contact')}
           >
-            Contact Us
+            Contact
           </h3>
           <h3
             className={`mb-1 font-semibold text-2xl cursor-pointer hover:-text--medium ${
@@ -202,6 +204,7 @@ const Header = () => {
             onClick={() => moveTo('/login')}
           />
         </nav>
+      </div>
       </div>
     </header>
   );

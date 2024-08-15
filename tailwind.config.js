@@ -33,7 +33,7 @@ module.exports = {
       '--color-gray-500': 'rgba(255, 255, 255, 0.5)',
       '--color-silver': '#c4c4c4',
       '--color-black': '#000',
-      '--light': 'rgba(251, 255, 71, 0.7)',
+      '--light': 'rgba(251, 255, 71, 0.9)',
       '--color-midnightblue': '#010064',
       '--dark': '#085e63',
       '--third-template-colour': '#22343d',

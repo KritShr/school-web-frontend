@@ -2,6 +2,9 @@ import FacilityBox from "../components1/FacilityBox.jsx";
 import { useEffect, useState } from "react";
 import SearchInput from "../components1/SearchInput.jsx";
 import axiosInstance from "../utils/axios.js"
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 const FacilitiesMain = () => {
   const limit = 12; //가져올 카드 수
@@ -10,6 +13,8 @@ const FacilitiesMain = () => {
   const [hasMore, setHasMore] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const isAuth = localStorage.getItem('isAuth');
 
   useEffect(() => { //컴포넌트가 어마운트 될 때 한 번만 수행하도록 함
     fetchFacilities(skip, limit, loadMore);
@@ -49,6 +54,22 @@ const FacilitiesMain = () => {
     fetchFacilities(0, limit, loadMore, event.target.value);
   }
 
+  const handleDelete = async(facilityId)=>{
+    try {
+      await axiosInstance.delete(`/facilities/${facilityId}`);
+      setFacilities(facilities.filter(facility => facility._id !== facilityId));
+      toast.info('Delete Success!');
+    } catch (error) {
+      console.error(error)
+      toast.error('Delete Failed...');
+    }
+  }
+  const navigate = useNavigate();
+  const handleCreate = () => {
+    console.log(`move to Create Facility!`)
+    navigate('/facilities/upload');
+  }
+  console.log(facilities);
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white"> {/* 전체 화면을 채우도록 수정 */}
@@ -60,10 +81,21 @@ const FacilitiesMain = () => {
         />
       </div>
 
+      {isAuth && (
+        <div className="mt-2 flex justify-end mb-1">
+          <button className="-bg--medium text-white px-3 py-1 rounded" onClick={handleCreate}>Create</button>
+        </div>
+      )}
+
       <div className="max-w-screen-2xl mx-auto p-4"> {/* 중간에 정렬 */}
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
           {facilities.map(facility=>
             <div className="p-2.5">
+              {isAuth && (
+                <div className="mt-2 flex justify-left gap-2 mb-1"> 
+                  <button className="-bg--medium text-white px-3 py-1 rounded" onClick={()=> handleDelete(facility._id)}>Delete</button>
+                </div>
+              )}
               <FacilityBox
                 facility={facility} key={facility._id}
               />
