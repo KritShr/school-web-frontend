@@ -41,7 +41,7 @@ const FacilityDetail = () => {
         ))
         ) : (
         <p>No images available</p>
-        )}
+        )}facility
           </div>  
         </div>
         
