@@ -2,8 +2,10 @@ import { useState } from "react";
 import styles from "../css/page/Contact.module.css";
 import axiosInstance from "../utils/axios";
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const isAuth = localStorage.getItem('isAuth');
   const [contact, setContact] = useState({
     name:'',
     email:'',
@@ -31,6 +33,11 @@ const Contact = () => {
     } catch(err){
       console.error(err);
     }
+  }
+  const navigate = useNavigate();
+  const moveToContactList = () =>{
+    console.log('move to Contact List!')
+    navigate('/contactList')
   }
 
   return (
@@ -122,6 +129,11 @@ const Contact = () => {
             </div>
           </form>
         </div>
+        {isAuth && (
+            <div className="mt-2 flex justify-center mb-1">
+              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={moveToContactList}>Move to Contact List</button>
+            </div>
+        )}
       </div>         
     </div>
   );

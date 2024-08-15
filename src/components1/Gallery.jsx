@@ -36,7 +36,7 @@ const Gallery = ({ className = "" }) => {
       {galleries.map((gallery) => (
         <div key={gallery.id} className="w-1/3 h-48 lg:h-80" onClick={moveToGallery}>
           <img
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover cursor-pointer"
             alt={gallery.title}
             src={`${import.meta.env.VITE_SERVER_URL}/${gallery.images[0]}`}
           />
