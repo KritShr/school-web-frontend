@@ -222,8 +222,6 @@ function App() {
         <Route path="/facilities/:facilityId" element={<FacilityDetail />} />
         <Route path="/event" element={<Event />} />
         <Route path="/newses/:eventId" element={<EventDetail />} />
-        
-
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/management" element={<Management />} />
         <Route path="/root" element={<Root />} />
@@ -237,8 +235,6 @@ function App() {
         <Route path="/contactList" element={<ContactList />} />
         <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
         <Route path="/management/upload"element={<UploadManagement/>} />
-        
-
         
         <Route path="/root1" element={<Root1 />} />
         <Route path="/root2" element={<Root2 />} />

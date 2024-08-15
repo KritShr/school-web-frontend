@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 const Header = () => {
   const navigate = useNavigate();
+
   const currentPath = window.location.pathname;
   const moveTo = useCallback((path) => {
     navigate(path);
