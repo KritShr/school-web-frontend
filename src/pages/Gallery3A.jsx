@@ -55,11 +55,23 @@ const Gallery3A = () => {
     setSearchTerm(event.target.value);
     fetchGalleries(0, limit, false, type, event.target.value);
   };
-  
+  const getGalleryTitle = () => {
+    switch (type) {
+      case 'school':
+        return "School Activities";
+      case 'volunteer':
+        return "Volunteers";
+      default:
+        return "Gallery";
+    }
+  };
+
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white">
       <div className={styles.contact4}>
-        <h2>{type}</h2>
+      <h2 className="text-4xl font-bold text-center mt-8 mb-4">
+      {getGalleryTitle()}
+      </h2>
         <div className="justify-end flex">
           <SearchInput 
             setSearchTerm={setSearchTerm}
