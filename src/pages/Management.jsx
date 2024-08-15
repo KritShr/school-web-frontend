@@ -62,10 +62,6 @@ const Management = () => {
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  const handleUpdate = (staffId) => {
-    console.log(`Editing staff with id: ${staffId}`);
-  }
-
   const handleDelete = async(staffId) => {
     try {
       await axiosInstance.delete(`/staffs/${staffId}`);

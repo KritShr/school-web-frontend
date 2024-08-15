@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import axiosInstance from '../utils/axios';
 
-const FileUpload = ({ onImageChange, image, api }) => {
+const FileUpload = ({ onImageChange, image, CreateApi}) => {
     
     const handleDrop = async (files) => {
         let formData = new FormData();
@@ -12,15 +12,15 @@ const FileUpload = ({ onImageChange, image, api }) => {
         formData.append('image', files[0]);
 
         try {
-            const response = await axiosInstance.post(api, formData, config);
+            const response = await axiosInstance.post(CreateApi, formData, config);
             onImageChange(response.data.fileName); // Replace the image
         } catch (err) {
             console.error(err);
         }
     };
 
-    const handleDelete = () => {
-        onImageChange(null); // Clear the image
+    const handleDelete = ()=> {
+        onImageChange(null); 
     };
 
     return (
@@ -35,7 +35,7 @@ const FileUpload = ({ onImageChange, image, api }) => {
                     </section>
                 )}
             </Dropzone>
-            <div className='flex-grow h-[300px] border flex items-center justify-center rounded-md -bg--default-white -border--medium'>
+            <div className='flex-grow h-[300px] border flex items-center justify-center rounded-md -bg--default-white -border--medium overflow-x-scroll overflow-y-hidden '>
                 {image ? (
                     <div onClick={handleDelete}>
                         <img
@@ -55,7 +55,7 @@ const FileUpload = ({ onImageChange, image, api }) => {
 FileUpload.propTypes = {
     onImageChange: PropTypes.func.isRequired,
     image: PropTypes.string, // Now it handles a single image
-    api: PropTypes.string
+    CreateApi: PropTypes.string
 };
 
 export default FileUpload;

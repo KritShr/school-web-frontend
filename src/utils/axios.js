@@ -17,15 +17,15 @@ axiosInstance.interceptors.request.use(function(config){ //요청 전 다음 코
     return Promise.reject(err);
 })
 
-axiosInstance.interceptors.response.use((response)=>{ //토큰 만료 시 리로드
-    return response
-}, async function(err){
-    if(err.response.data === 'jwt expired'){
-        localStorage.setItem('isAuth', false);
-        const navigate = useNavigate();
-        navigate('/login');
+axiosInstance.interceptors.response.use((response) => {
+    return response;
+}, async function(err) {
+    if (err.response && err.response.data === 'TokenExpiredError') {
+        console.log('JWT expired. Updating isAuth and redirecting...');
+        localStorage.setItem('isAuth', 'false');
         toast.info('Login Again!');
+        window.location.href = '/login'; // Redirect to login page
     }
     return Promise.reject(err);
-})
+});
 export default axiosInstance;

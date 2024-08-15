@@ -36,6 +36,7 @@ import UploadManagement from "./pages/uploadManagement";
 import OtherSubHeader from './layout/SubHeader/OtherSubHeader'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import UploadGallery from "./pages/UploadGallery";
 
 const routeTitles = {
   '/gallery/:type': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
@@ -48,7 +49,8 @@ const routeTitles = {
   '/event': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
   '/newses/:eventId': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
 
-  '/management/upload': { mainTitle: 'Management', subTitle: 'Home, Management'},
+  '/management/upload': { mainTitle: 'Management Upload', subTitle: 'Home, Management Upload'},
+  '/gallery/upload': { mainTitle: 'Gallery Upload', subTitle: 'Home, Gallery Upload'},
 
   '/management' : { mainTitle: 'Management', subTitle: 'Home, Management' },
   '/facilities' : { mainTitle: 'Facilities', subTitle: 'Home, Facilities' },
@@ -178,6 +180,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/gallery/upload":
+        title = "";
+        metaDescription = "";
+        break;
       case "/login":
         title = "";
         metaDescription = "";
@@ -235,6 +241,7 @@ function App() {
         <Route path="/contactList" element={<ContactList />} />
         <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
         <Route path="/management/upload"element={<UploadManagement/>} />
+        <Route path="/gallery/upload" element={<UploadGallery/>} />
         
         <Route path="/root1" element={<Root1 />} />
         <Route path="/root2" element={<Root2 />} />

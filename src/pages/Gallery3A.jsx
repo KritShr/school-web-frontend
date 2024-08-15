@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../utils/axios";
 import SearchInput from "../components1/SearchInput";
 import GalleryBox from "../components1/GalleryBox";  // Import GalleryBox component
 import styles from "../css/page/Gallery3A.module.css";
+import { toast } from "react-toastify";
 
 const Gallery3A = () => {
   const { type } = useParams();
@@ -14,6 +15,8 @@ const Gallery3A = () => {
   const [hasMore, setHasMore] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const isAuth = localStorage.getItem('isAuth');
 
   useEffect(() => {
     // Fetch galleries when component mounts or when 'type' changes
@@ -55,6 +58,22 @@ const Gallery3A = () => {
     setSearchTerm(event.target.value);
     fetchGalleries(0, limit, false, type, event.target.value);
   };
+
+  const handleDelete = async(galleryId)=>{
+    try {
+      await axiosInstance.delete(`/galleries/${galleryId}`);
+      setGalleries(galleries.filter(gallery => gallery._id !== galleryId));
+      toast.info('Delete Success!');
+    } catch (error) {
+      console.error(error)
+      toast.error('Delete Failed...');
+    }
+  }
+  const navigate = useNavigate();
+  const handleCreate = () => {
+    console.log(`move to Create Gallery!`)
+    navigate('/gallery/upload');
+  }
   
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white">
@@ -67,12 +86,24 @@ const Gallery3A = () => {
             onSearch={handleSearchTerm}
           />
         </div>
+        {isAuth && (
+            <div className="mt-2 flex justify-end mb-1">
+              <button className="-bg--medium text-white px-3 py-1 rounded" onClick={handleCreate}>Create</button>
+            </div>
+        )}
           
         {/** Gallery list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5 py-10">
-          {galleries.map((gallery) => (
-            <GalleryBox key={gallery._id} gallery={gallery} />  // Render GalleryBox for each gallery
-          ))}
+          {galleries.map(gallery => 
+            <div>
+              {isAuth && (
+                <div className="mt-2 flex justify-left gap-2 mb-1"> 
+                  <button className="-bg--medium text-white px-3 py-1 rounded" onClick={()=> handleDelete(gallery._id)}>Delete</button>
+                </div>
+              )}
+            <GalleryBox key={gallery._id} gallery={gallery} />
+            </div>
+          )}
         </div>
 
         <div className="justify-end flex">

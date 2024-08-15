@@ -6,6 +6,13 @@ const dept = [
     {key: 4, value: 'Non-teaching Staff'}
 ]
 
+const type = [
+    {key: 'nothing', value: '-'},
+    {key: 'school', value: 'School Activities'},
+    {key: 'volunteer', value: 'Volunteers'}
+]
+
 export {
-    dept
+    dept,
+    type
 }
