@@ -12,7 +12,7 @@ const NepaliCalendar = () => {
     { date: '2081-04-05', event: 'New Year Celebration' },
     { date: '2024-08-15', event: 'Company Meeting' },
     { date: '2081-04-31', event: 'Festival' },
-    { date: '2081-06-25', event: 'Independence Day' },
+    { date: '2081-04-25', event: 'Independence Day' },
     { date: '2081-06-28', event: 'Team Outing' },
     { date: '2081-06-29', event: 'Company Picnic' },
     { date: '2081-06-30', event: 'Board Meeting' },
@@ -121,7 +121,7 @@ const NepaliCalendar = () => {
         <div className="mb-4 flex space-x-2">
           <div>
             <label className="block mb-2 text-sm font-semibold text-gray-700">
-              Select Year:
+              Year
             </label>
             <input
               type="number"
@@ -132,7 +132,7 @@ const NepaliCalendar = () => {
           </div>
           <div>
             <label className="block mb-2 text-sm font-semibold text-gray-700">
-              Select Month:
+              Month
             </label>
             <select
               value={bsMonth}
