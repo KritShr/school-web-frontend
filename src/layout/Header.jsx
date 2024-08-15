@@ -162,13 +162,13 @@ const Header = () => {
             >
               <h4
                 className="px-4 py-2 text-xl cursor-pointer hover:-text--medium"
-                onClick={() => moveTo('/gallery/activities')}
+                onClick={() => moveTo('/gallery/school')}
               >
                 Activities
               </h4>
               <h4
                 className="px-4 py-2 text-xl cursor-pointer hover:-text--medium"
-                onClick={() => moveTo('/gallery/volunteers')}
+                onClick={() => moveTo('/gallery/volunteer')}
               >
                 Volunteers
               </h4>

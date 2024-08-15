@@ -28,7 +28,7 @@ const Gallery = ({ className = "" }) => {
   
 
   const moveToGallery = () =>{
-    navigate('/gallery')
+    navigate('/gallery/activities')
   }
 
   return (
