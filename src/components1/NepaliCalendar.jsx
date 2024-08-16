@@ -254,7 +254,7 @@ const NepaliCalendar = () => {
                 return parseInt(year) === bsYear && parseInt(month) === bsMonth;
               })
               .map((filteredEvent, index) => (
-                <li key={index} className="font-sans p-2 border border-gray-300 rounded flex justify-between">
+                <li key={index} className="font-sans m-2 p-5 shadow-lg rounded flex justify-between  hover:-shadow--medium bg-opacity-25 duration-200 text-2xl  font-semibold">
                   <div className='flex px-3'>
                     <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
                   </div>

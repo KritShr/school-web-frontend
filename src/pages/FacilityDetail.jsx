@@ -1,17 +1,20 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "../css/page/Contact.module.css";
 import { useState, useEffect } from "react";
-import axiosInstance from "../utils/axios.js"
+import axiosInstance from "../utils/axios.js";
 
 const FacilityDetail = () => {
   const { facilityId } = useParams();
-  const [facility, setFacility] = useState([]); // Treat facility as an object
+  const [facility, setFacility] = useState([]);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const isAuth = localStorage.getItem('isAuth');
+
   useEffect(() => {
     async function fetchFacility() {
       try {
         const response = await axiosInstance.get(`/facilities/${facilityId}?type=single`);
-        setFacility(response.data[0]); // Directly set response.data
+        setFacility(response.data[0]);
       } catch (error) {
         console.error(error);
       }
@@ -21,18 +24,32 @@ const FacilityDetail = () => {
 
   const navigate = useNavigate();
   const handleUpdate = () => {
-    console.log('move to Update Facility!')
     navigate(`/facilities/update/${facilityId}`);
   }
 
+  const openPopup = (index) => {
+    setCurrentImageIndex(index);
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+  const goToPreviousImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? facility.images.length - 1 : prevIndex - 1));
+  };
+
+  const goToNextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex === facility.images.length - 1 ? 0 : prevIndex + 1));
+  };
+
   if (!facility) {
-    return (
-      <div>No Facility</div>
-    );
+    return <div>No Facility</div>;
   }
-  
+
   return (
-    <div className="px-40 py-10 sm:px-20 lg:px-72 -bg-white justify-center">
+    <div className="px-40 py-10 sm:px-20 lg:px-72 bg-white justify-center">
       <div className={styles.contact4}>
         {/** title */}
         <h3 className="text-4xl font-bold text-center">
@@ -40,24 +57,32 @@ const FacilityDetail = () => {
         </h3>
 
         {isAuth && (
-            <div className="mt-2 flex justify-end mb-1">
-              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleUpdate}>Update</button>
-            </div>
+          <div className="mt-2 flex justify-end mb-1">
+            <button className="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-green-500 duration-200 text-base" onClick={handleUpdate}>
+              Update
+            </button>
+          </div>
         )}
 
         {/** image */}
         <div className="justify-center py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {facility.images && facility.images.length > 0 ? (
               facility.images.map((image, index) => (
-                <img key={index} src={`${import.meta.env.VITE_SERVER_URL}/${image}`} alt={facility.title} />
+                <div key={index} className="relative w-full overflow-hidden shadow-lg cursor-pointer" onClick={() => openPopup(index)}>
+                  <img 
+                    src={`${import.meta.env.VITE_SERVER_URL}/${image}`} 
+                    alt={facility.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
+                  />
+                </div>
               ))
-              ) : (
-                <p>No images available</p>
+            ) : (
+              <p>No images available</p>
             )}
           </div>  
         </div>
-        
+
         {/** introduction */}
         <div>
           <h3 className="text-2xl leading-10 text-left font-medium" style={{ whiteSpace: 'pre-line' }}>
@@ -65,6 +90,19 @@ const FacilityDetail = () => {
           </h3>
         </div>
 
+        {/** Popup for full-screen image */}
+        {isPopupOpen && (
+          <div className="-bg--text-default-default bg-opacity-50 fixed inset-0 flex items-center justify-center z-50">
+            <button onClick={closePopup} className="absolute top-4 right-4 text-white text-4xl">&times;</button>
+            <button onClick={goToPreviousImage} className="absolute left-4 text-white text-5xl">&#8249;</button>
+            <img 
+              src={`${import.meta.env.VITE_SERVER_URL}/${facility.images[currentImageIndex]}`} 
+              alt={facility.title} 
+              className="max-w-[90%] max-h-[80%]"
+            />
+            <button onClick={goToNextImage} className="absolute right-4 text-white text-5xl">&#8250;</button>
+          </div>
+        )}
       </div>
     </div>  
   );
