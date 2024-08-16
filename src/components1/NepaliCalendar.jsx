@@ -9,9 +9,6 @@ import { toast } from 'react-toastify';
 const NepaliCalendar = () => {
   const [bsYear, setBsYear] = useState(0);
   const [bsMonth, setBsMonth] = useState(0);
-  const [adYear, setAdYear] = useState('');
-  const [adMonth, setAdMonth] = useState('')
-
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [startDayOfWeek, setStartDayOfWeek] = useState(0);
   const [today, setToday] = useState({ day: 0, month: 0, year: 0 });
@@ -32,8 +29,6 @@ const NepaliCalendar = () => {
 
   useEffect(() => {
     getTodayDate(); 
-    readyForFetchEvents();
-    fetchEvents(skip, limit, loadMore, adYear, adMonth)
   }, []);
 
   const readyForFetchEvents = async()=>{
@@ -153,7 +148,6 @@ const NepaliCalendar = () => {
   const checkForEvent = (day) => {
     const formattedDay = String(day).padStart(2, '0');
     const eventDate = `${bsYear}-${String(bsMonth).padStart(2, '0')}-${formattedDay}`;
-    
     return events.some((event) => event.date === eventDate);
   };
 
@@ -190,95 +184,90 @@ const NepaliCalendar = () => {
   };
 
   return (
-    <div className="ml-20 mr-20 bg-white  rounded-lg overflow-hidden flex space-x-4">
-  {/* Calendar Box */}
-  <div className="w-2/3 m-4 h-[32rem] bg-gray-50 max-h-[34rem] shadow-xl rounded-lg">
-    <div className="w-full rounded-lg -bg--medium flex items-center justify-between px-6 py-3 bg-gray-700">
-      <button onClick={handlePrevMonth} className="-text--default-white ">Previous</button>
-      <h2 className="-text--default-white font-semibold">{bsMonths[bsMonth - 1]} {bsYear}</h2>
-      <button onClick={handleNextMonth} className="-text--default-white">Next</button>
-    </div>
-    <div className="grid grid-cols-7 gap-2 p-4">
-      {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
-        <div
-          key={index}
-          className={`text-center font-semibold ${
-            index === 6 ? '-text--custom-red' : '' // Make Saturday red
-          }`}
-        >
-          {day}
-        </div>
-      ))}
-      {Array.from({ length: startDayOfWeek }).map((_, index) => (
-        <div key={index}></div>
-      ))}
-      {daysInMonth.map((day, index) => {
-        const isSaturday = (index + startDayOfWeek) % 7 === 6;
-        const isEvent = checkForEvent(day);
-        const isToday = today.day === day && today.month === bsMonth && today.year === bsYear;
+    <div className="ml-20 mr-20 bg-white rounded-lg overflow-hidden flex space-x-4">
+  
+      {/* Calendar Box */}
+      <div className="w-2/3 m-4 bg-gray-50 shadow-xl rounded-lg flex flex-col">
+        <div className="w-full rounded-lg -bg--medium flex items-center justify-between px-6 py-3">
+          <button onClick={handlePrevMonth} className="-text--default-white">Previous</button>
+          <h2 className="-text--default-white font-semibold">{bsMonths[bsMonth - 1]} {bsYear}</h2>
+          <button onClick={handleNextMonth} className="-text--default-white">Next</button>
 
-        return (
-          <div
-            key={index}
-            className={`text-center py-2 border cursor-pointer hover:-bg--medium hover:-text--default-white ${
-              isToday
-                ? '-bg--medium -text--default-white'
-                : isEvent && isSaturday
-                ? 'font-bold -border--custom-red -text--custom-red'
-                : isSaturday
-                ? '-border--custom-red -text--custom-red'
-                : isEvent
-                ? 'font-bold'
-                : ''
-            }`}
-            style={index >= 28 && daysInMonth.length < 31 ? { gridColumnStart: 'span 7' } : {}}
-          >
-            {day}
-          </div>
-        );
-      })}
-    </div>
-  </div>
-
-  {/* Events Box */}
-  <div className="w-1/3 p-3 shadow-xl rounded-lg bg-gray-50 max-h-[33rem] flex flex-col">
-    <h2 className="text-3xl font-bold m-5">Events</h2>
-    <div className=  "overflow-y-auto flex-grow max-h-[30rem]">
-      {isAuth && (
-        <div className="mt-2 flex justify-left gap-2 mb-1"> 
-          <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
         </div>
-      )}
-      <ul className="space-y-2">
-        {events
-          .filter(event => {
-            const [year, month] = event.date.split('-');
-            return parseInt(year) === bsYear && parseInt(month) === bsMonth;
-          })
-          .map((filteredEvent, index) => (
-            <li key={index} className="font-sans p-2 border border-gray-300 rounded flex justify-between">
-              <div className='flex px-3'>
-                <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
-              </div>
-                    
-              {isAuth && (
-                <div className="flex justify-right"> 
-                  <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(filteredEvent._id)}>Delete</button>
-                </div>
-              )}
-            </li>
+        <div className="grid grid-cols-7 gap-2 p-4 flex-grow">
+          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
+            <div
+              key={index}
+              className={`text-center font-semibold ${index === 6 ? '-text--custom-red' : ''}`}
+            >
+              {day}
+            </div>
           ))}
-      </ul>
-    </div>      
-
-  </div>
-  {isFormOpen && (
-    <EventForm onClose={() => setIsFormOpen(false)} onSave={handleSaveEvent} />
-  )}
-</div>
-
-
+          {Array.from({ length: startDayOfWeek }).map((_, index) => (
+            <div key={index}></div>
+          ))}
+          {daysInMonth.map((day, index) => {
+            const isSaturday = (index + startDayOfWeek) % 7 === 6;
+            const isEvent = checkForEvent(day);
+            const isToday = today.day === day && today.month === bsMonth && today.year === bsYear;
+  
+            return (
+              <div
+                key={index}
+                className={`text-center py-2 border cursor-pointer hover:-bg--medium hover:-text--default-white ${
+                  isToday
+                    ? '-bg--medium -text--default-white'
+                    : isEvent && isSaturday
+                    ? 'font-bold -border--custom-red -text--custom-red'
+                    : isSaturday
+                    ? '-border--custom-red -text--custom-red'
+                    : isEvent
+                    ? 'font-bold'
+                    : ''
+                }`}
+                style={{}}
+              >
+                {day}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+  
+      {/* Events Box */}
+      <div className="w-1/3 m-4 p-3 shadow-xl rounded-lg bg-gray-50 flex flex-col">
+        <h2 className="text-3xl font-bold m-5">Events</h2>
+        <div className="overflow-y-auto flex-grow max-h-[30rem]">
+          <ul className="space-y-2">
+            {events
+              .filter(event => {
+                const [year, month] = event.date.split('-');
+                return parseInt(year) === bsYear && parseInt(month) === bsMonth;
+              })
+              .map((filteredEvent, index) => (
+                <li key={index} className="font-sans p-2 border border-gray-300 rounded flex justify-between">
+                  <div className='flex px-3'>
+                    <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
+                  </div>
+                        
+                  {isAuth && (
+                    <div className="flex justify-right"> 
+                      <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(filteredEvent._id)}>Delete</button>
+                    </div>
+                  )}
+                </li>
+              ))}
+          </ul>
+          
+        </div>
+      </div>
+  
+      {isFormOpen && (
+        <EventForm onClose={() => setIsFormOpen(false)} onSave={handleSaveEvent} />
+      )}
+    </div>
   );
+  
 };
 
 export default NepaliCalendar;
