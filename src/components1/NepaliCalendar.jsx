@@ -12,6 +12,8 @@ const NepaliCalendar = () => {
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [startDayOfWeek, setStartDayOfWeek] = useState(0);
   const [today, setToday] = useState({ day: 0, month: 0, year: 0 });
+  const [adYear, setAdYear] = useState('');
+  const [adMonth, setAdMonth] = useState('')
 
   const [events, setEvents] = useState([])
   const limit = 32; //가져올 카드 수
@@ -29,6 +31,8 @@ const NepaliCalendar = () => {
 
   useEffect(() => {
     getTodayDate(); 
+    readyForFetchEvents();
+    fetchEvents(skip, limit, loadMore, adYear, adMonth)
   }, []);
 
   const readyForFetchEvents = async()=>{
@@ -238,6 +242,11 @@ const NepaliCalendar = () => {
       <div className="w-1/3 m-4 p-3 shadow-xl rounded-lg bg-gray-50 flex flex-col">
         <h2 className="text-3xl font-bold m-5">Events</h2>
         <div className="overflow-y-auto flex-grow max-h-[30rem]">
+          {isAuth && (
+            <div className="mt-2 flex justify-left gap-2 mb-1"> 
+              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
+            </div>
+          )}
           <ul className="space-y-2">
             {events
               .filter(event => {
