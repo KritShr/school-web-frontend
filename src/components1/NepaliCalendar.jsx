@@ -195,9 +195,9 @@ const NepaliCalendar = () => {
       </div>
   
       {/* Events Box */}
-      <div className="w-1/3 m-4 p-3 shadow-xl rounded-lg bg-gray-50  flex flex-col">
+      <div className="w-1/3 m-4 p-3 shadow-xl rounded-lg bg-gray-50 flex flex-col">
         <h2 className="text-3xl font-bold m-5">Events</h2>
-        <div className="overflow-y-auto  flex-grow">
+        <div className="overflow-y-auto flex-grow max-h-[30rem]">
           <ul className="space-y-2">
             {events.map((event, index) => (
               <li key={index} className="font-sans p-2 border border-gray-300 rounded">
