@@ -90,19 +90,39 @@ const FacilityDetail = () => {
           </h3>
         </div>
 
+        
         {/** Popup for full-screen image */}
-        {isPopupOpen && (
-          <div className="-bg--text-default-default bg-opacity-50 fixed inset-0 flex items-center justify-center z-50">
-            <button onClick={closePopup} className="absolute top-4 right-4 text-white text-4xl">&times;</button>
-            <button onClick={goToPreviousImage} className="absolute left-4 text-white text-5xl">&#8249;</button>
-            <img 
-              src={`${import.meta.env.VITE_SERVER_URL}/${facility.images[currentImageIndex]}`} 
-              alt={facility.title} 
-              className="max-w-[90%] max-h-[80%]"
-            />
-            <button onClick={goToNextImage} className="absolute right-4 text-white text-5xl">&#8250;</button>
-          </div>
-        )}
+{isPopupOpen && (
+  <div className="fixed inset-0 -bg--text-default-default bg-opacity-45 flex items-center justify-center z-50">
+    <button 
+      onClick={closePopup} 
+      className="absolute top-4 right-4 text-white"
+      style={{ fontSize: '5rem' }}  // Explicit font size
+    >
+      &times;
+    </button>
+    <button 
+      onClick={goToPreviousImage} 
+      className="absolute left-4 text-white"
+      style={{ fontSize: '8rem' }}  // Explicit font size
+    >
+      &#8249;
+    </button>
+    <img 
+      src={`${import.meta.env.VITE_SERVER_URL}/${facility.images[currentImageIndex]}`} 
+      alt={facility.title} 
+      className="max-w-[90%] max-h-[80%]"  // Reduced size
+    />
+    <button 
+      onClick={goToNextImage} 
+      className="absolute right-4 text-white"
+      style={{ fontSize: '8rem' }}  // Explicit font size
+    >
+      &#8250;
+    </button>
+  </div>
+)}
+
       </div>
     </div>  
   );
