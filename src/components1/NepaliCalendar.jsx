@@ -172,6 +172,26 @@ const NepaliCalendar = () => {
     }
   }
 
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const handleCreate = () => {
+    setIsFormOpen(true);
+  };
+
+  const handleSaveEvent = async (newEvent) => {
+    // Convert Nepali date to Gregorian before saving
+    const gregorianDate = await convertToGregorianDate(newEvent.date);
+    try {
+      const response = await axiosInstance.post('/events', {
+        ...newEvent,
+        date: gregorianDate,
+      });
+      setEvents([...events, response.data]);
+    } catch (error) {
+      console.error('Error saving event:', error);
+    }
+  };
+
   return (
     <div className="ml-20 mr-20 bg-white  rounded-lg overflow-hidden flex space-x-4">
   {/* Calendar Box */}
@@ -262,6 +282,9 @@ const NepaliCalendar = () => {
               
     </div>
   </div>
+  {isFormOpen && (
+    <EventForm onClose={() => setIsFormOpen(false)} onSave={handleSaveEvent} />
+  )}
 </div>
 
 
