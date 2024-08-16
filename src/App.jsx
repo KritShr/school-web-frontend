@@ -40,6 +40,7 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import UploadGallery from "./pages/UploadGallery";
 import UploadFacility from "./pages/UploadFacility";
+import UploadNews from "./pages/UploadNews";
 
 const routeTitles = {
   '/gallery/:type': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
@@ -53,12 +54,13 @@ const routeTitles = {
   '/payment': { mainTitle: 'Payment', subTitle: 'Home, Payment' },
   '/event': { mainTitle: 'News', subTitle: 'Home, News' },
   '/newses/:eventId': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
-
+  '/newses/upload': { mainTitle: 'News Upload', subTitle: 'Home, News Upload'},
+  '/newses/update/:newsId': { mainTitle: 'News Update', subTitle: 'Home, News Update'},
   '/management/upload': { mainTitle: 'Staff Upload', subTitle: 'Home, Staff Upload'},
   '/gallery/upload': { mainTitle: 'Gallery Upload', subTitle: 'Home, Gallery Upload'},
   '/facilities/upload': { mainTitle: 'Facility Upload', subTitle: 'Home, Facility Upload'},
   '/facilities/update/:facilitiesId': { mainTitle: 'Facility Update', subTitle: 'Home, Facility Update'},
-
+  '/facilities/upload': { mainTitle: 'Facility Upload', subTitle: 'Home, Facility Upload'},
 
   '/management' : { mainTitle: 'Staff', subTitle: 'Home, Staff' },
   '/facilities' : { mainTitle: 'Facility', subTitle: 'Home, Facility' },
@@ -145,6 +147,10 @@ function App() {
         metaDescription = "";
         break;
       case "/newses/:eventId":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/newses/upload":
         title = "";
         metaDescription = "";
         break;
@@ -239,7 +245,9 @@ function App() {
         <Route path="/facilities" element={<FacilitiesMain />} />
         <Route path="/facilities/:facilityId" element={<FacilityDetail />} />
         <Route path="/event" element={<Event />} />
-        <Route path="/newses/:eventId" element={<EventDetail />} />
+        <Route path="/newses/:newsId" element={<EventDetail />} />
+        <Route path="/newses/upload" element={<UploadNews/>} />
+        <Route path="/newses/update/:newsId" element={<UploadNews isUpdate={true}/>} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/management" element={<Management />} />
         <Route path="/root" element={<Root />} />

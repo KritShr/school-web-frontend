@@ -58,7 +58,7 @@ const Event = () => {
   const handleDelete = async(newsId)=>{
     try {
       await axiosInstance.delete(`/news/${newsId}`);
-      setNewses(news.filter(news => news._id !== newsId));
+      setNewses(newses.filter(news => news._id !== newsId));
       toast.info('Delete Success!');
     } catch (error) {
       console.error(error)
@@ -68,7 +68,7 @@ const Event = () => {
   const navigate = useNavigate();
   const handleCreate = () => {
     console.log(`move to Create Facility!`)
-    navigate('/news/upload');
+    navigate('/newses/upload');
   }
   console.log(newses);
   
@@ -82,16 +82,21 @@ const Event = () => {
           onSearch={handleSearchTerm}
         />
       </div>
+      {isAuth && (
+        <div className="mt-2 flex justify-end mb-1">
+          <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
+        </div>
+      )}
 
       <div className="max-w-screen-3xl mx-auto p-2">
         <div className="grid grid-cols-3 grid-rows-2 gap-1 sm:grid-cols-2 lg:grid-cols-3">
           {newses.map(news => (
             <div className="p-2.5" key={news._id}>
               {isAuth && (
-        <div className="mt-2 flex justify-left gap-2 mb-1"> 
-          <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(facility._id)}>Delete</button>
-        </div>
-      )}
+                <div className="mt-2 flex justify-left gap-2 mb-1"> 
+                  <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(news._id)}>Delete</button>
+                </div>
+              )}
               <EventBox news={news} />
             </div>
           ))}
