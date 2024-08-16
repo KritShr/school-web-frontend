@@ -2,6 +2,8 @@ import EventBox from "../components1/EventBox.jsx";
 import { useEffect, useState } from "react";
 import SearchInput from "../components1/SearchInput.jsx";
 import axiosInstance from "../utils/axios.js";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Event = () => {
   const limit = 6; // Number of cards to fetch per page
@@ -10,6 +12,8 @@ const Event = () => {
   const [totalPages, setTotalPages] = useState(0); // Total number of pages
   const [searchTerm, setSearchTerm] = useState("");
 
+  const isAuth = localStorage.getItem('isAuth');
+  
   useEffect(() => {
     fetchNewses(currentPage, limit, searchTerm);
   }, [currentPage, searchTerm]);
@@ -50,6 +54,23 @@ const Event = () => {
     setCurrentPage(1); // Reset to first page when searching
     setSearchTerm(event.target.value);
   };
+
+  const handleDelete = async(newsId)=>{
+    try {
+      await axiosInstance.delete(`/news/${newsId}`);
+      setNewses(news.filter(news => news._id !== newsId));
+      toast.info('Delete Success!');
+    } catch (error) {
+      console.error(error)
+      toast.error('Delete Failed...');
+    }
+  }
+  const navigate = useNavigate();
+  const handleCreate = () => {
+    console.log(`move to Create Facility!`)
+    navigate('/news/upload');
+  }
+  console.log(newses);
   
 
   return (
@@ -66,6 +87,11 @@ const Event = () => {
         <div className="grid grid-cols-3 grid-rows-2 gap-1 sm:grid-cols-2 lg:grid-cols-3">
           {newses.map(news => (
             <div className="p-2.5" key={news._id}>
+              {isAuth && (
+        <div className="mt-2 flex justify-left gap-2 mb-1"> 
+          <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(facility._id)}>Delete</button>
+        </div>
+      )}
               <EventBox news={news} />
             </div>
           ))}
