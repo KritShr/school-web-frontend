@@ -20,6 +20,8 @@ const NepaliCalendar = () => {
   const [hasMore, setHasMore] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
 
+  const isAuth = localStorage.getItem('isAuth');
+
   // Array for months in BS (Bikram Sambat)
   const bsMonths = [
     'Baisakh', 'Jestha', 'Ashad', 'Shrawan', 'Bhadra', 'Ashwin',
@@ -152,6 +154,17 @@ const NepaliCalendar = () => {
     
   };
 
+  const handleDelete = async(eventId)=>{
+    try {
+      await axiosInstance.delete(`/events/${eventId}`);
+      setEvents(events.filter(event => event._id !== eventId));
+      toast.info('Delete Success!');
+    } catch (error) {
+      console.error(error)
+      toast.error('Delete Failed...');
+    }
+  }
+
   return (
     <div className="p-4 bg-white rounded shadow-md flex space-x-8">
       {/* Calendar Section */}
@@ -202,19 +215,19 @@ const NepaliCalendar = () => {
           ))}
 
         {daysInMonth.map((day, index) => (
-        <div
-        key={index}
-        className={`p-2 border-r border-b relative text-center ${
-          today.day === day && today.month === bsMonth && today.year === bsYear
-            ? 'border-red-500 font-bold text-red-500 -bg--color'
-        : checkForEvent(day) // Bold the text if there’s an event
-        ? 'font-bold'
-        : ''
-    }`}
-  >
-    {day || ''}
-  </div>
-))}
+          <div
+            key={index}
+            className={`p-2 border-r border-b relative text-center ${
+              today.day === day && today.month === bsMonth && today.year === bsYear
+                ? 'border-red-500 font-bold text-red-500 -bg--color'
+            : checkForEvent(day) // Bold the text if there’s an event
+            ? 'font-bold'
+            : ''
+            }`}
+          >
+            {day || ''}
+          </div>
+        ))}
         </div>
       </div>
 
@@ -222,6 +235,11 @@ const NepaliCalendar = () => {
       <div className="flex-1 h-full">
         <h2 className="text-xl font-bold mb-4">Events</h2>
         <div className="max-h-[31rem] overflow-y-auto">
+          {isAuth && (
+            <div className="mt-2 flex justify-left gap-2 mb-1"> 
+              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleCreate}>Create</button>
+            </div>
+          )}
           <ul className="space-y-2">
             {events
               .filter(event => {
@@ -229,11 +247,27 @@ const NepaliCalendar = () => {
                 return parseInt(year) === bsYear && parseInt(month) === bsMonth;
               })
               .map((filteredEvent, index) => (
-                <li key={index} className="p-2 border border-gray-300 rounded">
-                  <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
+                <li key={index} className="p-2 border border-gray-300 rounded flex justify-between">
+                  <div className='flex px-3'>
+                    <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
+                  </div>
+                  
+                  {isAuth && (
+                    <div className="flex justify-right"> 
+                      <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(filteredEvent._id)}>Create</button>
+                    </div>
+                  )}
                 </li>
               ))}
           </ul>
+          
+            <button
+              className="-bg--color-silver text-white px-6 py-4 rounded-md hover:-bg--medium duration-200 text-2xl font-semibold  bottom-0 right-0 mb-4 mr-4"
+              onClick={moveTo}
+            >
+              More
+            </button> 
+              
         </div>
       </div>
     </div>
