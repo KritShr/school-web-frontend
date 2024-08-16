@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import axiosInstance from '../utils/axios';
+import {convertToGregorianDate} from '../utils/ConvertDate'
+import {convertToNepaliDate} from '../utils/ConvertDate'
+import EventForm from './EventForm';
+import { toast } from 'react-toastify';
+
 
 const NepaliCalendar = () => {
   const [bsYear, setBsYear] = useState(0);
@@ -6,22 +12,18 @@ const NepaliCalendar = () => {
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [startDayOfWeek, setStartDayOfWeek] = useState(0);
   const [today, setToday] = useState({ day: 0, month: 0, year: 0 });
+  const [adYear, setAdYear] = useState('');
+  const [adMonth, setAdMonth] = useState('')
 
-  const events = [
-    { date: '2081-04-05', event: 'New Year Celebration' },
-    { date: '2081-04-31', event: 'Festival' },
-    { date: '2081-04-25', event: 'Independence Day' },
-    { date: '2081-04-25', event: 'Independence Day' },
-    { date: '2081-04-25', event: 'Independence Day' },
-    { date: '2081-04-25', event: 'Independence Day' },
-    { date: '2081-04-25', event: 'Independence Day' },
+  const [events, setEvents] = useState([])
+  const limit = 32; //가져올 카드 수
+  const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
+  const [hasMore, setHasMore] = useState(false);
+  const [loadMore, setLoadMore] = useState(false);
 
+  const isAuth = localStorage.getItem('isAuth');
 
-
-    
-
-  ];
-
+  // Array for months in BS (Bikram Sambat)
   const bsMonths = [
     'Baisakh', 'Jestha', 'Ashad', 'Shrawan', 'Bhadra', 'Ashwin',
     'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitra'
@@ -29,7 +31,44 @@ const NepaliCalendar = () => {
 
   useEffect(() => {
     getTodayDate(); 
+    readyForFetchEvents();
+    fetchEvents(skip, limit, loadMore, adYear, adMonth)
   }, []);
+
+  const readyForFetchEvents = async()=>{
+    const adDate = await convertToGregorianDate(today.year+'-'+today.month+'-'+today.day)
+    console.log(adDate)
+    setAdYear(adDate.split('-')[0]);
+    setAdMonth(adDate.split('-')[1])
+  }
+
+  const fetchEvents = async (skip, limit, loadMore, year, month) => {
+    console.log(year, month)
+
+    const params = { skip, limit, year, month };
+    try {
+      const response = await axiosInstance.get('/events', { params });
+      const fetchedEvents = response.data.events;
+  
+      // Convert all event dates to Nepali dates before updating the state
+      const eventsWithNepaliDates = await Promise.all(
+        fetchedEvents.map(async (event) => {
+          const nepaliDate = await convertToNepaliDate(event.date || ''); // Handle potential undefined date
+          return { ...event, date: nepaliDate };
+        })
+      );
+  
+      if (loadMore) {
+        setEvents([...events, ...eventsWithNepaliDates]);
+      } else {
+        setEvents(eventsWithNepaliDates);
+      }
+      setHasMore(response.data.hasMore);
+      setLoadMore(false);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+    }
+  };
 
   useEffect(() => {
     if (bsYear && bsMonth) {
@@ -135,13 +174,14 @@ const NepaliCalendar = () => {
 
   const handleSaveEvent = async (newEvent) => {
     // Convert Nepali date to Gregorian before saving
-    const gregorianDate = await convertToGregorianDate(newEvent.date);
+    const gregorianDate = await convertToGregorianDate(newEvent.date || ''); // Handle potential undefined date
     try {
       const response = await axiosInstance.post('/events', {
-        ...newEvent,
+        name: newEvent.name,
         date: gregorianDate,
       });
       setEvents([...events, response.data]);
+      window.location.reload();
     } catch (error) {
       console.error('Error saving event:', error);
     }
@@ -202,13 +242,32 @@ const NepaliCalendar = () => {
       <div className="w-1/3 m-4 p-3 shadow-xl rounded-lg bg-gray-50 flex flex-col">
         <h2 className="text-3xl font-bold m-5">Events</h2>
         <div className="overflow-y-auto flex-grow max-h-[30rem]">
+          {isAuth && (
+            <div className="mt-2 flex justify-left gap-2 mb-1"> 
+              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
+            </div>
+          )}
           <ul className="space-y-2">
-            {events.map((event, index) => (
-              <li key={index} className="font-sans m-2 px-8 p-5 shadow-lg rounded text-left  hover:-shadow--medium bg-opacity-25 duration-200 text-2xl  font-semibold">
-                <strong>{event.date}</strong>: {event.event}
-              </li>
-            ))}
+            {events
+              .filter(event => {
+                const [year, month] = event.date.split('-');
+                return parseInt(year) === bsYear && parseInt(month) === bsMonth;
+              })
+              .map((filteredEvent, index) => (
+                <li key={index} className="font-sans m-2 p-5 shadow-lg rounded flex justify-between  hover:-shadow--medium bg-opacity-25 duration-200 text-2xl  font-semibold">
+                  <div className='flex px-3'>
+                    <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
+                  </div>
+                        
+                  {isAuth && (
+                    <div className="flex justify-right"> 
+                      <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(filteredEvent._id)}>Delete</button>
+                    </div>
+                  )}
+                </li>
+              ))}
           </ul>
+          
         </div>
       </div>
   
