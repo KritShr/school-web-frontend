@@ -49,6 +49,8 @@ module.exports = {
       '--color-blueviolet': '#9747ff',
       '--neutrals-n200': '#6c7470',
       '--color-seagreen': '#179457',
+      '--custom-red': '#FF0000', // Custom red color
+
     }
   },
   plugins: [

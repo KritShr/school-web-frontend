@@ -2,31 +2,27 @@ import React, { useState, useEffect } from 'react';
 
 const NepaliCalendar = () => {
   const [bsYear, setBsYear] = useState(0);
-  const [bsMonth, setBsMonth] = useState(0); // Initially set to 0
+  const [bsMonth, setBsMonth] = useState(0);
   const [daysInMonth, setDaysInMonth] = useState([]);
-  const [startDayOfWeek, setStartDayOfWeek] = useState(0); // Sunday = 0
-  const [today, setToday] = useState({ day: 0, month: 0, year: 0 }); // Store today's date
+  const [startDayOfWeek, setStartDayOfWeek] = useState(0);
+  const [today, setToday] = useState({ day: 0, month: 0, year: 0 });
 
-  // Sample events array
   const events = [
     { date: '2081-04-05', event: 'New Year Celebration' },
-    { date: '2024-08-15', event: 'Company Meeting' },
     { date: '2081-04-31', event: 'Festival' },
     { date: '2081-04-25', event: 'Independence Day' },
-    { date: '2081-06-28', event: 'Team Outing' },
-    { date: '2081-06-29', event: 'Company Picnic' },
-    { date: '2081-06-30', event: 'Board Meeting' },
-    { date: '2081-06-31', event: 'Community Service' },
+    { date: '2081-04-25', event: 'Independence Day' },
+    
+
   ];
 
-  // Array for months in BS (Bikram Sambat)
   const bsMonths = [
     'Baisakh', 'Jestha', 'Ashad', 'Shrawan', 'Bhadra', 'Ashwin',
     'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitra'
   ];
 
   useEffect(() => {
-    getTodayDate(); // Set the calendar to today's Nepali date on mount
+    getTodayDate(); 
   }, []);
 
   useEffect(() => {
@@ -56,8 +52,7 @@ const NepaliCalendar = () => {
     const month = date.getMonth();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    // Assume that some Nepali months have 32 days
-    const nepaliMonthDays = [31, 32, 31, 32, 31, 30, 29, 30, 29, 29, 30, 30]; // Example array for days in BS months
+    const nepaliMonthDays = [31, 32, 31, 32, 31, 30, 29, 30, 29, 29, 30, 30];
 
     const daysArray = [];
     for (let i = 1; i <= nepaliMonthDays[bsMonth - 1]; i++) {
@@ -68,14 +63,14 @@ const NepaliCalendar = () => {
 
   const calculateStartDayOfWeek = (adDate) => {
     const date = new Date(adDate);
-    const startDay = date.getDay(); // Sunday = 0, Monday = 1, ..., Saturday = 6
+    const startDay = date.getDay();
     setStartDayOfWeek(startDay);
   };
 
   const getTodayDate = () => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = today.getMonth() + 1; // JavaScript months are 0-indexed
+    const month = today.getMonth() + 1;
     const day = today.getDate();
 
     fetch(
@@ -91,108 +86,97 @@ const NepaliCalendar = () => {
       .catch(error => console.error('Error fetching today\'s BS date:', error));
   };
 
-  const handleMonthChange = (e) => {
-    setBsMonth(parseInt(e.target.value));
+  const handlePrevMonth = () => {
+    if (bsMonth > 1) {
+      setBsMonth(bsMonth - 1);
+    } else {
+      setBsYear(bsYear - 1);
+      setBsMonth(12);
+    }
   };
 
-  const handleYearChange = (e) => {
-    setBsYear(parseInt(e.target.value));
+  const handleNextMonth = () => {
+    if (bsMonth < 12) {
+      setBsMonth(bsMonth + 1);
+    } else {
+      setBsYear(bsYear + 1);
+      setBsMonth(1);
+    }
   };
 
   const checkForEvent = (day) => {
     const formattedDay = String(day).padStart(2, '0');
     const eventDate = `${bsYear}-${String(bsMonth).padStart(2, '0')}-${formattedDay}`;
-
-    const hasEvent = events.some((event) => event.date === eventDate);
-
-    if (hasEvent) {
-        console.log('Checking event for date:', eventDate);
-    }
-
-    return hasEvent;
-    
+    return events.some((event) => event.date === eventDate);
   };
 
   return (
-    <div className="p-4 bg-white rounded shadow-md flex space-x-8">
-      {/* Calendar Section */}
-      <div className="flex-1 flex-grow-2">
-        
-        <div className="mb-4 flex space-x-2">
-          <div>
-            <label className="block mb-2 text-sm font-semibold text-gray-700">
-              Year
-            </label>
-            <input
-              type="number"
-              value={bsYear}
-              onChange={handleYearChange}
-              className="p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
-            />
-          </div>
-          <div>
-            <label className="block mb-2 text-sm font-semibold text-gray-700">
-              Month
-            </label>
-            <select
-              value={bsMonth}
-              onChange={handleMonthChange}
-              className="p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
-            >
-              {bsMonths.map((month, index) => (
-                <option key={index} value={index + 1}>
-                  {month}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-7 gap-0.5 border-t border-l">
-          <div className="py-2 border-r border-b text-center font-semibold">Sun</div>
-          <div className="py-2 border-r border-b text-center font-semibold">Mon</div>
-          <div className="py-2 border-r border-b text-center font-semibold">Tue</div>
-          <div className="py-2 border-r border-b text-center font-semibold">Wed</div>
-          <div className="py-2 border-r border-b text-center font-semibold">Thu</div>
-          <div className="py-2 border-r border-b text-center font-semibold">Fri</div>
-          <div className="py-2 border-r border-b text-center font-semibold">Sat</div>
-
-          {/* Fill in the blank days at the start of the month */}
-          {Array.from({ length: startDayOfWeek }).map((_, index) => (
-            <div key={index} className="p-2 border-r border-b"></div>
-          ))}
-
-        {daysInMonth.map((day, index) => (
-        <div
-        key={index}
-        className={`p-2 border-r border-b relative text-center ${
-          today.day === day && today.month === bsMonth && today.year === bsYear
-            ? 'border-red-500 font-bold text-red-500 -bg--color'
-        : checkForEvent(day) // Bold the text if there’s an event
-        ? 'font-bold'
-        : ''
-    }`}
-  >
-    {day || ''}
-  </div>
-))}
-        </div>
-      </div>
-
-      {/* Events Section with Scrollable Area */}
-      <div className="flex-1 h-full">
-        <h2 className="text-xl font-bold mb-4">Events</h2>
-        <div className="max-h-[31rem] overflow-y-auto">
-          <ul className="space-y-2">
-            {events.map((event, index) => (
-              <li key={index} className="p-2 border border-gray-300 rounded">
-                <strong>{event.date}</strong>: {event.event}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    <div className="ml-20 mr-20 bg-white  rounded-lg overflow-hidden flex space-x-4">
+  {/* Calendar Box */}
+  <div className="w-2/3 m-4 h-[32rem] bg-gray-50 max-h-[34rem] shadow-xl rounded-lg">
+    <div className="w-full rounded-lg -bg--medium flex items-center justify-between px-6 py-3 bg-gray-700">
+      <button onClick={handlePrevMonth} className="-text--default-white ">Previous</button>
+      <h2 className="-text--default-white font-semibold">{bsMonths[bsMonth - 1]} {bsYear}</h2>
+      <button onClick={handleNextMonth} className="-text--default-white">Next</button>
     </div>
+    <div className="grid grid-cols-7 gap-2 p-4">
+      {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day, index) => (
+        <div
+          key={index}
+          className={`text-center font-semibold ${
+            index === 6 ? '-text--custom-red' : '' // Make Saturday red
+          }`}
+        >
+          {day}
+        </div>
+      ))}
+      {Array.from({ length: startDayOfWeek }).map((_, index) => (
+        <div key={index}></div>
+      ))}
+      {daysInMonth.map((day, index) => {
+        const isSaturday = (index + startDayOfWeek) % 7 === 6;
+        const isEvent = checkForEvent(day);
+        const isToday = today.day === day && today.month === bsMonth && today.year === bsYear;
+
+        return (
+          <div
+            key={index}
+            className={`text-center py-2 border cursor-pointer hover:-bg--medium hover:-text--default-white ${
+              isToday
+                ? '-bg--medium -text--default-white'
+                : isEvent && isSaturday
+                ? 'font-bold -border--custom-red -text--custom-red'
+                : isSaturday
+                ? '-border--custom-red -text--custom-red'
+                : isEvent
+                ? 'font-bold'
+                : ''
+            }`}
+            style={index >= 28 && daysInMonth.length < 31 ? { gridColumnStart: 'span 7' } : {}}
+          >
+            {day}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  {/* Events Box */}
+  <div className="w-1/3 p-3 shadow-xl rounded-lg bg-gray-50 max-h-[33rem] flex flex-col">
+    <h2 className="text-3xl font-bold m-5">Events</h2>
+    <div className=  "overflow-y-auto flex-grow max-h-[30rem]">
+    <ul className="space-y-2">
+      {events.map((event, index) => (
+        <li key={index} className="font-sans p-2 border border-gray-300 rounded">
+          <strong>{event.date}</strong>: {event.event}
+        </li>
+      ))}
+    </ul>
+    </div>
+  </div>
+</div>
+
+
   );
 };
 

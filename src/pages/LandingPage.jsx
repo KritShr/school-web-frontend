@@ -101,7 +101,7 @@ const LandingPage = () => {
         </div>
 
         {/** event calendar */}
-        <div className="px-10 py-20 -bg--color">
+        <div className="px-10 py-20 -bg--white">
           <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Event Calendar</h3>
             {/*<Calendar />*/}
             <NepaliCalendar />
