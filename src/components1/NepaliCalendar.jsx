@@ -13,6 +13,10 @@ const NepaliCalendar = () => {
     { date: '2081-04-25', event: 'Independence Day' },
     { date: '2081-04-25', event: 'Independence Day' },
     { date: '2081-04-25', event: 'Independence Day' },
+    { date: '2081-04-25', event: 'Independence Day' },
+    { date: '2081-04-25', event: 'Independence Day' },
+
+
 
     
 
@@ -200,7 +204,7 @@ const NepaliCalendar = () => {
         <div className="overflow-y-auto flex-grow max-h-[30rem]">
           <ul className="space-y-2">
             {events.map((event, index) => (
-              <li key={index} className="font-sans px-8 p-2 border border-gray-300 rounded text-left">
+              <li key={index} className="font-sans m-2 px-8 p-5 shadow-lg rounded text-left  hover:-shadow--medium bg-opacity-25 duration-200 text-2xl  font-semibold">
                 <strong>{event.date}</strong>: {event.event}
               </li>
             ))}
