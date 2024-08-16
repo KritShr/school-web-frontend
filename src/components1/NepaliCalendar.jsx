@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../utils/axios';
-import {convertToGregorianDate} from '../utils/ConvertDate'
-import {convertToNepaliDate} from '../utils/ConvertDate'
-
 
 const NepaliCalendar = () => {
   const [bsYear, setBsYear] = useState(0);
   const [bsMonth, setBsMonth] = useState(0);
-  const [adYear, setAdYear] = useState('');
-  const [adMonth, setAdMonth] = useState('')
-
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [startDayOfWeek, setStartDayOfWeek] = useState(0);
   const [today, setToday] = useState({ day: 0, month: 0, year: 0 });
 
-  const [events, setEvents] = useState([])
-  const limit = 5; //가져올 카드 수
-  const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
-  const [hasMore, setHasMore] = useState(false);
-  const [loadMore, setLoadMore] = useState(false);
+  const events = [
+    { date: '2081-04-05', event: 'New Year Celebration' },
+    { date: '2081-04-31', event: 'Festival' },
+    { date: '2081-04-25', event: 'Independence Day' },
+    { date: '2081-04-25', event: 'Independence Day' },
+    
 
-  const isAuth = localStorage.getItem('isAuth');
+  ];
 
-  // Array for months in BS (Bikram Sambat)
   const bsMonths = [
     'Baisakh', 'Jestha', 'Ashad', 'Shrawan', 'Bhadra', 'Ashwin',
     'Kartik', 'Mangsir', 'Poush', 'Magh', 'Falgun', 'Chaitra'
@@ -30,50 +23,7 @@ const NepaliCalendar = () => {
 
   useEffect(() => {
     getTodayDate(); 
-    readyForFetchEvents();
-    fetchEvents(skip, limit, loadMore, adYear, adMonth)
   }, []);
-
-  const readyForFetchEvents = async()=>{
-    const adDate = await convertToGregorianDate(today.year+'-'+today.month+'-'+today.day)
-    console.log(adDate)
-    setAdYear(adDate.split('-')[0]);
-    setAdMonth(adDate.split('-')[1])
-  }
-
-  const fetchEvents = async (skip, limit, loadMore, year, month) => {
-    console.log(year, month)
-
-    const params = { skip, limit, year, month };
-    try {
-      const response = await axiosInstance.get('/events', { params });
-      const fetchedEvents = response.data.events;
-  
-      // Convert all event dates to Nepali dates before updating the state
-      const eventsWithNepaliDates = await Promise.all(
-        fetchedEvents.map(async (event) => {
-          const nepaliDate = await convertToNepaliDate(event.date);
-          return { ...event, date: nepaliDate };
-        })
-      );
-  
-      if (loadMore) {
-        setEvents([...events, ...eventsWithNepaliDates]);
-      } else {
-        setEvents(eventsWithNepaliDates);
-      }
-      setHasMore(response.data.hasMore);
-      setLoadMore(false);
-    } catch (error) {
-      console.error('Error fetching events:', error);
-    }
-  };
-
-  const handleLoadMore = () =>{
-    fetchEvents(skip+limit, limit, true);  
-    setLoadMore(true);
-    setSkip(skip+limit);
-  }
 
   useEffect(() => {
     if (bsYear && bsMonth) {
@@ -157,25 +107,13 @@ const NepaliCalendar = () => {
   const checkForEvent = (day) => {
     const formattedDay = String(day).padStart(2, '0');
     const eventDate = `${bsYear}-${String(bsMonth).padStart(2, '0')}-${formattedDay}`;
-    
     return events.some((event) => event.date === eventDate);
   };
-
-  const handleDelete = async(eventId)=>{
-    try {
-      await axiosInstance.delete(`/events/${eventId}`);
-      setEvents(events.filter(event => event._id !== eventId));
-      toast.info('Delete Success!');
-    } catch (error) {
-      console.error(error)
-      toast.error('Delete Failed...');
-    }
-  }
 
   return (
     <div className="ml-20 mr-20 bg-white  rounded-lg overflow-hidden flex space-x-4">
   {/* Calendar Box */}
-  <div className="w-2/3 m-4 h-[32rem] bg-gray-50 max-h-[34rem] shadow-xl rounded-lg">
+  <div className="w-2/3 m-4 h-auto bg-gray-50  shadow-xl rounded-lg">
     <div className="w-full rounded-lg -bg--medium flex items-center justify-between px-6 py-3 bg-gray-700">
       <button onClick={handlePrevMonth} className="-text--default-white ">Previous</button>
       <h2 className="-text--default-white font-semibold">{bsMonths[bsMonth - 1]} {bsYear}</h2>
@@ -227,39 +165,13 @@ const NepaliCalendar = () => {
   <div className="w-1/3 p-3 shadow-xl rounded-lg bg-gray-50 max-h-[33rem] flex flex-col">
     <h2 className="text-3xl font-bold m-5">Events</h2>
     <div className=  "overflow-y-auto flex-grow max-h-[30rem]">
-          {isAuth && (
-            <div className="mt-2 flex justify-left gap-2 mb-1"> 
-              <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleCreate}>Create</button>
-            </div>
-          )}
     <ul className="space-y-2">
-      {events
-              .filter(event => {
-                const [year, month] = event.date.split('-');
-                return parseInt(year) === bsYear && parseInt(month) === bsMonth;
-              })
-              .map((filteredEvent, index) => (
-          <li key={index} className="font-sans p-2 border border-gray-300 rounded flex justify-between">
-                  <div className='flex px-3'>
-              <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
-                  </div>
-                  
-                  {isAuth && (
-                    <div className="flex justify-right"> 
-                      <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(filteredEvent._id)}>Create</button>
-                    </div>
-                  )}
-          </li>
-        ))}
+      {events.map((event, index) => (
+        <li key={index} className="font-sans p-2 border border-gray-300 rounded">
+          <strong>{event.date}</strong>: {event.event}
+        </li>
+      ))}
     </ul>
-          
-            <button
-              className="-bg--color-silver text-white px-6 py-4 rounded-md hover:-bg--medium duration-200 text-2xl font-semibold  bottom-0 right-0 mb-4 mr-4"
-              onClick={moveTo}
-            >
-              More
-            </button> 
-              
     </div>
   </div>
 </div>
