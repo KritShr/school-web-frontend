@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import axiosInstance from '../utils/axios';
+import {convertToGregorianDate} from '../utils/ConvertDate'
+import {convertToNepaliDate} from '../utils/ConvertDate'
+
 
 const NepaliCalendar = () => {
   const [bsYear, setBsYear] = useState(0);
   const [bsMonth, setBsMonth] = useState(0); // Initially set to 0
+  const [adYear, setAdYear] = useState('');
+  const [adMonth, setAdMonth] = useState('')
+
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [startDayOfWeek, setStartDayOfWeek] = useState(0); // Sunday = 0
   const [today, setToday] = useState({ day: 0, month: 0, year: 0 }); // Store today's date
 
-  // Sample events array
-  const events = [
-    { date: '2081-04-05', event: 'New Year Celebration' },
-    { date: '2024-08-15', event: 'Company Meeting' },
-    { date: '2081-04-31', event: 'Festival' },
-    { date: '2081-04-25', event: 'Independence Day' },
-    { date: '2081-06-28', event: 'Team Outing' },
-    { date: '2081-06-29', event: 'Company Picnic' },
-    { date: '2081-06-30', event: 'Board Meeting' },
-    { date: '2081-06-31', event: 'Community Service' },
-  ];
+  const [events, setEvents] = useState([])
+  const limit = 5; //가져올 카드 수
+  const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
+  const [hasMore, setHasMore] = useState(false);
+  const [loadMore, setLoadMore] = useState(false);
 
   // Array for months in BS (Bikram Sambat)
   const bsMonths = [
@@ -27,7 +28,50 @@ const NepaliCalendar = () => {
 
   useEffect(() => {
     getTodayDate(); // Set the calendar to today's Nepali date on mount
+    readyForFetchEvents();
+    fetchEvents(skip, limit, loadMore, adYear, adMonth)
   }, []);
+
+  const readyForFetchEvents = async()=>{
+    const adDate = await convertToGregorianDate(today.year+'-'+today.month+'-'+today.day)
+    console.log(adDate)
+    setAdYear(adDate.split('-')[0]);
+    setAdMonth(adDate.split('-')[1])
+  }
+
+  const fetchEvents = async (skip, limit, loadMore, year, month) => {
+    console.log(year, month)
+
+    const params = { skip, limit, year, month };
+    try {
+      const response = await axiosInstance.get('/events', { params });
+      const fetchedEvents = response.data.events;
+  
+      // Convert all event dates to Nepali dates before updating the state
+      const eventsWithNepaliDates = await Promise.all(
+        fetchedEvents.map(async (event) => {
+          const nepaliDate = await convertToNepaliDate(event.date);
+          return { ...event, date: nepaliDate };
+        })
+      );
+  
+      if (loadMore) {
+        setEvents([...events, ...eventsWithNepaliDates]);
+      } else {
+        setEvents(eventsWithNepaliDates);
+      }
+      setHasMore(response.data.hasMore);
+      setLoadMore(false);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+    }
+  };
+
+  const handleLoadMore = () =>{
+    fetchEvents(skip+limit, limit, true);  
+    setLoadMore(true);
+    setSkip(skip+limit);
+  }
 
   useEffect(() => {
     if (bsYear && bsMonth) {
@@ -104,11 +148,6 @@ const NepaliCalendar = () => {
     const eventDate = `${bsYear}-${String(bsMonth).padStart(2, '0')}-${formattedDay}`;
 
     const hasEvent = events.some((event) => event.date === eventDate);
-
-    if (hasEvent) {
-        console.log('Checking event for date:', eventDate);
-    }
-
     return hasEvent;
     
   };
@@ -184,11 +223,16 @@ const NepaliCalendar = () => {
         <h2 className="text-xl font-bold mb-4">Events</h2>
         <div className="max-h-[31rem] overflow-y-auto">
           <ul className="space-y-2">
-            {events.map((event, index) => (
-              <li key={index} className="p-2 border border-gray-300 rounded">
-                <strong>{event.date}</strong>: {event.event}
-              </li>
-            ))}
+            {events
+              .filter(event => {
+                const [year, month] = event.date.split('-');
+                return parseInt(year) === bsYear && parseInt(month) === bsMonth;
+              })
+              .map((filteredEvent, index) => (
+                <li key={index} className="p-2 border border-gray-300 rounded">
+                  <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
+                </li>
+              ))}
           </ul>
         </div>
       </div>
