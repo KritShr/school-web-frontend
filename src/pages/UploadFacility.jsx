@@ -38,6 +38,7 @@ const UploadFacility = ({isUpdate}) => {
     }
 
     const handleImages = (newImages) => {
+        console.log('handleImage', newImages)
         setFacility(prevState=>({
             ...prevState,
             images: newImages
