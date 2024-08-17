@@ -50,8 +50,14 @@ module.exports = {
       '--neutrals-n200': '#6c7470',
       '--color-seagreen': '#179457',
       '--custom-red': '#FF0000', // Custom red color
+      '--custom-yellow' : '#FFFF66',
+      '--transparent': 'rgba(0, 0, 0, 0.1)'
 
-    }
+
+    },
+    backgroundImage: {
+      '--custom': 'radial-gradient(circle, rgba(255, 255, 0, 0.6), rgba(255, 255, 0, 0.0))', // Center to edge gradient
+      },
   },
   plugins: [
     function ({ addUtilities }) {
