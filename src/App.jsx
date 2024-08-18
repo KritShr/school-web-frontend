@@ -54,7 +54,7 @@ const routeTitles = {
   '/contactList/:id': { mainTitle: 'Contact List', subTitle: 'Home, Contact List' },
   '/payment': { mainTitle: 'Payment', subTitle: 'Home, Payment' },
   '/event': { mainTitle: 'News', subTitle: 'Home, News' },
-  '/newses/:eventId': { mainTitle: 'News & Events', subTitle: 'Home, News & Events' },
+  '/newses/:eventId': { mainTitle: 'News', subTitle: 'Home, News' },
   '/newses/upload': { mainTitle: 'News Upload', subTitle: 'Home, News Upload'},
   '/newses/update/:newsId': { mainTitle: 'News Update', subTitle: 'Home, News Update'},
   '/management/upload': { mainTitle: 'Staff Upload', subTitle: 'Home, Staff Upload'},

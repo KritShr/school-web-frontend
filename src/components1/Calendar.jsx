@@ -13,7 +13,7 @@ const days = [
 const Calendar = () => {
   return (
     <div className="flex items-center justify-center py-8 px-4">
-      <div className="max-w-sm w-full shadow-lg grid-cols-2 sm:grid-cols-1">
+      <div className="max-w-sm w-full shadow-lg lg:grid-cols-2 sm:grid-cols-1">
         {/** Calendar */}
         <div className="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
           <div className="px-4 flex items-center justify-between">

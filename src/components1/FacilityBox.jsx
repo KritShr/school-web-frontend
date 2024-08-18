@@ -29,11 +29,11 @@ const FacilityBox = ({facility}) => {
 
       <div className="mt-6 flex justify-center"> {/* 부모 요소에 중앙 정렬 적용 */}
         <button 
-          className="-bg--color-silver text-2xl font-bold w-96 bg-black text-white px-4 py-2 items-center rounded-md 
+          className="-bg--color-silver text-2xl font-semibold w-96 bg-black text-white px-4 py-2 items-center rounded-md 
                     hover:-bg--medium duration-200" 
           onClick={() => moveToDetail(facility._id)}
         >
-          more
+          More
         </button>
       </div>
     </div>

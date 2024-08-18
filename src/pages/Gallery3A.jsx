@@ -3,8 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../utils/axios";
 import SearchInput from "../components1/SearchInput";
 import GalleryBox from "../components1/GalleryBox";  // Import GalleryBox component
-import styles from "../css/page/Gallery3A.module.css";
 import { toast } from "react-toastify";
+import styles from "../css/page/Contact.module.css";
 
 const Gallery3A = () => {
   const { type } = useParams();
@@ -122,7 +122,7 @@ const Gallery3A = () => {
         <div className="justify-end flex">
           {hasMore && (
             <button
-              className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base"
+              className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 font-semibold text-base"
               onClick={handleLoadMore}
             >
               More

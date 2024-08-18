@@ -3,6 +3,7 @@ import ManagementBox from "../components1/ManagementBox.jsx";
 import axiosInstance from "../utils/axios.js";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import styles from "../css/page/Contact.module.css";
 
 const Management = () => {
   const limit = 12; // 가져올 카드 수
@@ -80,8 +81,9 @@ const Management = () => {
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 bg-white">
+      <div  className={styles.contact4}>
       <div className="max-w-screen-xl mx-auto p-8">
-        <h2 className="text-5xl font-bold text-center mb-5"> Board of <span className="-text--medium">Directors</span> </h2>
+        <h2 className="text-5xl font-semibold text-center mb-5"> Board of <span className="-text--medium">Directors</span> </h2>
           {isAuth && (
             <div className="mt-2 flex justify-end mb-1">
               <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
@@ -111,7 +113,7 @@ const Management = () => {
           )}
         </div>
         
-      </div>
+      </div></div>
     </div>
   );
 };

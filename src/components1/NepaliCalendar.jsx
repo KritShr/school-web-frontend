@@ -188,14 +188,14 @@ const NepaliCalendar = () => {
   };
 
   return (
-    <div className="ml-20 mr-20 bg-white rounded-lg overflow-hidden flex space-x-4">
+    <div className="px-10 sm:px-4 lg:px-40 bg-white flex flex-col lg:flex-row">
   
       {/* Calendar Box */}
-      <div className="w-2/3 m-4 bg-gray-50 shadow-xl rounded-lg flex flex-col">
+      <div className="lg:w-2/3 bg-gray-50 shadow-xl rounded-lg flex flex-col ">
         <div className="w-full rounded-lg -bg--medium flex items-center justify-between px-6 py-3">
-          <button onClick={handlePrevMonth} className="-text--default-white">Previous</button>
+          <button onClick={handlePrevMonth} className="-text--default-white text-2xl hover:-text--light">Previous</button>
           <h2 className="-text--default-white font-semibold">{bsMonths[bsMonth - 1]} {bsYear}</h2>
-          <button onClick={handleNextMonth} className="-text--default-white">Next</button>
+          <button onClick={handleNextMonth} className="-text--default-white text-2xl hover:-text--light">Next</button>
 
         </div>
         <div className="grid grid-cols-7 gap-2 p-4 flex-grow">
@@ -218,7 +218,7 @@ const NepaliCalendar = () => {
             return (
               <div
                 key={index}
-                className={`text-center py-2 border cursor-pointer hover:-bg--medium hover:-text--default-white ${
+                className={`text-center py-2 cursor-pointer hover:-bg--medium hover:-text--default-white ${
                   isToday
                     ? '-bg--medium -text--default-white'
                     : isEvent && isSaturday
@@ -239,7 +239,7 @@ const NepaliCalendar = () => {
       </div>
   
       {/* Events Box */}
-      <div className="w-1/3 m-4 p-3 shadow-xl rounded-lg bg-gray-50 flex flex-col">
+      <div className="lg:w-1/3 p-3 shadow-xl rounded-lg bg-gray-50 flex flex-col">
         <h2 className="text-3xl font-bold m-5">Events</h2>
         <div className="overflow-y-auto flex-grow max-h-[30rem]">
           {isAuth && (
@@ -254,10 +254,9 @@ const NepaliCalendar = () => {
                 return parseInt(year) === bsYear && parseInt(month) === bsMonth;
               })
               .map((filteredEvent, index) => (
-                <li key={index} className="font-sans m-2 p-5 shadow-lg rounded flex justify-between  hover:-shadow--medium bg-opacity-25 duration-200 text-2xl  font-semibold">
-                  <div className='flex px-3'>
-                    <strong>{filteredEvent.date}</strong>: {filteredEvent.name}
-                  </div>
+                <li key={index} className="items-center justify-between py-7 px-10 w-full rounded-md -bg--default-white flex mb-3 shadow-xl hover:-shadow--medium">
+                  <h3 className='text-2xl font-medium'>{filteredEvent.name}</h3>
+                  <h4 className='text-xl'>{filteredEvent.date}</h4>
                         
                   {isAuth && (
                     <div className="flex justify-right"> 

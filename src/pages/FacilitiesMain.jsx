@@ -4,7 +4,7 @@ import SearchInput from "../components1/SearchInput.jsx";
 import axiosInstance from "../utils/axios.js"
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import styles from "../css/page/Contact.module.css";
 
 const FacilitiesMain = () => {
   const limit = 12; //가져올 카드 수
@@ -73,6 +73,7 @@ const FacilitiesMain = () => {
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white"> {/* 전체 화면을 채우도록 수정 */}
+    <div  className={styles.contact4}>
       <div className="justify-end flex">
         <SearchInput 
           setSearchTerm = {setSearchTerm}
@@ -104,14 +105,15 @@ const FacilitiesMain = () => {
         </div>
       </div>
 
-      <div className="justify-end flex">
-        <button
-            className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base"
+      <div className="justify-center flex">
+        {hasMore && (<button
+            className="-bg--color-silver text-2xl font-semibold bg-black text-white px-4 py-2 items-center rounded-md 
+                    hover:-bg--medium duration-200"
             onClick={handleLoadMore}
           >
           More
-        </button>
-      </div>
+        </button>)}
+      </div></div>
     </div>
   );
 };

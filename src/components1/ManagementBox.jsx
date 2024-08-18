@@ -18,7 +18,7 @@ const ManagementBox = ({staff}) => {
           <h1 className="p-3 text-lg font-semibold text-gray-800 -text--medium">
             {staff.name}
           </h1>
-          <h1 className="p-3 text-2xl font-extrabold text-gray-600">
+          <h1 className="p-3 text-2xl font-bold text-gray-600">
             {dept[staff.department-1]}
           </h1>
         </div>

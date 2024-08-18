@@ -4,6 +4,7 @@ import SearchInput from "../components1/SearchInput.jsx";
 import axiosInstance from "../utils/axios.js";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import styles from "../css/page/Contact.module.css";
 
 const Event = () => {
   const limit = 6; // Number of cards to fetch per page
@@ -73,6 +74,7 @@ const Event = () => {
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white">
+      <div  className={styles.contact4}>
       <div className="justify-end flex">
         <SearchInput 
           setSearchTerm={setSearchTerm}
@@ -107,10 +109,10 @@ const Event = () => {
             <button
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
-              className={`px-4 py-2 border border-gray-300 mx-1 rounded ${
+              className={`px-4 py-2 mx-1 rounded ${
                 currentPage === index + 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-white text-gray-700"
+                  ? "-bg--medium -text--default-white"
+                  : "-bg--color-silver -text--text-default-default"
               }`}
             >
               {index + 1}
@@ -118,7 +120,7 @@ const Event = () => {
           ))}
           
         </nav>
-      </div>
+      </div></div>
     </div>
   );
 };

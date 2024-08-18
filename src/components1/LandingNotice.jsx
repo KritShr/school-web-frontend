@@ -1,5 +1,6 @@
 import React from 'react'
 import NoticeItem from "../components1/NoticeItem.jsx";
+import styles from "../css/page/Contact.module.css";
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axios.js"
 import { useNavigate } from 'react-router-dom';
@@ -32,16 +33,9 @@ const LandingNotice = () => {
 
   return (
     <div className="px-10 sm:px-4 lg:px-40 -bg-white">
+      <div  className={styles.contact4}>
       {/** notice 목록 */}
       <div className="">
-        <div className="items-center justify-between py-7 px-10 w-full rounded-md -bg--default-white flex mb-3 shadow-xl hover:-shadow--medium hover:">
-          <h3 className="text-2xl font-medium">
-            This is Title
-          </h3>
-          <h4 className="text-xl">
-            0000-00-00
-          </h4>
-        </div>
         {notices.map(notice=>
           <NoticeItem
             notice={notice} key={notice._id}
@@ -59,6 +53,7 @@ const LandingNotice = () => {
           >
           More
         </button>
+      </div>
       </div>
     </div>
   );
