@@ -67,11 +67,9 @@ const Event = () => {
   }
   const navigate = useNavigate();
   const handleCreate = () => {
-    console.log(`move to Create Facility!`)
+    console.log(`move to Create News!`)
     navigate('/newses/upload');
-  }
-  console.log(newses);
-  
+  }  
 
   return (
     <div className="px-10 py-10 sm:px-4 lg:px-40 -bg-white">
