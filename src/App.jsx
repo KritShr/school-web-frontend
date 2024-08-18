@@ -60,7 +60,6 @@ const routeTitles = {
   '/gallery/upload': { mainTitle: 'Gallery Upload', subTitle: 'Home, Gallery Upload'},
   '/facilities/upload': { mainTitle: 'Facility Upload', subTitle: 'Home, Facility Upload'},
   '/facilities/update/:facilitiesId': { mainTitle: 'Facility Update', subTitle: 'Home, Facility Update'},
-  '/facilities/upload': { mainTitle: 'Facility Upload', subTitle: 'Home, Facility Upload'},
 
   '/management' : { mainTitle: 'Staff', subTitle: 'Home, Staff' },
   '/facilities' : { mainTitle: 'Facility', subTitle: 'Home, Facility' },
