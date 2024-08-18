@@ -41,6 +41,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import UploadGallery from "./pages/UploadGallery";
 import UploadFacility from "./pages/UploadFacility";
 import UploadNews from "./pages/UploadNews";
+import UploadNotice from "./pages/UploadNotice";
 
 const routeTitles = {
   '/gallery/:type': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
@@ -60,6 +61,8 @@ const routeTitles = {
   '/gallery/upload': { mainTitle: 'Gallery Upload', subTitle: 'Home, Gallery Upload'},
   '/facilities/upload': { mainTitle: 'Facility Upload', subTitle: 'Home, Facility Upload'},
   '/facilities/update/:facilitiesId': { mainTitle: 'Facility Update', subTitle: 'Home, Facility Update'},
+  '/notice/upload': { mainTitle: 'Notice Upload', subTitle: 'Home, Notice Upload'},
+  '/notice/update/:noticeId': { mainTitle: 'Notice Update', subTitle: 'Home, Notice Update'},
 
   '/management' : { mainTitle: 'Staff', subTitle: 'Home, Staff' },
   '/facilities' : { mainTitle: 'Facility', subTitle: 'Home, Facility' },
@@ -138,6 +141,10 @@ function App() {
         metaDescription = "";
         break;
       case "/facilities/upload":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/notice/upload":
         title = "";
         metaDescription = "";
         break;
@@ -265,6 +272,8 @@ function App() {
         <Route path="/gallery/upload" element={<UploadGallery/>} />
         <Route path="/facilities/upload" element={<UploadFacility isUpdate={false}/>} />
         <Route path="/facilities/update/:facilityId" element={<UploadFacility isUpdate={true}/>} />
+        <Route path="/notice/upload" element={<UploadNotice isUpdate={false}/>} />
+        <Route path="/notice/update/:noticeId" element={<UploadNotice isUpdate={true}/>} />
 
         <Route path="/root1" element={<Root1 />} />
         <Route path="/root2" element={<Root2 />} />
