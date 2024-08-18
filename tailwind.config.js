@@ -21,6 +21,10 @@ module.exports = {
     },
       
     colors: {
+      yellow: {
+        400: '#f6e05e',
+        600: '#d69e2e',
+      },
       '--default-white': '#fff',
       '--neutrals-n100': '#7b827e',
       '--text-default-default': '#1e1e1e',
@@ -52,11 +56,13 @@ module.exports = {
       '--custom-red': '#FF0000', // Custom red color
       '--custom-yellow' : '#FFFF66',
       '--transparent': 'rgba(0, 0, 0, 0.1)'
+      
 
 
     },
     backgroundImage: {
       '--custom': 'radial-gradient(circle, rgba(255, 255, 0, 0.6), rgba(255, 255, 0, 0.0))', // Center to edge gradient
+      'gradient-to-r' : 'linear-gradient(to right, var(--tw-gradient-stops))'
       },
   },
   plugins: [

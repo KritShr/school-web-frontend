@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useInView } from 'react-intersection-observer';  // Import hook
+import { useInView } from 'react-intersection-observer';
+import { motion } from "framer-motion";
+import 'animate.css';  // Import animate.css
 import styles from "../css/page/Contact.module.css";
 import NepaliCalendar from '../components1/NepaliCalendar';
 import LandingNotice from "../components1/LandingNotice";
@@ -28,7 +30,6 @@ const LandingPage = () => {
     navigate('/about-us');
   }
 
-  // Define the refs for interaction
   const { ref: missionRef, inView: missionInView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -54,11 +55,21 @@ const LandingPage = () => {
     threshold: 0.3, 
   });
 
+  const missionVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+  };
+
+  const visionVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+  };
+
   return (
     <div className="sm:px-0 lg:px-0">
       <div className={styles.contact4}>
-        {/** intro */}
-        <div className="relative w-full h-[600px] overflow-hidden">
+        {/* Intro */}
+        <div className="relative w-full h-[500px] overflow-hidden">
           <div 
             className="absolute inset-0 z-0 flex flex-col transition-transform duration-1000 ease-in-out"
             style={{
@@ -66,17 +77,17 @@ const LandingPage = () => {
             }}
           >
             {slides.map((slide, index) => (
-              <div key={index} className="relative w-full h-[600px]">
+              <div key={index} className="relative w-full h-[500px]">
                 <img 
                   key={index}
                   src={slide} 
                   alt={`Slide ${index + 1}`} 
-                  className="w-full h-[600px] object-cover"
+                  className="w-full h-[500px] object-cover"
                 />
                 <div 
                   className="absolute inset-0"
                   style={{
-                    background: "linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0))"
+                    background: "circle-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0))"
                   }}
                 ></div>
               </div>
@@ -99,8 +110,8 @@ const LandingPage = () => {
           </div>
         </div>
         
-        {/** mission & vision */}
-        <div className="px-10 py-20 items-center">
+        {/* Mission & Vision */}
+        <div className="px-10 py-20 lg:px-[280px] items-center">
           <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Creative education for practical life</h3>
           <div className="flex gap-2">
             <div 
@@ -143,38 +154,41 @@ const LandingPage = () => {
           </div>
         </div>
 
-        {/** event calendar */}
-        <div 
-          ref={calendarRef} 
-          className={`px-10 py-20 bg-white transform transition-opacity duration-1000 ${
-            calendarInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+
+        
+
+        {/* Event Calendar */}
+        <motion.div 
+          ref={calendarRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={calendarInView ? { opacity: 1, y: 0, transition: { duration: 1 } } : { opacity: 0, y: 20 }}
+          className="px-10 py-20 bg-white"
         >
-          <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Event Calendar</h3>
+          <h3 className="text-4xl text-center font-bold mb-16 -text--medium animate__animated animate__fadeInUp">Event Calendar</h3>
           <NepaliCalendar />
-        </div>
+        </motion.div>
 
-        {/** notice */}
-        <div 
-          ref={noticeRef} 
-          className={`px-10 py-20 transform transition-opacity duration-1000 ${
-            noticeInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+        {/* Notice */}
+        <motion.div 
+          ref={noticeRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={noticeInView ? { opacity: 1, y: 0, transition: { duration: 1 } } : { opacity: 0, y: 20 }}
+          className="px-10 py-20"
         >
-          <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Notice</h3>
+          <h3 className="text-4xl text-center font-bold mb-16 -text--medium animate__animated animate__fadeInUp">Notice</h3>
           <LandingNotice />
-        </div>
+        </motion.div>
 
-        {/** gallery */}
-        <div 
-          ref={galleryRef} 
-          className={`px-10 py-20 transform transition-opacity duration-1000 ${
-            galleryInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
+        {/* Gallery */}
+        <motion.div 
+          ref={galleryRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={galleryInView ? { opacity: 1, y: 0, transition: { duration: 1 } } : { opacity: 0, y: 20 }}
+          className="px-10 py-20"
         >
-          <h3 className="text-4xl text-center font-bold mb-16 -text--medium">Gallery</h3>
+          <h3 className="text-4xl text-center font-bold mb-16 -text--medium animate__animated animate__fadeInUp">Gallery</h3>
           <Gallery />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

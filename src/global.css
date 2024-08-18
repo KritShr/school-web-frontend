@@ -4,6 +4,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* global.css or styles.css */
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.animate-shadow {
+  animation: shadowPulse 2s infinite ease-in-out;
+}
+.bg-custom-circle {
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.6), rgba(255, 255, 0, 0));
+  border-radius: 50%; /* Ensures the shape is circular */
+  padding: 2rem; /* Adjust padding as needed to create space around the content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Centers the element horizontally */
+  max-width: fit-content; /* Ensures the width fits the content */
+  max-height: fit-content; /* Ensures the height fits the content */
+}
+
 
 
 body {

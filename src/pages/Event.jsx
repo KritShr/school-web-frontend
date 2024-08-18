@@ -36,8 +36,8 @@ const Event = () => {
       const pages = Math.ceil(totalItems / limit);
       setTotalPages(pages);
       console.log('Total Pages:', pages); // Debugging output
-      } catch (err) {
-        //console.error(err);
+    } catch (err) {
+      //console.error(err);
     }
   };
 
@@ -50,22 +50,22 @@ const Event = () => {
     });
   };
 
-
   const handleSearchTerm = (event) => {
     setCurrentPage(1); // Reset to first page when searching
     setSearchTerm(event.target.value);
   };
 
-  const handleDelete = async(newsId)=>{
+  const handleDelete = async (newsId) => {
     try {
       await axiosInstance.delete(`/news/${newsId}`);
       setNewses(newses.filter(news => news._id !== newsId));
       toast.info('Delete Success!');
     } catch (error) {
-      console.error(error)
+      console.error(error);
       toast.error('Delete Failed...');
     }
-  }
+  };
+
   const navigate = useNavigate();
   const handleCreate = () => {
     console.log(`move to Create News!`)
@@ -91,10 +91,10 @@ const Event = () => {
       <div className="max-w-screen-3xl mx-auto p-2">
         <div className="grid grid-cols-3 grid-rows-2 gap-1 sm:grid-cols-2 lg:grid-cols-3">
           {newses.map(news => (
-            <div className="p-2.5" key={news._id}>
+            <div className="p-2.5 transform transition-transform duration-200 hover:scale-105" key={news._id}>
               {isAuth && (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
-                  <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(news._id)}>Delete</button>
+                  <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={() => handleDelete(news._id)}>Delete</button>
                 </div>
               )}
               <EventBox news={news} />
@@ -118,7 +118,6 @@ const Event = () => {
               {index + 1}
             </button>
           ))}
-          
         </nav>
       </div></div>
     </div>
