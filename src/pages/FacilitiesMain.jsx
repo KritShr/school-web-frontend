@@ -85,7 +85,7 @@ const FacilitiesMain = () => {
         />
       </div>
 
-      {isAuth && (
+      {isAuth ==='true'&& (
         <div className="mt-2 flex justify-end mb-1">
           <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
         </div>
@@ -95,7 +95,7 @@ const FacilitiesMain = () => {
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
           {facilities.map(facility =>
             <div className="p-2.5 transform transition-transform duration-200 hover:scale-105" key={facility._id}>
-              {isAuth && (
+              {isAuth ==='true'&& (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
                   <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={() => handleDelete(facility._id)}>Delete</button>
                 </div>

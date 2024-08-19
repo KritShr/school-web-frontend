@@ -82,7 +82,7 @@ const Event = () => {
           onSearch={handleSearchTerm}
         />
       </div>
-      {isAuth && (
+      {isAuth ==='true'&& (
         <div className="mt-2 flex justify-end mb-1">
           <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
         </div>
@@ -92,7 +92,7 @@ const Event = () => {
         <div className="grid grid-cols-3 grid-rows-2 gap-1 sm:grid-cols-2 lg:grid-cols-3">
           {newses.map(news => (
             <div className="p-2.5 transform transition-transform duration-200 hover:scale-105" key={news._id}>
-              {isAuth && (
+              {isAuth ==='true'&& (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
                   <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={() => handleDelete(news._id)}>Delete</button>
                 </div>

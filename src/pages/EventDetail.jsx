@@ -58,7 +58,7 @@ const EventDetail = () => {
           {news.title}
         </h3>
 
-        {isAuth && (
+        {isAuth ==='true'&& (
           <div className="mt-2 flex justify-end mb-1">
             <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleUpdate}>
               Update

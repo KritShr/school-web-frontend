@@ -84,7 +84,7 @@ const Management = () => {
       <div  className={styles.contact4}>
       <div className="max-w-screen-xl mx-auto p-8">
         <h2 className="text-5xl font-semibold text-center mb-5"> Board of <span className="-text--medium">Directors</span> </h2>
-          {isAuth && (
+          {isAuth ==='true'&& (
             <div className="mt-2 flex justify-end mb-1">
               <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
             </div>
@@ -100,7 +100,7 @@ const Management = () => {
           {/* 여러 박스 배치*/}
           {staffs.map(staff=>
             <div className="p-2.5">
-              {isAuth && (
+              {isAuth ==='true'&& (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
                   <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(staff._id)}>Delete</button>
                 </div>

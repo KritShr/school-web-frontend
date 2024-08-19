@@ -80,7 +80,7 @@ const Notice1 = () => {
         />
       </div>
 
-      {isAuth && (
+      {isAuth ==='true'&& (
         <div className="mt-2 flex justify-end mb-1">
           <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
         </div>
@@ -91,7 +91,7 @@ const Notice1 = () => {
         {notices.map(notice=>
           <div className="flex">
             <NoticeItem notice={notice} key={notice._id} />
-            {isAuth && (
+            {isAuth ==='true'&& (
               <div className="flex justify-left gap-3">
                 <button className="-bg--color-silver px-4 py-2 mb-3 rounded-md hover:-bg--medium duration-200 text-base" onClick={() => handleDelete(notice._id)}>Delete</button>
               </div>
