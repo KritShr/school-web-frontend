@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../utils/axios';
-import {convertToGregorianDate} from '../utils/ConvertDate'
-import {convertToNepaliDate} from '../utils/ConvertDate'
+import axiosInstance from '../../../utils/axios';
+import {convertToGregorianDate} from '../../../utils/ConvertDate'
+import {convertToNepaliDate} from '../../../utils/ConvertDate'
 import EventForm from './EventForm';
 import { toast } from 'react-toastify';
 

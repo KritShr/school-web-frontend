@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import axiosInstance from "../utils/axios"
+import axiosInstance from "../../../utils/axios"
 import { useState, useEffect } from "react"
 import { useNavigate} from "react-router-dom";
 
-const Gallery = ({ className = "" }) => {
+const Gallery = ({}) => {
   const limit = 3;
   const [galleries, setGalleries] = useState([]);
 
@@ -24,8 +24,6 @@ const Gallery = ({ className = "" }) => {
       console.error(err);
     }
   }
-
-  
 
   const moveToGallery = () =>{
     navigate('/gallery/school')

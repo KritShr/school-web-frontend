@@ -3,17 +3,17 @@ import { useState, useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
 import { motion } from "framer-motion";
 import 'animate.css';  // Import animate.css
-import styles from "../css/page/Contact.module.css";
-import NepaliCalendar from '../components1/NepaliCalendar';
-import LandingNotice from "../components1/LandingNotice";
-import Gallery from "../components1/Gallery";
+import styles from "../../Contact.module.css";
+import NepaliCalendar from './Sections/NepaliCalendar';
+import LandingNotice from "./Sections/Notice";
+import Gallery from "./Sections/Gallery";
 
 const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    "../public/image-10@2x.png",
-    "../public/image-11@2x.png",
-    "../public/image-12@2x.png"
+    "/image-10@2x.png",
+    "/image-11@2x.png",
+    "/image-12@2x.png"
   ];
 
   useEffect(() => {
@@ -153,9 +153,6 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-
-
-        
 
         {/* Event Calendar */}
         <motion.div 
