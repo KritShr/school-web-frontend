@@ -24,7 +24,7 @@ const EventBox = ({news}) => {
       <div className="flex justify-center mt-4">
         <div className="relative w-full h-96"> {/* 4:3 비율 (2배 크기) */}
           <img 
-            src={`${import.process.env.VITE_SERVER_URL}/${news.images[0]}`}  // public 폴더의 이미지 파일 경로
+            src={`${process.env.VITE_SERVER_URL}/${news.images[0]}`}  // public 폴더의 이미지 파일 경로
             alt={news.title} 
             className="w-full h-full object-cover" 
           />
