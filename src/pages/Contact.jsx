@@ -45,7 +45,7 @@ const Contact = () => {
       <div className={styles.contact4} >
         {/** find us */}
         <div className="flex gap-0">
-          <div className="px-10 py-4 w-full h-539px lg:w-1/3 p-2 min-h-96 justify-center items-center -bg--color rounded-md">
+          <div className="px-10 py-4 w-full h-539px lg:w-1/3 p-2 min-h-96 justify-center items-center -bg--color-silver rounded-md">
             <h3 className="py-10 font-bold text-3xl">CONTACT INFO</h3>
             <h3 className="text-lg text-left">
               You can always reach us via following contact details. We will give our best to reach you as possible.
@@ -129,7 +129,7 @@ const Contact = () => {
             </div>
           </form>
         </div>
-        {isAuth && (
+        {isAuth ==='true'&& (
             <div className="mt-2 flex justify-center mb-1">
               <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={moveToContactList}>Move to Contact List</button>
             </div>

@@ -1,11 +1,11 @@
 import React from 'react'
-import NoticeItem from "../components1/NoticeItem.jsx";
-import styles from "../css/page/Contact.module.css";
+import NoticeItem from "../../../components1/NoticeItem.jsx";
+
 import { useEffect, useState } from "react";
-import axiosInstance from "../utils/axios.js"
+import axiosInstance from "../../../utils/axios.js"
 import { useNavigate } from 'react-router-dom';
 
-const LandingNotice = () => {
+const Notice = () => {
   const limit = 3; //가져올 카드 수
   const [notices, setNotices] = useState([]);
 
@@ -33,7 +33,7 @@ const LandingNotice = () => {
 
   return (
     <div className="px-10 sm:px-4 lg:px-40 -bg-white">
-      <div  className={styles.contact4}>
+
       {/** notice 목록 */}
       <div className="">
         {notices.map(notice=>
@@ -54,9 +54,9 @@ const LandingNotice = () => {
           More
         </button>
       </div>
-      </div>
+
     </div>
   );
 }
 
-export default LandingNotice
+export default Notice

@@ -99,7 +99,7 @@ const Gallery3A = () => {
             onSearch={handleSearchTerm}
           />
         </div>
-        {isAuth && (
+        {isAuth ==='true'&& (
             <div className="mt-2 flex justify-end mb-1">
               <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
             </div>
@@ -109,7 +109,7 @@ const Gallery3A = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5 py-10">
           {galleries.map(gallery => 
             <div>
-              {isAuth && (
+              {isAuth ==='true'&& (
                 <div className="mt-2 flex justify-left gap-2 mb-1"> 
                   <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(gallery._id)}>Delete</button>
                 </div>

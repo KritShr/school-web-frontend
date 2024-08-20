@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../utils/axios';
-import {convertToGregorianDate} from '../utils/ConvertDate'
-import {convertToNepaliDate} from '../utils/ConvertDate'
+import axiosInstance from '../../../utils/axios';
+import {convertToGregorianDate} from '../../../utils/ConvertDate'
+import {convertToNepaliDate} from '../../../utils/ConvertDate'
 import EventForm from './EventForm';
 import { toast } from 'react-toastify';
 
@@ -21,7 +21,7 @@ const NepaliCalendar = () => {
   const [hasMore, setHasMore] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
 
-  const isAuth = localStorage.getItem('isAuth');
+  const isAuth = localStorage.getItem('isAuth')
 
   // Array for months in BS (Bikram Sambat)
   const bsMonths = [
@@ -34,6 +34,10 @@ const NepaliCalendar = () => {
     readyForFetchEvents();
     fetchEvents(skip, limit, loadMore, adYear, adMonth)
   }, []);
+
+  useEffect(()=>{
+
+  })
 
   const readyForFetchEvents = async()=>{
     const adDate = await convertToGregorianDate(today.year+'-'+today.month+'-'+today.day)
@@ -242,7 +246,7 @@ const NepaliCalendar = () => {
       <div className="lg:w-1/3 p-3 shadow-xl rounded-lg bg-gray-50 flex flex-col">
         <h2 className="text-3xl font-bold m-5">Events</h2>
         <div className="overflow-y-auto flex-grow max-h-[30rem]">
-          {isAuth && (
+          {isAuth==='true' && (
             <div className="mt-2 flex justify-left gap-2 mb-1"> 
               <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={handleCreate}>Create</button>
             </div>
@@ -258,7 +262,7 @@ const NepaliCalendar = () => {
                   <h3 className='text-2xl font-medium'>{filteredEvent.name}</h3>
                   <h4 className='text-xl'>{filteredEvent.date}</h4>
                         
-                  {isAuth && (
+                  {isAuth==='true' && (
                     <div className="flex justify-right"> 
                       <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={()=> handleDelete(filteredEvent._id)}>Delete</button>
                     </div>
