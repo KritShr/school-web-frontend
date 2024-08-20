@@ -9,7 +9,7 @@ const ManagementBox = ({staff}) => {
       <div className="w-60 h-[430px] p-3 bg-white rounded-lg shadow-xl flex-shrink-0 transform transition-transform hover:scale-105">
         <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-md">
           <img
-            src={`${import.meta.env.VITE_SERVER_URL}/${staff.image}`}  // public 폴더의 이미지 파일 경로
+            src={`${process.env.VITE_SERVER_URL}/${staff.image}`}  // public 폴더의 이미지 파일 경로
             alt={staff.title} 
             className="absolute inset-0 w-full h-full object-cover"
           />
