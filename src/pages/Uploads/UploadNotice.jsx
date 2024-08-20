@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import DocsUpload from '../components1/DocsUpload';
-import axiosInstance from '../utils/axios'
+import DocsUpload from '../../components1/DocsUpload';
+import axiosInstance from '../../utils/axios'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, useParams } from 'react-router-dom';

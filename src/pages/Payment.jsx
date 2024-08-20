@@ -1,4 +1,4 @@
-import GroupComponent from "../components/GroupComponent";
+//import GroupComponent from "../components/GroupComponent";
 import styles from "../css/page/Management.module.css";
 import styles_c from "../css/page/Contact.module.css";
 

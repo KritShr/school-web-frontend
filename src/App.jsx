@@ -8,40 +8,35 @@ import {
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import FacilitiesMain from "./pages/FacilitiesMain";
-import FacilityDetail from "./pages/FacilityDetail";
+import FacilityDetail from "./pages/Details/FacilityDetail";
 import Event from "./pages/Event";
-import EventDetail from "./pages/EventDetail";
+import EventDetail from "./pages/Details/EventDetail";
 
-
-import AboutUs from "./pages/AboutUs";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import Management from "./pages/Management";
-import Root from "./pages/Root";
-import Notice1 from "./pages/Notice1";
-import NoticeDetail from "./pages/NoticeDetail";
 
-import Contact from "./pages/Contact";
-import ContactList from "./pages/ContactList";
-import ContactListDetail from "./pages/ContactListDetail";
+import Notice1 from "./pages/Notice1";
+import NoticeDetail from "./pages/Details/NoticeDetail";
+
+import Contact from "./pages/Contact/Contact";
+import ContactList from "./pages/Contact/ContactList";
+import ContactListDetail from "./pages/Contact/ContactListDetail";
 import Payment from "./pages/Payment";
 
 import Gallery3A from "./pages/Gallery3A";
-import GalleryDetail from "./pages/GalleryDetail";
+import GalleryDetail from "./pages/Details/GalleryDetail";
 
 import LoginPage from "./pages/LoginPage";
-import Root1 from "./pages/Root1";
-import Root2 from "./pages/Root2";
-import Root11 from "./pages/Root11";
-import Root3 from "./pages/Root3";
 import Footer from './layout/Footer'
 import Header from './layout/Header'
-import UploadManagement from "./pages/uploadManagement";
+import UploadManagement from "./pages/Uploads/UploadManagement";
 import OtherSubHeader from './layout/SubHeader/OtherSubHeader'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import UploadGallery from "./pages/UploadGallery";
-import UploadFacility from "./pages/UploadFacility";
-import UploadNews from "./pages/UploadNews";
-import UploadNotice from "./pages/UploadNotice";
+import UploadGallery from "./pages/Uploads/UploadGallery";
+import UploadFacility from "./pages/Uploads/UploadFacility";
+import UploadNews from "./pages/Uploads/UploadNews";
+import UploadNotice from "./pages/Uploads/UploadNotice";
 
 const routeTitles = {
   '/gallery/:type': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
@@ -172,10 +167,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/root":
-        title = "";
-        metaDescription = "";
-        break;
       case "/notice":
         title = "";
         metaDescription = "";
@@ -212,22 +203,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/root1":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/root2":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/root3":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/root4":
-        title = "";
-        metaDescription = "";
-        break;
+        
     }
 
     if (title) {
@@ -256,7 +232,6 @@ function App() {
         <Route path="/newses/update/:newsId" element={<UploadNews isUpdate={true}/>} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/management" element={<Management />} />
-        <Route path="/root" element={<Root />} />
         <Route path="/notice" element={<Notice1 />} />
         <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
@@ -275,10 +250,6 @@ function App() {
         <Route path="/notice/upload" element={<UploadNotice isUpdate={false}/>} />
         <Route path="/notice/update/:noticeId" element={<UploadNotice isUpdate={true}/>} />
 
-        <Route path="/root1" element={<Root1 />} />
-        <Route path="/root2" element={<Root2 />} />
-        <Route path="/root3" element={<Root11 />} />
-        <Route path="/root4" element={<Root3 />} />
       </Route>
       
     </Routes>

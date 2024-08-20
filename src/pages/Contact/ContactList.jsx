@@ -1,8 +1,8 @@
-import SearchInput from "../components1/SearchInput.jsx";
-import ContactItem from "../components1/ContactItem.jsx";
+import SearchInput from "../../components1/SearchInput.jsx";
+import ContactItem from "../../components1/ContactItem.jsx";
 import { useEffect, useState } from "react";
-import axiosInstance from "../utils/axios.js"
-import styles from "../css/page/Contact.module.css";
+import axiosInstance from "../../utils/axios.js"
+import styles from "../../Contact.module.css";
 import { toast } from 'react-toastify';
 
 const ContactList = () => {

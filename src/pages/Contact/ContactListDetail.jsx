@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import styles from "../css/page/Contact.module.css";
+import styles from "../../Contact.module.css";
 import { useEffect, useState } from "react";
-import axiosInstance from "../utils/axios.js"
+import axiosInstance from "../../utils/axios.js"
 
 const ContactListDetail = () => {
   const {contactListId} = useParams();

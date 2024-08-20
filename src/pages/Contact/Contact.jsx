@@ -1,6 +1,6 @@
 import { useState } from "react";
-import styles from "../css/page/Contact.module.css";
-import axiosInstance from "../utils/axios";
+import styles from "../../Contact.module.css";
+import axiosInstance from "../../utils/axios";
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 

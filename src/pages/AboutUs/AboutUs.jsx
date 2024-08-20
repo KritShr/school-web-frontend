@@ -1,4 +1,4 @@
-import styles from "../css/page/Contact.module.css";
+import styles from "../../Contact.module.css";
 import 'animate.css';  // Import animate.css
 import { motion } from "framer-motion";  // Import framer-motion
 
