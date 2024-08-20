@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import DocsUpload from '../../components1/DocsUpload';
+import DocsUpload from './File/DocsUpload';
 import axiosInstance from '../../utils/axios'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

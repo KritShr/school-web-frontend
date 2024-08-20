@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import FileUpload from '../../components1/FileUpload'
+import FileUpload from './File/FileUpload'
 import axiosInstance from '../../utils/axios'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
