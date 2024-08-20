@@ -47,7 +47,7 @@ const Header = () => {
             className="h-16 w-16"
             loading="lazy"
             alt="Logo"
-            src="/image-3@2x.png"
+            src="/CLA@logo.png"
           />
           <h2 className="!bg-white whitespace-nowrap font-bold text-2xl lg:text-4xl text-gray-800">
             Creative Learners' Academy

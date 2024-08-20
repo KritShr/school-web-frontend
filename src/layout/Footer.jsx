@@ -19,7 +19,7 @@ const Footer = () => {
             className="size-56 mb-5"
             loading="lazy"
             alt=""
-            src="/tittle@2x.png"
+            src="/CLA@logo.png"
           />
           <h3 className="-text--color-darkslategray-100 text-4xl font-semibold">Creative <br/>Learners'<br/>Academy</h3>
         </div>
@@ -63,7 +63,7 @@ export default Footer;
             className={styles.tittleIcon}
             loading="lazy"
             alt=""
-            src="/tittle@2x.png"
+            src="/CLA@logo.png"
           />
 //           <div className={styles.academy} style={academyStyle}>
 //             <h2 className={styles.creativeLearnersAcademyContainer}>
