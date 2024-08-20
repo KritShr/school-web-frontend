@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "../css/page/Contact.module.css";
 
+
 const Event = () => {
   const limit = 6; // Number of cards to fetch per page
   const [newses, setNewses] = useState([]);
@@ -28,7 +29,8 @@ const Event = () => {
     };
     try {
       const response = await axiosInstance.get('/news', { params });
-      console.log('API Response:', response.data);
+      //console.log('API Response:', response.data);
+
 
       setNewses(response.data.newses);
       // Estimating total pages based on `hasMore` field
