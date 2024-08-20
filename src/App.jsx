@@ -7,15 +7,15 @@ import {
   useLocation,
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import FacilitiesMain from "./pages/FacilitiesMain";
+import FacilitiesMain from "./pages/Facility/FacilitiesMain";
 import FacilityDetail from "./pages/Details/FacilityDetail";
-import Event from "./pages/Event";
+import Event from "./pages/News/Event";
 import EventDetail from "./pages/Details/EventDetail";
 
 import AboutUs from "./pages/AboutUs/AboutUs";
-import Management from "./pages/Management";
+import Management from "./pages/Staff/Management";
 
-import Notice1 from "./pages/Notice1";
+import Notice1 from "./pages/Notice/Notice1";
 import NoticeDetail from "./pages/Details/NoticeDetail";
 
 import Contact from "./pages/Contact/Contact";
@@ -23,14 +23,15 @@ import ContactList from "./pages/Contact/ContactList";
 import ContactListDetail from "./pages/Contact/ContactListDetail";
 import Payment from "./pages/Payment";
 
-import Gallery3A from "./pages/Gallery3A";
+import Gallery3A from "./pages/Gallery/Gallery3A";
 import GalleryDetail from "./pages/Details/GalleryDetail";
 
 import LoginPage from "./pages/LoginPage";
 import Footer from './layout/Footer'
 import Header from './layout/Header'
+import OtherSubHeader from './layout/OtherSubHeader'
+
 import UploadManagement from "./pages/Uploads/UploadManagement";
-import OtherSubHeader from './layout/SubHeader/OtherSubHeader'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import UploadGallery from "./pages/Uploads/UploadGallery";
