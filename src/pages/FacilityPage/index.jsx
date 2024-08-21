@@ -1,6 +1,6 @@
 import FacilityBox from "./Sections/FacilityItem.jsx";
 import { useEffect, useState } from "react";
-import SearchInput from "../../components1/SearchInput.jsx";
+import SearchInput from "../../components/SearchInput.jsx";
 import axiosInstance from "../../utils/axios.js";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

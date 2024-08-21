@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ManagementBox = ({staff}) => {
+const StaffItem = ({staff}) => {
   const dept = ['Principal', 'Coordinator', 'Teaching Staff', 'Non-teaching Staff']
 
   return (
@@ -27,8 +27,8 @@ const ManagementBox = ({staff}) => {
   );
 };
 
-ManagementBox.propTypes = {
+StaffItem.propTypes = {
     staff: PropTypes.object.isRequired,
 };
 
-export default ManagementBox;
+export default StaffItem;

@@ -1,5 +1,5 @@
-import SearchInput from "../../components1/SearchInput.jsx";
-import NoticeItem from "../../components1/NoticeItem.jsx";
+import SearchInput from "../../components/SearchInput.jsx";
+import NoticeItem from "../../components/NoticeItem.jsx";
 import { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axios.js"
 import { useNavigate } from "react-router-dom";

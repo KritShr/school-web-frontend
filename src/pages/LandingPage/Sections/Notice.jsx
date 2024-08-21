@@ -1,5 +1,5 @@
 import React from 'react'
-import NoticeItem from "../../../components1/NoticeItem.jsx";
+import NoticeItem from "../../../components/NoticeItem.jsx";
 
 import { useEffect, useState } from "react";
 import axiosInstance from "../../../utils/axios.js"

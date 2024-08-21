@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import { useState } from 'react';
-import axiosInstance from '../../../utils/axios';
+import axiosInstance from '../utils/axios';
 
 const DocsUpload = ({ onFileChange, files, CreateApi }) => {
     const [loading, setLoading] = useState(false);

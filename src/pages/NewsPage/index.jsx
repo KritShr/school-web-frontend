@@ -1,13 +1,13 @@
-import EventBox from "./EventBox.jsx";
+import NewsItem from "./Sections/NewsItem.jsx";
 import { useEffect, useState } from "react";
-import SearchInput from "../../components1/SearchInput.jsx";
+import SearchInput from "../../components/SearchInput.jsx";
 import axiosInstance from "../../utils/axios.js";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "../../Contact.module.css";
 
 
-const Event = () => {
+const News = () => {
   const limit = 6; // Number of cards to fetch per page
   const [newses, setNewses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Current page
@@ -99,7 +99,7 @@ const Event = () => {
                   <button className="-bg--color-silver text-white px-4 py-2 rounded-md hover:-bg--medium duration-200 text-base" onClick={() => handleDelete(news._id)}>Delete</button>
                 </div>
               )}
-              <EventBox news={news} />
+              <NewsItem news={news} />
             </div>
           ))}
         </div>
@@ -126,4 +126,4 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default News;

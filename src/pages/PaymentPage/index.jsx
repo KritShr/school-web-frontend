@@ -1,5 +1,5 @@
 //import GroupComponent from "../components/GroupComponent";
-import styles from "../Contact.module.css";
+import styles from "../../Contact.module.css";
 
 const Payment = () => {
   return (

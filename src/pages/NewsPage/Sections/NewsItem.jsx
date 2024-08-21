@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";  // useNavigate를 import
 import PropTypes from "prop-types";
 import { useCallback } from "react";
 
-const EventBox = ({news}) => {
+const NewsItem = ({news}) => {
   var date = new Date(news.updatedAt);
   var year = date.getFullYear().toString();
   var month = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -14,8 +14,8 @@ const EventBox = ({news}) => {
 
   const navigate = useNavigate();  // useNavigate 훅 사용
 
-  const moveToDetail = useCallback((eventId) => {
-    navigate(`/newses/${eventId}`);
+  const moveToDetail = useCallback((newsId) => {
+    navigate(`/newses/${newsId}`);
   }, [navigate]);
 
   return (
@@ -54,8 +54,8 @@ const EventBox = ({news}) => {
   );
 };
 
-EventBox.propTypes = {
+NewsItem.propTypes = {
   news: PropTypes.object.isRequired,
 };
 
-export default EventBox;
+export default NewsItem;

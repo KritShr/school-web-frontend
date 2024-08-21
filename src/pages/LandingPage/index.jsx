@@ -11,9 +11,9 @@ import Gallery from "./Sections/Gallery";
 const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    "/image-10@2x.png",
-    "/image-11@2x.png",
-    "/image-12@2x.png"
+    "vector@2x.png",
+    "vector@2x.png",
+    "vector@2x.png"
   ];
 
   useEffect(() => {
@@ -64,8 +64,6 @@ const LandingPage = () => {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
-  const apiUrl = "http://43.203.223.3:8000/" || "http://43.203.223.3:8000/";
-  console.log(apiUrl);
   return (
     <div className="sm:px-0 lg:px-0">
       <div className={styles.contact4}>

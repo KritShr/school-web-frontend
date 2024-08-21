@@ -1,44 +1,44 @@
 import React, { useState } from 'react'
-import FilesUpload from './File/FilesUpload';
+import FileUpload from '../../components/FileUpload'
 import axiosInstance from '../../utils/axios'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { type } from '../../utils/selectData';
+import { dept } from '../../utils/selectData';
 import { useNavigate } from 'react-router-dom';
 
-const UploadGallery = () => {
+const UploadStaff = () => {
     const navigate = useNavigate();
 
-    const [gallery, setGallery] = useState({
-        title:'',
-        type:'',
-        images:[]
+    const [staff, setStaff] = useState({
+        name:'',
+        department:'',
+        image:''
     })
 
     const handleChange= (event)=>{
         const{name, value} = event.target;
-        setGallery(prevState=>({
+        setStaff(prevState=>({
           ...prevState, // 바꾸지 않는 값은 유지
           [name]: value // 바꾸는 값을 오버라이드
         }));
     }
 
-    const handleImages = (newImages) => {
-        setGallery(prevState=>({
+    const handleImages = (newImage) => {
+        setStaff(prevState=>({
             ...prevState,
-            images: newImages
+            image: newImage
         }));
     }
     
     const handleSubmit = async(event)=>{
         event.preventDefault();
 
-        const body={...gallery}
+        const body={...staff}
         console.log(body)
         try {
-            await axiosInstance.post('/galleries', body);
+            await axiosInstance.post('/staffs', body);
             toast.info('Upload Success!');
-            navigate('/gallery/school');
+            navigate('/management');
             
         } catch (error) {
             console.error(error);
@@ -50,33 +50,33 @@ const UploadGallery = () => {
     <div className='px-10 py-10 sm:px-4 lg:px-40 -bg-white'>
         <div className="mt-10 mb-10 isolate self-center -bg--color-gainsboro-100 py-10 rounded-md">
             <div className="text-center">
-                <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload Gallery</h2>
+                <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload Management</h2>
             </div>
             <form onSubmit={handleSubmit} className="px-10 lg:px-40">
-                <FilesUpload images = {gallery.images} onImageChange={handleImages} CreateApi={'/galleries/image'}/>
+                <FileUpload image = {staff.image} onImageChange={handleImages} CreateApi={'/staffs/image'}/>
                 <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div >
-                    <label htmlFor="title" className="block text-sm font-semibold leading-6 text---third-template-colour text-left">Title</label>
+                    <label htmlFor="name" className="block text-sm font-semibold leading-6 text---third-template-colour text-left">Name</label>
                     <div className="mt-2.5">
                     <input 
                         type="text" 
-                        name="title" 
-                        id="title" 
+                        name="name" 
+                        id="name" 
                         className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset -ring--medium placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:-ring--medium sm:text-sm sm:leading-6"  
                         onChange={handleChange}
-                        value={gallery.title}
+                        value={staff.name}
                     />
                     </div>
                 </div>
                 <div >
-                    <label htmlFor="type" className="block text-sm font-semibold leading-6 text-gray-900 text-left">Type</label>
+                    <label htmlFor="department" className="block text-sm font-semibold leading-6 text-gray-900 text-left">Department</label>
                     <div className="mt-2.5">
                         <select
                             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset -ring--medium placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:-ring--medium sm:text-sm sm:leading-6"
-                            name="type" id="type" onChange={handleChange} value={gallery.type}
+                            name="department" id="department" onChange={handleChange} value={staff.department}
                         >
-                            {type.map(item=>(
-                            <option key={item.key} value={item.key}>{item.value}</option>
+                            {dept.map(item=>(
+                                <option key={item.key} value={item.key}>{item.value}</option>
                             ))}
                         </select>
                     </div>  
@@ -93,4 +93,4 @@ const UploadGallery = () => {
   )
 }
 
-export default UploadGallery;
+export default UploadStaff

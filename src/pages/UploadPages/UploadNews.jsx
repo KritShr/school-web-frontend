@@ -1,64 +1,64 @@
 import React, { useEffect, useState } from 'react'
-import DocsUpload from './File/DocsUpload';
+import FilesUpload from '../../components/FilesUpload';
 import axiosInstance from '../../utils/axios'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const UploadNotice = ({isUpdate}) => {
+const UploadNews = ({isUpdate}) => {
     const navigate = useNavigate();
-    const { noticeId } = useParams();
-    const [notice, setNotice] = useState({
+    const { newsId } = useParams();
+    const [news, setNews] = useState({
         title:'',
         description:'',
-        files:[]
+        images:[]
     })
     useEffect(() => {
-        if (isUpdate && noticeId) {
-          async function fetchNotice() {
+        if (isUpdate && newsId) {
+          async function fetchNewses() {
             try {
-              const response = await axiosInstance.get(`/notices/${noticeId}?type=single`);
-              setNotice(response.data[0]);
+              const response = await axiosInstance.get(`/news/${newsId}?type=single`);
+              setNews(response.data[0]);
             } catch (error) {
               console.error(error);
             }
           }
-          fetchNotice();
+          fetchNewses();
         }
-      }, [isUpdate, noticeId]);
+      }, [isUpdate, newsId]);
     
 
     const handleChange= (event)=>{
         const{name, value} = event.target;
-        setNotice(prevState=>({
+        setNews(prevState=>({
           ...prevState, // 바꾸지 않는 값은 유지
           [name]: value // 바꾸는 값을 오버라이드
         }));
     }
 
-    const handleFiles = (newFiles) => {
-        setNotice(prevState=>({
+    const handleImages = (newImages) => {
+        setNews(prevState=>({
             ...prevState,
-            files: newFiles
+            images: newImages
         }));
     }
     
     const handleSubmit = async(event)=>{
         event.preventDefault();
 
-        const body={...notice}
+        const body={...news}
         console.log(body)
         try {
             if(isUpdate){
-                await axiosInstance.put(`/notices/${noticeId}`, body);
+                await axiosInstance.put(`/news/${newsId}`, body);
             } else{
-                await axiosInstance.post('/notices', body);
+                await axiosInstance.post('/news', body);
             }
             toast.info('Upload Success!');
             if(isUpdate){
-                navigate(`/notice/${noticeId}`)
+                navigate(`/newses/${newsId}`)
             } else{
-                navigate('/notice');
+                navigate('/event');
             }
             
             
@@ -72,10 +72,10 @@ const UploadNotice = ({isUpdate}) => {
     <div className='px-10 py-10 sm:px-4 lg:px-40 -bg-white'>
         <div className="mt-10 mb-10 isolate self-center -bg--color-gainsboro-100 py-10 rounded-md">
             <div className="text-center">
-                <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload Notice</h2>
+                <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload News</h2>
             </div>
             <form onSubmit={handleSubmit} className="px-10 lg:px-40">
-                <DocsUpload files = {notice.files} onFileChange={handleFiles} CreateApi={'/notices/file'}/>
+                <FilesUpload images = {news.images} onImageChange={handleImages} CreateApi={'/news/image'}/>
                 <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div className='sm:col-span-2'>
                     <label htmlFor="title" className="block text-sm font-semibold leading-6 text---third-template-colour text-left">Title</label>
@@ -86,7 +86,7 @@ const UploadNotice = ({isUpdate}) => {
                             id="title" 
                             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset -ring--medium placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:-ring--medium sm:text-sm sm:leading-6"  
                             onChange={handleChange}
-                            value={notice.title}
+                            value={news.title}
                         />
                     </div>
                 </div>
@@ -99,7 +99,7 @@ const UploadNotice = ({isUpdate}) => {
                         rows="4" 
                         className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset -ring--medium placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:-ring--medium sm:text-sm sm:leading-6" 
                         onChange={handleChange}
-                        value={notice.description}
+                        value={news.description}
                     />
                     </div>
                 </div>
@@ -115,4 +115,4 @@ const UploadNotice = ({isUpdate}) => {
   )
 }
 
-export default UploadNotice;
+export default UploadNews;

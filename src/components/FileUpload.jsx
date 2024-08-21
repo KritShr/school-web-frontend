@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import axiosInstance from '../../../utils/axios';
+import axiosInstance from '../utils/axios';
 
 const FileUpload = ({ onImageChange, image, CreateApi}) => {
     

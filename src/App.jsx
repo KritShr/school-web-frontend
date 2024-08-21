@@ -10,45 +10,35 @@ import LandingPage from "./pages/LandingPage";
 import AboutUs from "./pages/AboutUsPage";
 import Contact from "./pages/ContactPage";
 import ContactList from "./pages/ContactListPage";
-import ContactListDetail from "./pages/DetailPages/ContactListDetail";
 import FacilitiesMain from "./pages/FacilityPage";
-import FacilityDetail from "./pages/DetailPages/FacilityDetail";
 import Gallery3A from "./pages/GalleryPage";
-
-import Event from "./pages/News/Event";
-import EventDetail from "./pages/DetailPages/EventDetail";
-
-
-import Management from "./pages/Staff/Management";
-
-import Notice1 from "./pages/Notice/Notice1";
-import NoticeDetail from "./pages/DetailPages/NoticeDetail";
-
-
-
-
-import Payment from "./pages/Payment";
-
-
-import GalleryDetail from "./pages/DetailPages/GalleryDetail";
-
+import Payment from "./pages/PaymentPage";
+import News from "./pages/NewsPage";
+import Staff from "./pages/StaffPage";
+import Notice from "./pages/NoticePage";
 import LoginPage from "./pages/LoginPage";
+
+import ContactListDetail from "./pages/DetailPages/ContactListDetail";
+import FacilityDetail from "./pages/DetailPages/FacilityDetail";
+import NoticeDetail from "./pages/DetailPages/NoticeDetail";
+import GalleryDetail from "./pages/DetailPages/GalleryDetail";
+import EventDetail from "./pages/DetailPages/EventDetail";
+import UploadStaff from "./pages/UploadPages/UploadStaff";
+import UploadGallery from "./pages/UploadPages/UploadGallery";
+import UploadFacility from "./pages/UploadPages/UploadFacility";
+import UploadNews from "./pages/UploadPages/UploadNews";
+import UploadNotice from "./pages/UploadPages/UploadNotice";
+
 import Footer from './layout/Footer'
 import Header from './layout/Header'
 import OtherSubHeader from './layout/OtherSubHeader'
 
-import UploadManagement from "./pages/Uploads/UploadManagement";
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import UploadGallery from "./pages/Uploads/UploadGallery";
-import UploadFacility from "./pages/Uploads/UploadFacility";
-import UploadNews from "./pages/Uploads/UploadNews";
-import UploadNotice from "./pages/Uploads/UploadNotice";
 
 const routeTitles = {
   '/gallery/:type': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
   '/galleries/:galleryId': { mainTitle: 'Gallery', subTitle: 'Home, Gallery' },
-
   '/notice': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/notice/:id': { mainTitle: 'Notice', subTitle: 'Home, Notice' },
   '/contact': { mainTitle: 'Contact', subTitle: 'Home, Contact' },
@@ -65,7 +55,6 @@ const routeTitles = {
   '/facilities/update/:facilitiesId': { mainTitle: 'Facility Update', subTitle: 'Home, Facility Update'},
   '/notice/upload': { mainTitle: 'Notice Upload', subTitle: 'Home, Notice Upload'},
   '/notice/update/:noticeId': { mainTitle: 'Notice Update', subTitle: 'Home, Notice Update'},
-
   '/management' : { mainTitle: 'Staff', subTitle: 'Home, Staff' },
   '/facilities' : { mainTitle: 'Facility', subTitle: 'Home, Facility' },
   '/facilities/:id': { mainTitle: 'Facility', subTitle: 'Home, Facility' },
@@ -233,13 +222,13 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/facilities" element={<FacilitiesMain />} />
         <Route path="/facilities/:facilityId" element={<FacilityDetail />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/event" element={<News />} />
         <Route path="/newses/:newsId" element={<EventDetail />} />
         <Route path="/newses/upload" element={<UploadNews/>} />
         <Route path="/newses/update/:newsId" element={<UploadNews isUpdate={true}/>} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/management" element={<Management />} />
-        <Route path="/notice" element={<Notice1 />} />
+        <Route path="/management" element={<Staff />} />
+        <Route path="/notice" element={<Notice />} />
         <Route path="/notice/:noticeId" element={<NoticeDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/payment" element={<Payment />} />
@@ -247,10 +236,9 @@ function App() {
         <Route path="/galleries/:galleryId" element={<GalleryDetail />} />
 
         <Route path="/login" element={<LoginPage/>} />
-
         <Route path="/contactList" element={<ContactList />} />
         <Route path="/contactList/:contactListId" element={<ContactListDetail />} />
-        <Route path="/management/upload"element={<UploadManagement/>} />
+        <Route path="/management/upload"element={<UploadStaff/>} />
         <Route path="/gallery/upload" element={<UploadGallery/>} />
         <Route path="/facilities/upload" element={<UploadFacility isUpdate={false}/>} />
         <Route path="/facilities/update/:facilityId" element={<UploadFacility isUpdate={true}/>} />

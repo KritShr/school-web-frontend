@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from "react";
-import ManagementBox from "./ManagementBox.jsx";
+import ManagementBox from "./Sections/StaffItem.jsx";
 import axiosInstance from "../../utils/axios.js";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import styles from "../../Contact.module.css";
 
-const Management = () => {
+const StaffPage = () => {
   const limit = 12; // 가져올 카드 수
   const [staffs, setStaffs] = useState([]);
   const [skip, setSkip] = useState(0); // 이미지를 불러올 시작점
@@ -118,4 +118,4 @@ const Management = () => {
   );
 };
 
-export default Management;
+export default StaffPage;
