@@ -6,28 +6,21 @@ const Payment = () => {
     <div className="px-20 py-10 sm:px-4 lg:px-80 -bg--default-white">
       <div className={styles.contact4}>
         
-        {/** founder */}
-        <div className="grid grid-cols-2 gap-3 lg:gap-10 sm:grid-cols-1 lg:grid-cols-2">
-          {/** text */}
-          <div className="flex flex-col justify-evenly">
-            <h2 className="text-left text-4xl font-bold -text--medium">PRINCIPAL</h2>
-            <h3 className="text-left text-3xl font-medium py-5">MR. KrishnaHari Ghawa Shrestha</h3>
-            <h4 className="text-justify text-2xl font-normal">
-              This is description. This is description. This is description. This is description. This is description.
-              This is description. This is description. This is description. This is description. This is description.
-              This is description. This is description. This is description. This is description. This is description.
-              This is description. This is description. This is description. This is description. This is description.
-              This is description. This is description. This is description. This is description. This is description. 
-            </h4>
-          </div>
-          {/** image */}
-          <div className="flex flex-col">
-            <img alt="" src="/image-11@2x.png" loading="lazy"/>
-          </div>
+        
+        {/** image */}
+        <div className="flex flex-col items-center">
+          <img alt="" src="/cla_payment.png" loading="lazy" className="w-full h-auto max-w-none" style={{ maxWidth: '500px' }} />
         </div>
 
-        
-
+        <h3 className="text-left text-3xl font-medium py-5">
+          <span className="-text--medium">Bank A/C Name :</span> Creative Learnerss Academy
+        </h3>
+        <h3 className="text-left text-3xl font-medium py-5">
+          <span className="-text--medium">Account Number :</span> 2222440002306765
+        </h3>
+        <h3 className="text-left text-3xl font-medium py-5">
+          <span className="-text--medium">Name of Bank :</span> Nepal Investment Mega Bank, Thimi
+        </h3>
       </div>
     </div>
   );
