@@ -64,7 +64,7 @@ const LandingPage = () => {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
-  const apiUrl = import.meta.env.VITE_SERVER_URL || "http://43.203.223.3:8000/";
+  const apiUrl = "http://43.203.223.3:8000/" || "http://43.203.223.3:8000/";
   console.log(apiUrl);
   return (
     <div className="sm:px-0 lg:px-0">

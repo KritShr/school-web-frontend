@@ -40,7 +40,7 @@ const FileUpload = ({ onImageChange, image, CreateApi}) => {
                     <div onClick={handleDelete}>
                         <img
                             className='min-w-[300px] h-[300px]'
-                            src={`${import.meta.env.VITE_SERVER_URL}/${image}`}
+                            src={`${"http://43.203.223.3:8000/"}/${image}`}
                             alt=''
                         />
                     </div>

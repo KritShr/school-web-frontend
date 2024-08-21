@@ -71,7 +71,7 @@ const FacilityDetail = () => {
               facility.images.map((image, index) => (
                 <div key={index} className="relative w-full overflow-hidden shadow-lg cursor-pointer" onClick={() => openPopup(index)}>
                   <img 
-                    src={`${import.meta.env.VITE_SERVER_URL}/${image}`} 
+                    src={`${"http://43.203.223.3:8000/"}/${image}`} 
                     alt={facility.title} 
                     className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
                   />
@@ -109,7 +109,7 @@ const FacilityDetail = () => {
       &#8249;
     </button>
     <img 
-      src={`${import.meta.env.VITE_SERVER_URL}/${facility.images[currentImageIndex]}`} 
+      src={`${"http://43.203.223.3:8000/"}/${facility.images[currentImageIndex]}`} 
       alt={facility.title} 
       className="max-w-[90%] max-h-[80%]"  // Reduced size
     />

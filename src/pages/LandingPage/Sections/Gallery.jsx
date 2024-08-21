@@ -36,7 +36,7 @@ const Gallery = ({}) => {
           <img
             className="w-full h-full object-cover cursor-pointer"
             alt={gallery.title}
-            src={`${import.meta.env.VITE_SERVER_URL}/${gallery.images[0]}`}
+            src={`${"http://43.203.223.3:8000/"}/${gallery.images[0]}`}
           />
         </div>
       ))}
