@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from "../css/page/Contact.module.css";
+import styles from "../Contact.module.css";
 import { toast } from 'react-toastify';
 import axiosInstance from "../utils/axios";
 import { useNavigate } from 'react-router-dom';

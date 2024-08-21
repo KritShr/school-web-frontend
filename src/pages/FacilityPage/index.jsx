@@ -1,4 +1,4 @@
-import FacilityBox from "./FacilityBox.jsx";
+import FacilityBox from "./Sections/FacilityItem.jsx";
 import { useEffect, useState } from "react";
 import SearchInput from "../../components1/SearchInput.jsx";
 import axiosInstance from "../../utils/axios.js";

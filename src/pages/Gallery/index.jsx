@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
 import SearchInput from "../../components1/SearchInput";
-import GalleryBox from "./GalleryBox";  // Import GalleryBox component
+import GalleryBox from "./Sections/GalleryItem";  // Import GalleryBox component
 import { toast } from "react-toastify";
 import styles from "../../Contact.module.css";
 

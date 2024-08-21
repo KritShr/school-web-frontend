@@ -7,24 +7,30 @@ import {
   useLocation,
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import FacilitiesMain from "./pages/Facility/FacilitiesMain";
-import FacilityDetail from "./pages/Details/FacilityDetail";
-import Event from "./pages/News/Event";
-import EventDetail from "./pages/Details/EventDetail";
+import AboutUs from "./pages/AboutUsPage";
+import Contact from "./pages/ContactPage";
+import ContactList from "./pages/ContactListPage";
+import ContactListDetail from "./pages/DetailPages/ContactListDetail";
+import FacilitiesMain from "./pages/FacilityPage";
+import FacilityDetail from "./pages/DetailPages/FacilityDetail";
+import Gallery3A from "./pages/Gallery";
 
-import AboutUs from "./pages/AboutUs/AboutUs";
+import Event from "./pages/News/Event";
+import EventDetail from "./pages/DetailPages/EventDetail";
+
+
 import Management from "./pages/Staff/Management";
 
 import Notice1 from "./pages/Notice/Notice1";
-import NoticeDetail from "./pages/Details/NoticeDetail";
+import NoticeDetail from "./pages/DetailPages/NoticeDetail";
 
-import Contact from "./pages/Contact/Contact";
-import ContactList from "./pages/Contact/ContactList";
-import ContactListDetail from "./pages/Contact/ContactListDetail";
+
+
+
 import Payment from "./pages/Payment";
 
-import Gallery3A from "./pages/Gallery/Gallery3A";
-import GalleryDetail from "./pages/Details/GalleryDetail";
+
+import GalleryDetail from "./pages/DetailPages/GalleryDetail";
 
 import LoginPage from "./pages/LoginPage";
 import Footer from './layout/Footer'

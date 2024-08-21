@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";  // useNavigate를 import
 import PropTypes from "prop-types";
 import { useCallback } from "react";
-import styles from "../../Contact.module.css";
+import styles from "../../../Contact.module.css";
 
 const GalleryBox = ({gallery}) => {
   var date = new Date(gallery.updatedAt);

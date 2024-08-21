@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../../src/Contact.module.css";
+import styles from "../Contact.module.css";
 
 const OtherSubHeader = ({mainTitle, subTitle}) => {
   const subTitleParts = subTitle ? subTitle.split(',') : [];

@@ -1,5 +1,5 @@
 import SearchInput from "../../components1/SearchInput.jsx";
-import ContactItem from "./ContactItem.jsx";
+import ContactItem from "./Sections/ContactItem.jsx";
 import { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axios.js"
 import styles from "../../Contact.module.css";

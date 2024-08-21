@@ -1,11 +1,10 @@
 //import GroupComponent from "../components/GroupComponent";
-import styles from "../css/page/Management.module.css";
-import styles_c from "../css/page/Contact.module.css";
+import styles from "../Contact.module.css";
 
 const Payment = () => {
   return (
     <div className="px-20 py-10 sm:px-4 lg:px-80 -bg--default-white">
-      <div className={styles_c.contact4}>
+      <div className={styles.contact4}>
         
         {/** founder */}
         <div className="grid grid-cols-2 gap-3 lg:gap-10 sm:grid-cols-1 lg:grid-cols-2">
