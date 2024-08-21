@@ -60,7 +60,7 @@ const NoticeDetail = () => {
                 {notice.files.map((file, index) => (
                   <li key={index} className="py-1"> 
                     <a
-                      href={`/BackApi/${file}`}
+                      href={`${import.meta.env.VITE_SERVER_URL}/${file}`}
                       download
                       className="-text--text-default-default hover:-text--medium"
                     >

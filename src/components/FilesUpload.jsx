@@ -63,7 +63,7 @@ const FilesUpload = ({onImageChange, images, CreateApi}) => {
                             <div onClick={() => handleDelete(image)} key={image + index}>
                                 <img
                                     className='min-w-[300px] h-[300px]'
-                                    src={`/BackApi/${image}`}
+                                    src={`${import.meta.env.VITE_SERVER_URL}/${image}`}
                                     alt=''
                                 />
                             </div>
