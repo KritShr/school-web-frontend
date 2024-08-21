@@ -64,7 +64,7 @@ const LandingPage = () => {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
-  console.log(import.meta.env.VITE_API_URL);
+  console.log(process.env.VITE_API_URL);
   return (
     <div className="sm:px-0 lg:px-0">
       <div className={styles.contact4}>
