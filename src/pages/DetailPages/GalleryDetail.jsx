@@ -59,7 +59,7 @@ const GalleryDetail = () => {
               gallery.images.map((image, index) => (
                 <div key={index} className="relative w-full overflow-hidden shadow-lg cursor-pointer" onClick={() => openPopup(index)}>
                   <img 
-                    src={`${"http://43.203.223.3:8000/"}/${image}`} 
+                    src={`${import.meta.env.VITE_SERVER_URL}/${image}`} 
                     alt={gallery.title} 
                     className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
                   />
@@ -84,7 +84,7 @@ const GalleryDetail = () => {
             <button onClick={closePopup} className="absolute top-4 right-4 text-white" style={{ fontSize: '5rem' }}>&times;</button>
             <button onClick={goToPreviousImage} className="absolute left-4 text-white" style={{ fontSize: '8rem' }}>&#8249;</button>
             <img 
-              src={`${"http://43.203.223.3:8000/"}/${gallery.images[currentImageIndex]}`} 
+              src={`${import.meta.env.VITE_SERVER_URL}/${gallery.images[currentImageIndex]}`} 
               alt={gallery.title} 
               className="max-w-[90%] max-h-[80%]"
             />

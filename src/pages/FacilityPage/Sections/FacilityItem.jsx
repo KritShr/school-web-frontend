@@ -20,7 +20,7 @@ const FacilityBox = ({facility}) => {
       <div className="flex justify-center mt-4">
         <div className="relative w-96 h-72"> {/* 4:3 비율 (2배 크기) */}
           <img 
-            src={`${"http://43.203.223.3:8000/"}/${facility.images[0]}`}  // public 폴더의 이미지 파일 경로
+            src={`${import.meta.env.VITE_SERVER_URL}/${facility.images[0]}`}  // public 폴더의 이미지 파일 경로
             alt={facility.title} 
             className="absolute inset-0 w-full h-full object-cover" 
           />
