@@ -13,7 +13,7 @@ import ContactList from "./pages/ContactListPage";
 import ContactListDetail from "./pages/DetailPages/ContactListDetail";
 import FacilitiesMain from "./pages/FacilityPage";
 import FacilityDetail from "./pages/DetailPages/FacilityDetail";
-import Gallery3A from "./pages/Gallery";
+import Gallery3A from "./pages/GalleryPage";
 
 import Event from "./pages/News/Event";
 import EventDetail from "./pages/DetailPages/EventDetail";
