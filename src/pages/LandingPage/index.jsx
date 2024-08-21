@@ -86,7 +86,7 @@ const LandingPage = () => {
                 <div 
                   className="absolute inset-0"
                   style={{
-                    background: "circle-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0))"
+                    background: "linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0))"
                   }}
                 ></div>
               </div>
