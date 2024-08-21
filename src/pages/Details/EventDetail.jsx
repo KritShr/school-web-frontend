@@ -73,7 +73,7 @@ const EventDetail = () => {
               news.images.map((image, index) => (
                 <div key={index} className="relative w-full overflow-hidden shadow-lg cursor-pointer" onClick={() => openPopup(index)}>
                   <img 
-                    src={`${process.env.VITE_SERVER_URL}/${image}`} 
+                    src={`${import.meta.env.VITE_SERVER_URL}/${image}`} 
                     alt={news.title} 
                     className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
                   />
@@ -98,7 +98,7 @@ const EventDetail = () => {
             <button onClick={closePopup} className="absolute top-4 right-4 text-white text-4xl">&times;</button>
             <button onClick={goToPreviousImage} className="absolute left-4 text-white text-5xl">&#8249;</button>
             <img 
-              src={`${process.env.VITE_SERVER_URL}/${news.images[currentImageIndex]}`} 
+              src={`${import.meta.env.VITE_SERVER_URL}/${news.images[currentImageIndex]}`} 
               alt={news.title} 
               className="max-w-[90%] max-h-[80%]"
             />
