@@ -53,7 +53,7 @@ const UploadStaff = () => {
                 <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload Management</h2>
             </div>
             <form onSubmit={handleSubmit} className="px-10 lg:px-40">
-                <FileUpload image = {staff.image} onImageChange={handleImages} CreateApi={'/staffs/image'}/>
+                <FileUpload image = {staff.image} onImageChange={handleImages} CreateApi={'/staffs/image'} DeleteApi={'staffs'}/>
                 <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div >
                     <label htmlFor="name" className="block text-sm font-semibold leading-6 text---third-template-colour text-left">Name</label>

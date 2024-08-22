@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import axiosInstance from '../utils/axios';
 import { useState } from 'react';
+import { toast } from "react-toastify";
 
-const FilesUpload = ({onImageChange, images, CreateApi}) => {
+const FilesUpload = ({onImageChange, images, CreateApi, DeleteApi}) => {
     const [loading, setLoading] = useState(false);
     
     const handleDrop = async (files) => {
@@ -38,6 +39,12 @@ const FilesUpload = ({onImageChange, images, CreateApi}) => {
         let newImages = [...images];
         newImages.splice(currentIndex, 1);
         onImageChange(newImages);
+        try {
+            await axiosInstance.delete(`/${DeleteApi}/file/${image}`);
+        } catch (error) {
+            console.error(error);
+            toast.error('Delete Failed...');
+        }        
     };
 
     return (
@@ -80,7 +87,8 @@ const FilesUpload = ({onImageChange, images, CreateApi}) => {
 FilesUpload.propTypes = {
     onImageChange: PropTypes.func.isRequired,
     images: PropTypes.array.isRequired,
-    CreateApi: PropTypes.string
+    CreateApi: PropTypes.string,
+    DeleteApi: PropTypes.string
 };
 
 export default FilesUpload;

@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import { useState } from 'react';
 import axiosInstance from '../utils/axios';
+import { toast } from "react-toastify";
 
-const DocsUpload = ({ onFileChange, files, CreateApi }) => {
+const DocsUpload = ({ onFileChange, files, CreateApi, DeleteApi }) => {
     const [loading, setLoading] = useState(false);
 
     const handleDrop = async (droppedFiles) => {
@@ -38,6 +39,15 @@ const DocsUpload = ({ onFileChange, files, CreateApi }) => {
         let newFiles = [...files];
         newFiles.splice(currentIndex, 1);
         onFileChange(newFiles);
+        try {
+            console.log(file)
+            console.log(`/${DeleteApi}/file/${file}`)
+            await axiosInstance.delete(`/${DeleteApi}/file/${file}`);
+        } catch (error) {
+            console.error(error);
+            toast.error('Delete Failed...');
+        } 
+        
     };
 
     return (
@@ -76,7 +86,8 @@ const DocsUpload = ({ onFileChange, files, CreateApi }) => {
 DocsUpload.propTypes = {
     onFileChange: PropTypes.func.isRequired,
     files: PropTypes.array.isRequired,
-    CreateApi: PropTypes.string
+    CreateApi: PropTypes.string,
+    DeleteApi: PropTypes.string
 };
 
 export default DocsUpload;

@@ -53,7 +53,7 @@ const UploadGallery = () => {
                 <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload Gallery</h2>
             </div>
             <form onSubmit={handleSubmit} className="px-10 lg:px-40">
-                <FilesUpload images = {gallery.images} onImageChange={handleImages} CreateApi={'/galleries/image'}/>
+                <FilesUpload images = {gallery.images} onImageChange={handleImages} CreateApi={'/galleries/image'} DeleteApi={'galleries'}/>
                 <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div >
                     <label htmlFor="title" className="block text-sm font-semibold leading-6 text---third-template-colour text-left">Title</label>

@@ -75,7 +75,7 @@ const UploadNews = ({isUpdate}) => {
                 <h2 className="py-10 font-bold text-3xl text---third-template-colour">Upload News</h2>
             </div>
             <form onSubmit={handleSubmit} className="px-10 lg:px-40">
-                <FilesUpload images = {news.images} onImageChange={handleImages} CreateApi={'/news/image'}/>
+                <FilesUpload images = {news.images} onImageChange={handleImages} CreateApi={'/news/image'} DeleteApi={'news'}/>
                 <div className="mt-5 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div className='sm:col-span-2'>
                     <label htmlFor="title" className="block text-sm font-semibold leading-6 text---third-template-colour text-left">Title</label>
