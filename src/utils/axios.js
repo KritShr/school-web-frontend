@@ -19,11 +19,14 @@ axiosInstance.interceptors.request.use(function(config){ //요청 전 다음 코
 axiosInstance.interceptors.response.use((response) => {
     return response;
 }, async function(err) {
-    if (err.response && err.response.data === 'TokenExpiredError') {
+    if (err.response && (err.response.data === 'TokenExpiredError' || err.response.data==='Unauthorized')) {
         console.log('JWT expired. Updating isAuth and redirecting...');
         localStorage.setItem('isAuth', 'false');
         toast.info('Login Again!');
-        window.location.href = '/login'; // Redirect to login page
+        
+        setTimeout(() => {
+            window.location.href = '/login';
+        }, 2000);
     }
     return Promise.reject(err);
 });
