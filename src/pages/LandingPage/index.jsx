@@ -11,7 +11,7 @@ import Gallery from "./Sections/Gallery";
 const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    "vector@2x.png",
+    "school_pic1.png",
     "vector@2x.png",
     "vector@2x.png"
   ];
